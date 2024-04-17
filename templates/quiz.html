@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+    <script>
+        let quiz = {{quiz|tojson}} 
+    </script>
+
+    <div class="quiz-container">
+        <h1>{{quiz.name}}!</h1>
+        <div class="question">{{quiz.question}}</div>
+        <div id="durationDisplay">0 seconds</div>
+        <div class="inputAnswer"></div>
+        <button class="btn btn-primary" id="submitAnswer">Submit</button>
+
+    </div>
+{% endblock %}
