@@ -11,7 +11,8 @@ quizzes = {
         "answer_morse": "..",
         "answer_letter": "i",
         "hint": "/static/image/i-hint.png",
-        "answer_img": "/static/image/i-answer.png"
+        "answer_img": "/static/image/i-answer.png",
+        "type": "english_to_morse"
     },
     "2": {
         "id": 2,
@@ -19,6 +20,7 @@ quizzes = {
         "question": "Please enter the Morse Code for 'A'",
         "answer_morse": ".-",
         "answer_letter": "a",
+        "hint": "/static/image/a-hint.png",
     }
 }
 
