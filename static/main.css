@@ -3,3 +3,19 @@
   text-align: center;
   margin: 50px 0px;
 }
+
+.inputMorseCode {
+  width: 400px;
+  height: 100px;
+  margin: 20px 0px;
+  background-color: #f8f8f8;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 50px;
+}
+
+.error {
+  color: red;
+  font-size: 20px;
+}
