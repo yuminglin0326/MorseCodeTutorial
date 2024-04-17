@@ -2,6 +2,7 @@ $(document).ready(function() {
     let spaceDownTime = 0;
     let spaceDown = false;
     let duration = 0;
+    let morseAudio = new Audio('/static/morse_code_T.mp3');
 
     $(document).keydown(function(e) {
         if (e.which === 32 && !spaceDown) { 
@@ -9,12 +10,15 @@ $(document).ready(function() {
             displayDuration();
             $('#durationDisplay').text('0 seconds');
             spaceDown = true;
+            playAudio();
           }
     });
 
     $(document).keyup(function(e) {
         if (e.which === 32 && spaceDown) {
             spaceDown = false;
+            clearInterval(audioTimer);
+            morseAudio.pause();
           }
     });
 
@@ -41,6 +45,15 @@ $(document).ready(function() {
                 clearInterval(intervalId); 
             }
           }, 100);
+    }
+
+    function playAudio() {
+        morseAudio.currentTime = 0; // Reset audio to the beginning
+        morseAudio.play();
+        // Set a timeout to stop audio playback after 500 milliseconds
+        audioTimer = setTimeout(function() {
+            morseAudio.pause();
+        }, 500);
     }
 
     $('#submitAnswer').click(function() {
