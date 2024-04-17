@@ -9,6 +9,14 @@ quizzes = {
         "name": "Quiz 1",
         "question": "Please enter the Morse Code for 'I'",
         "answer": "..",
+        "hint": "/static/i-hint.png",
+        "answer_img": "/static/i-answer.png"
+    },
+    "2": {
+        "id": 2,
+        "name": "Quiz 2",
+        "question": "Please enter the Morse Code for 'A'",
+        "answer": ".-",
     }
 }
 
@@ -23,6 +31,12 @@ def quiz(quiz_id):
     quiz = quizzes[quiz_id]
 
     return render_template('quiz.html', quiz=quiz)
+
+@app.route('/quiz_answer/<quiz_id>')
+def quiz_answer(quiz_id):
+    quiz = quizzes[quiz_id]
+
+    return render_template('quiz_answer.html', quiz=quiz)
 
 @app.route('/answered_quiz', methods=['GET', 'POST'])
 def answered_quiz():
