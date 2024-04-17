@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+    <script>
+        let quiz = {{ quiz|tojson }};
+    </script>
+
+    <div class="quiz-container">
+        <h1>{{ quiz.name }}!</h1>
+        <div class="question">{{ quiz.question }}</div>
+        <div id="duration-display">0 seconds</div>
+        <div id="quiz-mid-container">
+            <div class="input-morse-code"></div>
+        </div>
+       
+        <div class="flashlight-container">
+            <img class="flashlight" src="/static/image/led off.png" alt="led light off">
+        </div>
+        <div id="answer-feedback-container"></div>
+        <div id="button-container">
+            <button id="submitAnswer" class="btn btn-primary hide">Submit</button>
+            <div id="wrong-answer-buttons">
+                <button id="hint-button" class="btn btn-primary hide">Hint</button>
+                <button id="correct-answer-button" class="btn btn-secondary hide">Correct Answer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-result">
+        <h2>Quiz Result</h2>
+        <p>You answered {{ quiz_score }} out of {{ quiz.total_questions }} questions correctly.</p>
+    </div>
+
+{% endblock %}

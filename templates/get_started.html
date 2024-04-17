@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center mt-5">
+    <h2>Let’s first learn about how to enter dots and dashes on this website!</h2>
+    <p>Morse code consists of a set of standardized sequences of short and long signals, typically referred to as dots and dashes</p>
+    <h4>Press space for a second to enter a dot</h4>
+    <input type="text" id="textbox" name="textbox">
+    <div class="row justify-content-center">
+        <div class="col-md-4 gray-box" id="grayBox">
+            <div class="dot" id="dot"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var pressTime;
+
+    document.getElementById("textbox").addEventListener("keydown", function(event) {
+        if (event.keyCode === 32) { // Check if the key pressed is spacebar
+            event.preventDefault(); // Prevent the default behavior of adding a space
+            pressTime = Date.now(); // Record the time when the spacebar was pressed
+        }
+    });
+
+    document.getElementById("textbox").addEventListener("keyup", function(event) {
+        if (event.keyCode === 32 && pressTime) { // Check if the key released is spacebar and spacebar was pressed before
+            var releaseTime = Date.now(); // Record the time when the spacebar was released
+            if (releaseTime - pressTime >= 1000) { // Check if spacebar was held down for at least one second
+                var textbox = document.getElementById("textbox");
+                textbox.value += "."; // Add a dot to the text box
+            }
+            pressTime = null; // Reset pressTime after adding the dot
+        }
+    });
+</script>
+{% endblock %}

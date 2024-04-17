@@ -43,6 +43,15 @@ quiz_score = 0
 def home():
     return render_template('home.html')
 
+@app.route('/get-started')
+def get_started():
+    return render_template('get_started.html')
+
+@app.route('/morse-code')
+def morse_code():
+    return render_template('morse_code.html')
+
+
 @app.route('/learn/<learn_id>')
 def learn(learn_id):
     learn_data = learns[learn_id]
@@ -67,6 +76,13 @@ def quiz_answer(quiz_id):
     quiz = quizzes[quiz_id]
 
     return render_template('quiz_answer.html', quiz=quiz)
+
+@app.route('/quiz/score')
+def score(quiz_score):
+
+    quiz_data = learns[quiz_score]
+
+    return render_template('quiz_score.html', quiz=quiz_data)
 
 @app.route('/answered_quiz', methods=['GET', 'POST'])
 def answered_quiz():
