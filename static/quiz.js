@@ -39,10 +39,10 @@ $(document).ready(function() {
               $('#duration-display').text(duration/1000 + ' seconds');
             } else {
                 $('.error').remove();
-                if (duration < 200) {
+                if (duration < 150) {
                     console.log("dot duration: " + duration);
                     $('.input-morse-code').append('.');
-                } else if (duration > 200 && duration < 500) {
+                } else if (duration > 150 && duration < 500) {
                     console.log("dash duration: " + duration);
                     $('.input-morse-code').append('-');
                 } else {
@@ -71,10 +71,35 @@ $(document).ready(function() {
         let answer = $('.input-morse-code').text();
         if (answer === quiz["answer"]) {
             console.log("Correct!");
+            let inputAnswer = {
+                "answer": answer,
+                "is_correct": true
+            }
+            
+            sendAnswer(inputAnswer);
         } else {
             console.log("Incorrect!");
+            let inputAnswer = {
+                "answer": answer,
+                "is_correct": false
+            }
+            
+            sendAnswer(inputAnswer);
         }
     });
+
+    sendAnswer = function(inputAnswer) {
+        $.ajax({
+            type: "POST",
+            url: "/answered_quiz",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(inputAnswer),
+            success: function(result) {
+                console.log(result);
+            }
+        })
+    }
 
     
 });

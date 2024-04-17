@@ -12,6 +12,7 @@ quizzes = {
     }
 }
 
+quiz_score = 0
 
 @app.route('/')
 def home():
@@ -22,6 +23,21 @@ def quiz(quiz_id):
     quiz = quizzes[quiz_id]
 
     return render_template('quiz.html', quiz=quiz)
+
+@app.route('/answered_quiz', methods=['GET', 'POST'])
+def answered_quiz():
+    global quiz_score
+
+    json_data = request.get_json()
+
+    is_correct = json_data["is_correct"]
+    print(is_correct)
+    if is_correct:
+        quiz_score += 1
+    
+    print(quiz_score)
+
+    return jsonify({"score": quiz_score})
 
 
 if __name__ == '__main__':
