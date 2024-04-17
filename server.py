@@ -12,8 +12,18 @@ learns = {
         "morse_image": "/static/image/a-morse.png",
         "morse_audio": "/static/audio/morse_code_a.mp3",
         "position": [[190, 595], [315, 570]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+    },
+    "2": {
+        "id": 2,
+        "letter": "e",
+        "morse_code": ".",
+        "plain_image": "/static/image/e-plain.png",
+        "morse_image": "/static/image/e-morse.png",
+        "morse_audio": "/static/audio/morse_code_e.mp3",
+        "position": [[390, 480]], # [top, left],
         "dash": "/static/image/dash_hor.png"
-    }
+    },
 }
 
 quizzes = {
@@ -61,9 +71,14 @@ def learn(learn_id):
 @app.route('/learn_try/<learn_id>')
 def learn_try(learn_id):
     learn_data = learns[learn_id]
+    total_learns = len(learns)
 
-    return render_template('learn_try.html', learn=learn_data)
+    return render_template('learn_try.html', learn=learn_data, total_learns=total_learns)
 
+@app.route('/finish_learn')
+def finish_learn():
+    all_learns = learns
+    return render_template('finish_learn.html', learns=all_learns)
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):

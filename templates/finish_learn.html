@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'finish_learn.js') }}"></script>
+
+    <script>
+        let learns = {{learns|tojson}} 
+    </script>
+
+    <div id="finish-learn-container">
+        <div id="congrats">Congratulations!</div>
+        <p>You finished learning all letters!</p>
+        <button id="learn-quiz-button" class="btn btn-primary">Quiz</button>
+        <button id="learn-review-button" class="btn btn-secondary">Review</button>
+        <div class="review-detail-button"></div>
+    </div>
+
+    
+     
+{% endblock %}

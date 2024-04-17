@@ -87,3 +87,23 @@
   left: 20px; /* Adjust as needed */
   z-index: 2; /* Set stacking order */
 }
+
+/* finish-learn page styling */
+#finish-learn-container {
+  text-align: center;
+  margin: 50px 0px;
+}
+
+#congrats {
+  font-size: 60px;
+  color: green;
+}
+
+.review-detail-button {
+  margin: 20px 0px;
+}
+
+button.letter {
+  margin: 10px;
+  font-size: 20px;
+}

@@ -49,10 +49,10 @@ $(document).ready(function() {
               $('#duration-display').text(duration/1000 + ' seconds');
             } else {
                 $('.error').remove();
-                if (duration < 150) {
+                if (duration < 200) {
                     console.log("dot duration: " + duration);
                     $('.input-morse-code').append('.');
-                } else if (duration > 150 && duration < 500) {
+                } else if (duration > 200 && duration < 500) {
                     console.log("dash duration: " + duration);
                     $('.input-morse-code').append('-');
                 } else {

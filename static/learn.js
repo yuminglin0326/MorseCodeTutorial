@@ -33,6 +33,7 @@ $(document).ready(function() {
 
     });
 
+    // ToSolve: need to make dynamic
     displayFlashlight = function() {
         $('.flashlight-on').show();
         setTimeout(function() {

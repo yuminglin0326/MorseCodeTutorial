@@ -50,7 +50,7 @@ $(document).ready(function() {
               $('#duration-display').text(duration/1000 + ' seconds');
             } else {
                 $('.error').remove();
-                if (duration < 150) {
+                if (duration < 200) {
                     console.log("dot duration: " + duration);
                     
                     let input = '.';
@@ -70,7 +70,7 @@ $(document).ready(function() {
                     
                     checkMorseCode(input);
 
-                } else if (duration > 150 && duration < 500) {
+                } else if (duration > 200 && duration < 500) {
                     console.log("dash duration: " + duration);
 
                     let input = '-';
@@ -143,10 +143,15 @@ $(document).ready(function() {
     }
 
     $(document).click(function() {
+        console.log("click")
         if (submit) {
             if (isCorrect) {
                 let nextLearn = learn["id"] + 1
-                window.location.href = "/learn/" + nextLearn;
+                if (nextLearn > total_letters) {
+                    window.location.href = "/finish_learn";
+                } else {
+                    window.location.href = "/learn/" + nextLearn;
+                }
             } else {
                 $('#answer-feedback-container').empty();
                 $('.input-morse-code').empty();
