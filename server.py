@@ -30,6 +30,15 @@ quiz_score = 0
 def home():
     return render_template('home.html')
 
+@app.route('/get-started')
+def get_started():
+    return render_template('get_started.html')
+
+@app.route('/morse-code')
+def morse_code():
+    return render_template('morse_code.html')
+
+
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     quiz = quizzes[quiz_id]
