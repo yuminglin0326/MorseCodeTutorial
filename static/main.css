@@ -50,3 +50,28 @@
 .hint {
   width: 200px;
 }
+
+/* learn page styling */
+.learn-container {
+  text-align: center;
+  margin: 50px 0px;
+}
+
+.learn-message {
+  font-size: 20px;
+  color: lightgrey;
+}
+
+.flashlight-container {
+  position: relative;
+  margin: 20px 0px;
+}
+
+.flashlight-off,
+.flashlight-on {
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%; /* Place images at the horizontal center */
+  transform: translateX(-50%); /* Adjust to center the images */
+}

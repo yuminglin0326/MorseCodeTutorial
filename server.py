@@ -3,6 +3,17 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
+learns = {
+    "1": {
+        "id": 1,
+        "letter": "a",
+        "morse_code": ".-",
+        "plain_image": "/static/image/a-plain.png",
+        "morse_image": "/static/image/a-morse.png",
+        "morse_audio": "/static/audio/morse_code_a.mp3",
+    }
+}
+
 quizzes = {
     "1": {
         "id": 1,
@@ -29,6 +40,12 @@ quiz_score = 0
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/learn/<learn_id>')
+def learn(learn_id):
+    learn_data = learns[learn_id]
+
+    return render_template('learn.html', learn=learn_data)
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):

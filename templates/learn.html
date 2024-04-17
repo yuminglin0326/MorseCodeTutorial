@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+
+    <script>
+        let learn = {{learn|tojson}} 
+    </script>
+
+    <div class="learn-container">
+        <h1>Click on the letter to learn its Morse code!</h1>
+        <div class="learn-letter-container">
+            <img id="letter-plain" src="/static/image/{{learn.letter}}-plain.png" alt="letter image">
+        </div>
+        <div class="button-container">
+            <button class="btn btn-primary hide" id="learn-try-button">Try it!</button>
+            <button class="btn btn-secondary hide" id="learn-listen-button">Listen Again</button>
+        </div>
+        <div class="flashlight-container">
+            <img class="flashlight-off hide" alt="light-off" src="/static/image/led off.png">
+            <img class="flashlight-on hide" alt="light-on" src="/static/image/led on.png">
+        </div>
+        
+
+    </div>
+{% endblock %}
