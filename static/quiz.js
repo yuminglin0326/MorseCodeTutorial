@@ -8,9 +8,13 @@ $(document).ready(function() {
         if (e.which === 32 && !spaceDown) { 
             spaceDownTime = Date.now();
             displayDuration();
-            $('#durationDisplay').text('0 seconds');
+            $('#duration-display').text('0 seconds');
             spaceDown = true;
             playAudio();
+
+            // turn on flashlight
+            $('.flashlight-container').empty();
+            $('.flashlight-container').append('<img class="flashlight" src="/static/led on.png">')
           }
     });
 
@@ -20,6 +24,10 @@ $(document).ready(function() {
             clearInterval(audioTimer);
             morseAudio.pause();
             spaceDownTime = 0;
+
+            // turn off flashlight
+            $('.flashlight-container').empty();
+            $('.flashlight-container').append('<img class="flashlight" src="/static/led off.png">')
           }
     });
 
@@ -28,21 +36,21 @@ $(document).ready(function() {
         intervalId = setInterval(function() {
             if (spaceDown) {
               duration = Date.now() - spaceDownTime;
-              $('#durationDisplay').text(duration/1000 + ' seconds');
+              $('#duration-display').text(duration/1000 + ' seconds');
             } else {
                 $('.error').remove();
                 if (duration < 200) {
                     console.log("dot duration: " + duration);
-                    $('.inputMorseCode').append('.');
+                    $('.input-morse-code').append('.');
                 } else if (duration > 200 && duration < 500) {
                     console.log("dash duration: " + duration);
-                    $('.inputMorseCode').append('-');
+                    $('.input-morse-code').append('-');
                 } else {
                     let error = $("<div class='error'>")
                     error.html("try enter the morse code again!")
                     if (!isError) {
                         isError = true;
-                        $('.inputMorseCode').after(error);
+                        $('.input-morse-code').after(error);
                     }
                 }
                 clearInterval(intervalId); 
@@ -60,7 +68,7 @@ $(document).ready(function() {
     }
 
     $('#submitAnswer').click(function() {
-        let answer = $('.inputMorseCode').text();
+        let answer = $('.input-morse-code').text();
         if (answer === quiz["answer"]) {
             console.log("Correct!");
         } else {
