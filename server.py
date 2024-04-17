@@ -44,6 +44,8 @@ quizzes = {
         "answer_morse": ".-",
         "answer_letter": "a",
         "hint": "/static/image/a-hint.png",
+        "answer_img": "/static/image/a-answer.png",
+        "type": "english_to_morse"
     }
 }
 
@@ -53,9 +55,13 @@ quiz_score = 0
 def home():
     return render_template('home.html')
 
-@app.route('/get-started')
-def get_started():
-    return render_template('get_started.html')
+@app.route('/get-started-dot')
+def get_started_dot():
+    return render_template('get_started_dot.html')
+
+@app.route('/get-started-dash')
+def get_started_dash():
+    return render_template('get_started_dash.html')
 
 @app.route('/morse-code')
 def morse_code():
