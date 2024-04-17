@@ -11,6 +11,8 @@ learns = {
         "plain_image": "/static/image/a-plain.png",
         "morse_image": "/static/image/a-morse.png",
         "morse_audio": "/static/audio/morse_code_a.mp3",
+        "position": [[190, 595], [315, 570]], # [top, left],
+        "dash": "/static/image/dash_hor.png"
     }
 }
 
@@ -46,6 +48,13 @@ def learn(learn_id):
     learn_data = learns[learn_id]
 
     return render_template('learn.html', learn=learn_data)
+
+@app.route('/learn_try/<learn_id>')
+def learn_try(learn_id):
+    learn_data = learns[learn_id]
+
+    return render_template('learn_try.html', learn=learn_data)
+
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):

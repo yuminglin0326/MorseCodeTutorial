@@ -75,3 +75,15 @@
   left: 50%; /* Place images at the horizontal center */
   transform: translateX(-50%); /* Adjust to center the images */
 }
+
+.learn-letter-container {
+  position: relative; /* Set position to relative */
+  z-index: 1; /* Set stacking order */
+}
+
+.morse-on-image {
+  position: absolute; /* Set position to absolute */
+  top: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  z-index: 2; /* Set stacking order */
+}

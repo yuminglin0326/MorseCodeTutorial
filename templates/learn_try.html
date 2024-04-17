@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learn_try.js') }}"></script>
+
+    <script>
+        let learn = {{learn|tojson}} 
+    </script>
+
+    <div class="learn-container">
+        <h1>Press spacebar to enter the morse code!</h1>
+        <p class="learn-message">Press the spacebar shortly to enter a dot, hold the spacebar to enter a dash!</p>
+        <div class="learn-letter-container">
+            <img src="{{ learn['plain_image'] }}" alt="letter image">
+        </div>
+        <div class="morse-on-image"></div>
+        <div class="input-morse-code"></div>
+        <div class="flashlight-container"></div>
+        <div id="answer-feedback-container"></div>
+    </div>
+    
+{% endblock %}
