@@ -5,7 +5,7 @@ $(document).ready(function() {
     let morseAudio = new Audio('/static/morse_code_T.mp3');
 
     $(document).keydown(function(e) {
-        if (e.which === 32 && !spaceDown) { 
+        if (e.which === 32 && !spaceDown) { // Check if the pressed key is the space key
             spaceDownTime = Date.now();
             displayDuration();
             $('#duration-display').text('0 seconds');
@@ -15,7 +15,14 @@ $(document).ready(function() {
             // turn on flashlight
             $('.flashlight-container').empty();
             $('.flashlight-container').append('<img class="flashlight" src="/static/led on.png">')
-          }
+          } else if (e.which === 8) { // Check if the pressed key is the backspace key
+            // Remove the last character from input-morse-code
+            let text = $('.input-morse-code').text();
+            $('.input-morse-code').text(text.slice(0, -1));
+            if (text.length === 1) {
+                $('#submitAnswer').remove();
+            }
+        }
     });
 
     $(document).keyup(function(e) {
@@ -54,6 +61,14 @@ $(document).ready(function() {
                     }
                 }
                 clearInterval(intervalId); 
+
+                // Check if input-morse-code is not empty
+                if ($('.input-morse-code').text().trim() !== '') {
+                    // Add submit button if it's not already present
+                    if ($('#submitAnswer').length === 0) {
+                        $('#button-container').append('<button id="submitAnswer" class="btn btn-primary">Submit</button>');
+                    }
+                }
             }
           }, 10);
     }
