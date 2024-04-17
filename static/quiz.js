@@ -2,7 +2,7 @@ $(document).ready(function() {
     let spaceDownTime = 0;
     let spaceDown = false;
     let duration = 0;
-    let morseAudio = new Audio('/static/morse_code_T.mp3');
+    let morseAudio = new Audio('/static/audio/morse_code_T.mp3');
     let submitted = false;
     let isCorrect = false;
     let inCorrectCount = 0;
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
             // turn on flashlight
             $('.flashlight-container').empty();
-            $('.flashlight-container').append('<img class="flashlight" src="/static/led on.png">')
+            $('.flashlight-container').append('<img class="flashlight" src="/static/image/led on.png">')
           } else if (e.which === 8 && !submitted) { // Check if the pressed key is the backspace key
             // Remove the last character from input-morse-code
             let text = $('.input-morse-code').text();
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
             // turn off flashlight
             $('.flashlight-container').empty();
-            $('.flashlight-container').append('<img class="flashlight" src="/static/led off.png">')
+            $('.flashlight-container').append('<img class="flashlight" src="/static/image/led off.png">')
           }
     });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
         e.stopPropagation();
         submitted = true;
         let answer = $('.input-morse-code').text();
-        if (answer === quiz["answer"]) {
+        if (answer === quiz["answer_morse"]) {
             console.log("Correct!");
 
             isCorrect = true;

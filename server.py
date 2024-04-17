@@ -8,15 +8,17 @@ quizzes = {
         "id": 1,
         "name": "Quiz 1",
         "question": "Please enter the Morse Code for 'I'",
-        "answer": "..",
-        "hint": "/static/i-hint.png",
-        "answer_img": "/static/i-answer.png"
+        "answer_morse": "..",
+        "answer_letter": "i",
+        "hint": "/static/image/i-hint.png",
+        "answer_img": "/static/image/i-answer.png"
     },
     "2": {
         "id": 2,
         "name": "Quiz 2",
         "question": "Please enter the Morse Code for 'A'",
-        "answer": ".-",
+        "answer_morse": ".-",
+        "answer_letter": "a",
     }
 }
 
