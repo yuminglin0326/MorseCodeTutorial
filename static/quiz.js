@@ -19,32 +19,35 @@ $(document).ready(function() {
             spaceDown = false;
             clearInterval(audioTimer);
             morseAudio.pause();
+            spaceDownTime = 0;
           }
     });
 
     function displayDuration() {
+        let isError = false;
         intervalId = setInterval(function() {
             if (spaceDown) {
               duration = Date.now() - spaceDownTime;
               $('#durationDisplay').text(duration/1000 + ' seconds');
             } else {
-                
+                $('.error').remove();
                 if (duration < 200) {
                     console.log("dot duration: " + duration);
-                    $('.inputAnswer').append('.');
-                    $('.error').remove();
-                } else if (duration > 300 && duration < 500) {
+                    $('.inputMorseCode').append('.');
+                } else if (duration > 200 && duration < 500) {
                     console.log("dash duration: " + duration);
-                    $('.inputAnswer').append('-');
-                    $('.error').remove();
+                    $('.inputMorseCode').append('-');
                 } else {
                     let error = $("<div class='error'>")
                     error.html("try enter the morse code again!")
-                    $('.inputAnswer').append(error);
+                    if (!isError) {
+                        isError = true;
+                        $('.inputMorseCode').after(error);
+                    }
                 }
                 clearInterval(intervalId); 
             }
-          }, 100);
+          }, 10);
     }
 
     function playAudio() {
@@ -57,7 +60,7 @@ $(document).ready(function() {
     }
 
     $('#submitAnswer').click(function() {
-        let answer = $('.inputAnswer').text();
+        let answer = $('.inputMorseCode').text();
         if (answer === quiz["answer"]) {
             console.log("Correct!");
         } else {
