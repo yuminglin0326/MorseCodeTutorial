@@ -68,6 +68,13 @@ def quiz_answer(quiz_id):
 
     return render_template('quiz_answer.html', quiz=quiz)
 
+@app.route('/quiz/score')
+def score(quiz_score):
+
+    quiz_data = learns[quiz_score]
+
+    return render_template('quiz_score.html', quiz=quiz_data)
+
 @app.route('/answered_quiz', methods=['GET', 'POST'])
 def answered_quiz():
     global quiz_score
