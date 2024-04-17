@@ -148,7 +148,11 @@ $(document).ready(function() {
     $(document).click(function() {
         if (submitted && isCorrect) {
             let nextQuiz = quiz["id"] + 1;
-            window.location.href = "/quiz/" + nextQuiz;
+            if (nextQuiz > total_quizzes) {
+                window.location.href = "/quiz/score";
+            } else {
+                window.location.href = "/quiz/" + nextQuiz;
+            }
         } else if (submitted && inCorrectCount >= 2) {
             window.location.href = "/quiz_answer/" + quiz["id"];
         }

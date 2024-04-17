@@ -83,19 +83,24 @@ def finish_learn():
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     quiz = quizzes[quiz_id]
+    total_quizzes = len(quizzes)
 
-    return render_template('quiz.html', quiz=quiz)
+    return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes)
 
 @app.route('/quiz_answer/<quiz_id>')
 def quiz_answer(quiz_id):
     quiz = quizzes[quiz_id]
+    total_quizzes = len(quizzes)
 
-    return render_template('quiz_answer.html', quiz=quiz)
+    return render_template('quiz_answer.html', quiz=quiz, total_quizzes=total_quizzes)
 
 @app.route('/quiz/score')
-def score(quiz_score):
+def score():
 
-    quiz_data = learns[quiz_score]
+    quiz_data = {
+        "score": quiz_score,
+        "total_questions": len(quizzes),
+    }
 
     return render_template('quiz_score.html', quiz=quiz_data)
 
