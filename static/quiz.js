@@ -3,9 +3,10 @@ $(document).ready(function() {
     let spaceDown = false;
     let duration = 0;
     let morseAudio = new Audio('/static/morse_code_T.mp3');
+    let submitted = false;
 
     $(document).keydown(function(e) {
-        if (e.which === 32 && !spaceDown) { // Check if the pressed key is the space key
+        if (e.which === 32 && !spaceDown && !submitted) { // Check if the pressed key is the space key
             spaceDownTime = Date.now();
             displayDuration();
             $('#duration-display').text('0 seconds');
@@ -15,12 +16,12 @@ $(document).ready(function() {
             // turn on flashlight
             $('.flashlight-container').empty();
             $('.flashlight-container').append('<img class="flashlight" src="/static/led on.png">')
-          } else if (e.which === 8) { // Check if the pressed key is the backspace key
+          } else if (e.which === 8 && !submitted) { // Check if the pressed key is the backspace key
             // Remove the last character from input-morse-code
             let text = $('.input-morse-code').text();
             $('.input-morse-code').text(text.slice(0, -1));
-            if (text.length === 1) {
-                $('#submitAnswer').remove();
+            if (text.length === 1 && !$('#submitAnswer').hasClass('hide-button')) {
+                $('#submitAnswer').addClass('hide-button');
             }
         }
     });
@@ -64,9 +65,9 @@ $(document).ready(function() {
 
                 // Check if input-morse-code is not empty
                 if ($('.input-morse-code').text().trim() !== '') {
-                    // Add submit button if it's not already present
-                    if ($('#submitAnswer').length === 0) {
-                        $('#button-container').append('<button id="submitAnswer" class="btn btn-primary">Submit</button>');
+                    // show submit button
+                    if ($('#submitAnswer').hasClass('hide-button')) {
+                        $('#submitAnswer').removeClass('hide-button');
                     }
                 }
             }
@@ -83,17 +84,34 @@ $(document).ready(function() {
     }
 
     $('#submitAnswer').click(function() {
+        submitted = true;
         let answer = $('.input-morse-code').text();
         if (answer === quiz["answer"]) {
             console.log("Correct!");
+
+            // add feedback messages when answer is correct
+            let feedback = $("<div class='feedback'>").html("Correct!").addClass("quiz-correct");
+            let continueMessage = $("<div class='continue-message'>").html("Click anywhere to continue");
+            $('#answer-feedback-container').append(feedback, continueMessage);
+            $('#submitAnswer').addClass('hide-button');
+            
+
+            // send answer to server
             let inputAnswer = {
                 "answer": answer,
                 "is_correct": true
             }
-            
             sendAnswer(inputAnswer);
         } else {
             console.log("Incorrect!");
+            let feedback = $("<div class='feedback'>")
+            feedback.html("Incorrect!").addClass("quiz-wrong");
+            $('#answer-feedback-container').append(feedback);
+            $('#submitAnswer').addClass('hide-button');
+            $('#hint-button').removeClass('hide-button');
+            $('#correct-answer-button').removeClass('hide-button');
+
+            // send answer to server
             let inputAnswer = {
                 "answer": answer,
                 "is_correct": false

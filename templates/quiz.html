@@ -16,7 +16,14 @@
         <div class="flashlight-container">
             <img class="flashlight" src="/static/led off.png" alt="led light off">
         </div>
-        <div id="button-container"></div>
+        <div id="answer-feedback-container"></div>
+        <div id="button-container">
+            <button id="submitAnswer" class="btn btn-primary hide-button">Submit</button>
+            <div id="wrong-answer-buttons">
+                <button id="hint-button" class="btn btn-primary hide-button">Hint</button>
+                <button id="correct-answer-button" class="btn btn-secondary hide-button">Correct Answer</button>
+            </div>
+        </div>
 
     </div>
 {% endblock %}

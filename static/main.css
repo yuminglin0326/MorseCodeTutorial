@@ -27,3 +27,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.hide-button {
+  display: none;
+}
+
+.quiz-correct {
+  color: green;
+  font-size: 40px;
+}
+
+.quiz-wrong {
+  color: red;
+  font-size: 40px;
+}
+
+.continue-message {
+  font-size: 20px;
+  color: lightgrey;
+}
