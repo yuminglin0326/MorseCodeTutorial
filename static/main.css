@@ -13,6 +13,7 @@
   background-color: #f8f8f8;
   text-align: center;
   font-size: 50px;
+  vertical-align: middle;
 }
 
 .error {
@@ -22,10 +23,6 @@
 
 .flashlight {
   width: 100px;
-  height: 100px;
-  margin: 20px 0px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hide {
@@ -35,16 +32,19 @@
 .quiz-correct {
   color: green;
   font-size: 40px;
+  text-align: center;
 }
 
 .quiz-wrong {
   color: red;
   font-size: 40px;
+  text-align: center;
 }
 
 .continue-message {
   font-size: 20px;
   color: lightgrey;
+  text-align: center;
 }
 
 .hint {
@@ -78,7 +78,7 @@
 
 .flashlight-container {
   position: relative;
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
 }
 
 .flashlight-off,
@@ -88,6 +88,7 @@
   top: 0;
   left: 50%; /* Place images at the horizontal center */
   transform: translateX(-50%); /* Adjust to center the images */
+  margin-top: 10px;
 }
 
 .learn-letter-container {
@@ -107,7 +108,7 @@
 }
 
 .plain-image {
-  width: 200px;
+  height: 200px;
 }
 
 /* .morse-on-image {
@@ -123,13 +124,8 @@
   left: 100px;
   position: absolute;
 }
-s
 
 /* finish-learn page styling */
-#finish-learn-container {
-  text-align: center;
-  margin: 50px 0px;
-}
 
 #congrats {
   font-size: 60px;

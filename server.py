@@ -11,8 +11,9 @@ learns = {
         "plain_image": "/static/image/a-plain.png",
         "morse_image": "/static/image/a-morse.png",
         "morse_audio": "/static/audio/morse_code_a.mp3",
-        "position": [[-7, 73], [130, 45]], # [top, left],
+        "position": [[-9, 60], [110, 32]], # [top, left],
         "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300, 350, 1000] # [on for 300ms, off for 50ms, on for 650ms]
     },
     "2": {
         "id": 2,
@@ -21,8 +22,9 @@ learns = {
         "plain_image": "/static/image/e-plain.png",
         "morse_image": "/static/image/e-morse.png",
         "morse_audio": "/static/audio/morse_code_e.mp3",
-        "position": [[390, 800]], # [top, left],
-        "dash": "/static/image/dash_hor.png"
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
     },
 }
 

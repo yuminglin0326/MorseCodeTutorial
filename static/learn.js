@@ -1,15 +1,12 @@
 $(document).ready(function() {
-    let displayed = false;
+    let displayed = false; // check if the letter is displayed
     $(document).click(function() {
         if (displayed) {
+            // if the letter is displayed, do nothing
             return;
         }
-        // display the letter with morse code
-        // $('#letter-plain').remove();
-        $('.learn-message').html('The order matters!');
-        // let morse_img = $('<img id="letter-morse" alt="letter-morse">');
-        // console.log(learn["morse_image"]);
-        // morse_img.attr('src', learn["morse_image"]);
+
+        
 
 
         // display morse code on the letter
@@ -35,7 +32,7 @@ $(document).ready(function() {
             }
         }
 
-        // $('.try-letter-container').append(learnMessage);
+        $('.learn-message').html('The order matters!');
 
         // play the morse code audio
         let audio = new Audio(learn["morse_audio"]);
@@ -66,21 +63,24 @@ $(document).ready(function() {
     // ToSolve: need to make dynamic
     displayFlashlight = function() {
         $('.flashlight-on').show();
-        setTimeout(function() {
-            $('.flashlight-on').hide();
-            // Show img2 for 50ms
-            $('.flashlight-off').show();
-            setTimeout(function() {
-                $('.flashlight-off').hide();
-                // Show img1 for 600ms
-                $('.flashlight-on').show();
+        for (let i = 0; i < learn["flash_interval"].length; i++) {
+            let interval = learn["flash_interval"][i];
+            if (i % 2 == 0) {
                 setTimeout(function() {
+                    console.log(interval)
                     $('.flashlight-on').hide();
-                    // Show img2 indefinitely
                     $('.flashlight-off').show();
-                }, 600);
-            }, 50);
-        }, 300);
+                    
+                }, interval);
+            } else {
+                setTimeout(function() {
+                    console.log(interval)
+                    $('.flashlight-off').hide();
+                    $('.flashlight-on').show();
+                    
+                }, interval);
+            }
+        }
     }
 
     $('#learn-listen-button').click(function() {
