@@ -66,7 +66,7 @@ $(document).ready(function() {
                     $('.input-morse-code').append(input);
                     
                     // Append the dot image to the morse-on-image div
-                    let morseImg = $('<img>').attr('src', '/static/image/dot.png').attr('alt', 'dot').attr('id', 'morse-img-' + morseImgId);
+                    let morseImg = $('<img>').attr('src', '/static/image/dot.png').attr('alt', 'dot').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
                     morseImg.css({
                         'width': '50px',
                         'position': 'absolute',
@@ -87,7 +87,7 @@ $(document).ready(function() {
                     $('.input-morse-code').append(input);
 
                     // Append the dash image to the morse-on-image div
-                    let morseImg = $('<img>').attr('src', learn["dash"]).attr('alt', 'horizontal dash').attr('id', 'morse-img-' + morseImgId);
+                    let morseImg = $('<img>').attr('src', learn["dash"]).attr('alt', 'horizontal dash').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
                     morseImg.css({
                         'width': '110px',
                         'position': 'absolute',
@@ -173,7 +173,7 @@ $(document).ready(function() {
                 // reset the page
                 $('#answer-feedback-container').empty();
                 $('.input-morse-code').empty();
-                $('.morse-on-image').empty();
+                $('.morse-on-image').remove();
                 submit = false;
                 isCorrect = true;
                 morseImgId = 0;
