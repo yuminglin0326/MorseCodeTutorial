@@ -11,7 +11,7 @@ learns = {
         "plain_image": "/static/image/a-plain.png",
         "morse_image": "/static/image/a-morse.png",
         "morse_audio": "/static/audio/morse_code_a.mp3",
-        "position": [[2, 103], [130, 73]], # [top, left],
+        "position": [[-7, 73], [130, 45]], # [top, left],
         "dash": "/static/image/dash_hor.png",
     },
     "2": {

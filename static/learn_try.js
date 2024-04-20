@@ -70,12 +70,10 @@ $(document).ready(function() {
                     morseImg.css({
                         'width': '50px',
                         'position': 'absolute',
-                        // 'top': '0px',
-                        // 'left': '92px'
                         'top': learn["position"][morseImgId][0] + 'px',
                         'left': learn["position"][morseImgId][1] + 'px'
                     })
-                    $('.learn-letter-container').append(morseImg)
+                    $('.try-letter-container').append(morseImg)
 
                     
                     checkMorseCode(input);
@@ -96,7 +94,7 @@ $(document).ready(function() {
                         'top': learn["position"][morseImgId][0] + 'px',
                         'left': learn["position"][morseImgId][1] + 'px'
                     })
-                    $('.learn-letter-container').append(morseImg)
+                    $('.try-letter-container').append(morseImg)
 
 
                     checkMorseCode(input);
