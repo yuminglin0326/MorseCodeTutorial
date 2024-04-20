@@ -68,12 +68,14 @@ $(document).ready(function() {
                     // Append the dot image to the morse-on-image div
                     let morseImg = $('<img>').attr('src', '/static/image/dot.png').attr('alt', 'dot').attr('id', 'morse-img-' + morseImgId);
                     morseImg.css({
-                        'width': '60px',
+                        'width': '50px',
                         'position': 'absolute',
+                        // 'top': '0px',
+                        // 'left': '92px'
                         'top': learn["position"][morseImgId][0] + 'px',
                         'left': learn["position"][morseImgId][1] + 'px'
                     })
-                    $('.morse-on-image').append(morseImg)
+                    $('.learn-letter-container').append(morseImg)
 
                     
                     checkMorseCode(input);
@@ -94,7 +96,7 @@ $(document).ready(function() {
                         'top': learn["position"][morseImgId][0] + 'px',
                         'left': learn["position"][morseImgId][1] + 'px'
                     })
-                    $('.morse-on-image').append(morseImg)
+                    $('.learn-letter-container').append(morseImg)
 
 
                     checkMorseCode(input);

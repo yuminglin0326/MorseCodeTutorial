@@ -52,8 +52,15 @@
 }
 
 /* learn page styling */
-.learn-container {
+/* .learn-container {
   text-align: center;
+  margin: 50px 0px;
+} */
+.learn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 50px 0px;
 }
 
@@ -76,16 +83,36 @@
   transform: translateX(-50%); /* Adjust to center the images */
 }
 
+/* .learn-letter-container {
+  position: relative; 
+  z-index: 1; 
+} */
+
 .learn-letter-container {
-  position: relative; /* Set position to relative */
-  z-index: 1; /* Set stacking order */
+  float: left;
+  position: relative;
 }
 
+.learn-letter-container img {
+  vertical-align: bottom;
+}
+
+.plain-image {
+  width: 200px;
+}
+
+/* .morse-on-image {
+  position: absolute; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 2; 
+} */
+
 .morse-on-image {
-  position: absolute; /* Set position to absolute */
-  top: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-  z-index: 2; /* Set stacking order */
+  width: 50px;
+  top: 0;
+  left: 100px;
+  position: absolute;
 }
 
 /* finish-learn page styling */
