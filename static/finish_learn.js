@@ -1,7 +1,7 @@
 $(document).ready(function() {
     console.log(learns)
     $('#learn-quiz-button').click(function() {
-        window.location.href = "/quiz/1";
+        window.location.href = "/quiz";
     });
 
     $('#learn-review-button').click(function() {

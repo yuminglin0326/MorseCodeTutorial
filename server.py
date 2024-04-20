@@ -31,23 +31,30 @@ learns = {
 quizzes = {
     "1": {
         "id": 1,
-        "name": "Quiz 1",
-        "question": "Please enter the Morse Code for 'I'",
-        "answer_morse": "..",
+        "question": "Please enter the Morse Code for 'E'",
+        "answer_morse": ".",
         "answer_letter": "i",
-        "hint": "/static/image/i-hint.png",
-        "answer_img": "/static/image/i-answer.png",
-        "type": "english_to_morse"
+        "hint": "/static/image/e-hint.png",
+        "answer_img": "/static/image/e-answer.png",
+        "scored": False
     },
     "2": {
         "id": 2,
-        "name": "Quiz 2",
-        "question": "Please enter the Morse Code for 'A'",
-        "answer_morse": ".-",
+        "question": "Please enter the Morse Code for 'L'",
+        "answer_morse": ".-..",
         "answer_letter": "a",
-        "hint": "/static/image/a-hint.png",
-        "answer_img": "/static/image/a-answer.png",
-        "type": "english_to_morse"
+        "hint": "/static/image/l-hint.png",
+        "answer_img": "/static/image/l-answer.png",
+        "scored": False
+    },
+    "3": {
+        "id": 3,
+        "question": "Please enter the Morse Code for 'O'",
+        "answer_morse": "---",
+        "answer_letter": "o",
+        "hint": "/static/image/o-hint.png",
+        "answer_img": "/static/image/o-answer.png",
+        "scored": False
     }
 }
 
@@ -88,6 +95,17 @@ def finish_learn():
     all_learns = learns
     return render_template('finish_learn.html', learns=all_learns)
 
+
+@app.route('/quiz')
+def quiz_home():
+    for quiz in quizzes.values():
+        quiz["scored"] = False
+
+    global quiz_score
+    quiz_score = 0
+
+    return render_template('quiz_home.html')
+
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     quiz = quizzes[quiz_id]
@@ -115,14 +133,20 @@ def score():
 @app.route('/answered_quiz', methods=['GET', 'POST'])
 def answered_quiz():
     global quiz_score
-
+    
     json_data = request.get_json()
 
+    quiz_id = str(json_data["id"])
+    if (quizzes[quiz_id]["scored"] == True):
+        return jsonify({"score": quiz_score})
+    
     is_correct = json_data["is_correct"]
     print(is_correct)
     if is_correct:
         quiz_score += 1
     
+    quizzes[quiz_id]["scored"] = True
+
     print(quiz_score)
 
     return jsonify({"score": quiz_score})

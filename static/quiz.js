@@ -101,6 +101,7 @@ $(document).ready(function() {
 
             // send answer to server
             let inputAnswer = {
+                "id": quiz["id"],
                 "answer": answer,
                 "is_correct": true
             }
@@ -123,6 +124,7 @@ $(document).ready(function() {
 
             // send answer to server
             let inputAnswer = {
+                "id": quiz["id"],
                 "answer": answer,
                 "is_correct": false
             }

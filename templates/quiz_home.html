@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_home.js') }}"></script>
+
+    <div class="quiz-container">
+        <h1>Quiz!</h1>
+        <p>Test your Morse Code knowledge!</p>
+        <button class="btn btn-primary" id="start-quiz-button">Start</button>
+    </div>
+{% endblock %}
