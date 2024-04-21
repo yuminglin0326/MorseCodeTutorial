@@ -31,30 +31,44 @@ learns = {
 quizzes = {
     "1": {
         "id": 1,
+        "type": "eng_to_morse",
         "question": "Please enter the Morse Code for 'E'",
         "answer_morse": ".",
         "answer_letter": "i",
         "hint": "/static/image/e-hint.png",
         "answer_img": "/static/image/e-answer.png",
-        "scored": False
+        "scored": False,
     },
     "2": {
         "id": 2,
+        "type": "eng_to_morse",
         "question": "Please enter the Morse Code for 'L'",
         "answer_morse": ".-..",
         "answer_letter": "a",
         "hint": "/static/image/l-hint.png",
         "answer_img": "/static/image/l-answer.png",
-        "scored": False
+        "scored": False,
     },
     "3": {
         "id": 3,
+        "type": "eng_to_morse",
         "question": "Please enter the Morse Code for 'O'",
         "answer_morse": "---",
         "answer_letter": "o",
         "hint": "/static/image/o-hint.png",
         "answer_img": "/static/image/o-answer.png",
-        "scored": False
+        "scored": False,
+    },
+    "4": {
+        "id": 4,
+        "type": "flashlight_to_eng",
+        "question": "Watch the flashlight and enter the corresponding English letter",
+        "answer_morse": "--",
+        "answer_letter": "m",
+        "flash_interval": [650, 700, 1350], # [on for 650ms, off for 50ms, on for 650ms]
+        "hint": "--",
+        "answer_img": "/static/image/m-answer.png",
+        "scored": False,
     }
 }
 

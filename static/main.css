@@ -1,7 +1,10 @@
 /* quiz pages styling */
 .quiz-container {
-  text-align: center;
-  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0px;
 }
 
 .input-morse-code {
@@ -47,13 +50,17 @@
   text-align: center;
 }
 
+.hint img {
+  height: 200px;
+}
 .hint {
-  width: 200px;
+  font-size: 60px;
+  font-weight: bold;
 }
 
 /* learn page styling */
 #letter-plain {
-  width: 200px;
+  height: 200px;
 }
 
 .hidden {
@@ -78,7 +85,7 @@
 
 .flashlight-container {
   position: relative;
-  /* margin: 20px 0px; */
+  margin-bottom: 120px;
 }
 
 .flashlight-off,
@@ -139,4 +146,8 @@
 button.letter {
   margin: 10px;
   font-size: 20px;
+}
+
+input {
+  border: none;
 }

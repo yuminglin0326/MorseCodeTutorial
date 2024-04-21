@@ -12,14 +12,9 @@
     <div class="quiz-container">
         <h1>Quiz!</h1>
         <div class="question">{{quiz.id}}. {{quiz.question}}</div>
-        <div id="duration-display">0 seconds</div>
-        <div id="quiz-mid-container">
-            <div class="input-morse-code"></div>
-        </div>
+        <div id="duration-display" class="hide">0 seconds</div>
+        <div id="quiz-mid-container"></div>
        
-        <div class="flashlight-container">
-            <img class="flashlight" src="/static/image/led off.png" alt="led light off">
-        </div>
         <div id="answer-feedback-container"></div>
         <div id="button-container">
             <button id="submitAnswer" class="btn btn-primary hide">Submit</button>
