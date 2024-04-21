@@ -4,19 +4,20 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 learns = {
+    # unused data for letter "A"
+    # "1": {
+    #     "id": 1,
+    #     "letter": "a",
+    #     "morse_code": ".-",
+    #     "plain_image": "/static/image/a-plain.png",
+    #     "morse_image": "/static/image/a-morse.png",
+    #     "morse_audio": "/static/audio/morse_code_a.mp3",
+    #     "position": [[-9, 60], [110, 32]], # [top, left],
+    #     "dash": "/static/image/dash_hor.png",
+    #     "flash_interval": [300, 350, 1000] # [on for 300ms, off for 50ms, on for 650ms]
+    # },
     "1": {
         "id": 1,
-        "letter": "a",
-        "morse_code": ".-",
-        "plain_image": "/static/image/a-plain.png",
-        "morse_image": "/static/image/a-morse.png",
-        "morse_audio": "/static/audio/morse_code_a.mp3",
-        "position": [[-9, 60], [110, 32]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300, 350, 1000] # [on for 300ms, off for 50ms, on for 650ms]
-    },
-    "2": {
-        "id": 2,
         "letter": "e",
         "morse_code": ".",
         "plain_image": "/static/image/e-plain.png",
