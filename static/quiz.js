@@ -8,6 +8,7 @@ $(document).ready(function() {
     let inCorrectCount = 0;
     let quizType = quiz["type"];
 
+    // display quiz question based on quiz type
     if (quizType === "eng_to_morse") {
         $('#duration-display').show();
         // display input box as div
@@ -43,6 +44,7 @@ $(document).ready(function() {
         console.log("flashlight to english");
     }
 
+    // allow user to enter morse code by pressing space key if the type is eng_to_morse
     if (quizType === "eng_to_morse") {
         $(document).keydown(function(e) {
             if (e.which === 32 && !spaceDown && !submitted) { // Check if the pressed key is the space key
@@ -165,6 +167,7 @@ $(document).ready(function() {
         }
     });
 
+    // submit answer
     $('#submitAnswer').click(function(e) {
         e.stopPropagation();
         submitted = true;
@@ -228,6 +231,7 @@ $(document).ready(function() {
         }
     });
 
+    // function to send answer to server
     sendAnswer = function(inputAnswer) {
         $.ajax({
             type: "POST",
@@ -255,6 +259,7 @@ $(document).ready(function() {
         }
     });
 
+    // hint button
     $('#hint-button').click(function() {
         let hint = "";
         if (quizType === "eng_to_morse") {
@@ -273,6 +278,7 @@ $(document).ready(function() {
         submitted = false;
     });
 
+    // correct answer button
     $('#correct-answer-button').click(function() {
         window.location.href = "/quiz_answer/" + quiz["id"];
     });
