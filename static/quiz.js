@@ -24,9 +24,10 @@ $(document).ready(function() {
         // display input box as input
         let inputbox = $("<input class='input-morse-code' type='text'>");
         $('#quiz-mid-container').append(inputbox);
+        inputbox.focus();
 
         // display flashlight
-        let flashlightContainer = $("<div class='flashlight-container'>");
+        let flashlightContainer = $("<div class='flashlight-container extra-margin'>");
         let flashlightOff = $("<img class='flashlight-off hide' src='/static/image/led off.png' alt='led light off'>")
         let flashlightOn = $("<img class='flashlight-on hide' src='/static/image/led on.png' alt='led light on'>")
         flashlightContainer.append(flashlightOff, flashlightOn);
@@ -122,21 +123,19 @@ $(document).ready(function() {
         }
     }
     
-
+    // function to play flashlight
     function playFlashlight(intervals) {
         $('.flashlight-on').show();
         for (let i = 0; i < intervals.length; i++) {
             let time = intervals[i];
             if (i % 2 == 0) {
                 setTimeout(function() {
-                    console.log(time)
                     $('.flashlight-on').hide();
                     $('.flashlight-off').show();
                     
                 }, time);
             } else {
                 setTimeout(function() {
-                    console.log(time)
                     $('.flashlight-off').hide();
                     $('.flashlight-on').show();
                     
@@ -145,7 +144,9 @@ $(document).ready(function() {
         }
     };
 
+    // replay flashlight button
     $('#replay-button').click(function() {
+        $('.input-morse-code').focus();
         playFlashlight(quiz["flash_interval"]);
     });
 

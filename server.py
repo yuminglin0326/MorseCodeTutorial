@@ -65,9 +65,31 @@ quizzes = {
         "question": "Watch the flashlight and enter the corresponding English letter",
         "answer_morse": "--",
         "answer_letter": "m",
-        "flash_interval": [650, 700, 1350], # [on for 650ms, off for 50ms, on for 650ms]
+        "flash_interval": [650, 750, 1400], # [on for 650ms, off for 100ms, on for 650ms]
         "hint": "--",
         "answer_img": "/static/image/m-answer.png",
+        "scored": False,
+    },
+    "5": {
+        "id": 5,
+        "type": "flashlight_to_eng",
+        "question": "Watch the flashlight and enter the corresponding English letter",
+        "answer_morse": ".-.",
+        "answer_letter": "r",
+        "flash_interval": [300, 400, 1050, 1150, 1450], # [on for 300ms, off for 100ms, on for 650ms, off for 100ms, on for 300ms]
+        "hint": ".-.",
+        "answer_img": "/static/image/r-answer.png",
+        "scored": False,
+    },
+    "6": {
+        "id": 6,
+        "type": "flashlight_to_eng",
+        "question": "Watch the flashlight and enter the corresponding English letter",
+        "answer_morse": "... --- ...",
+        "answer_letter": "sos",
+        "flash_interval": [300, 400, 700, 800, 1100, 1400, 2050, 2150, 2800, 2900, 3550, 3850, 4150, 4250, 4550, 4650, 4950],
+        "hint": "... --- ...",
+        "answer_img": "/static/image/r-answer.png",
         "scored": False,
     }
 }

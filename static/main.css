@@ -7,6 +7,13 @@
   margin: 30px 0px;
 }
 
+#quiz-mid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .input-morse-code {
   width: 400px;
   height: 70px;
@@ -50,7 +57,7 @@
   text-align: center;
 }
 
-.hint img {
+img.hint {
   height: 200px;
 }
 .hint {
@@ -85,6 +92,9 @@
 
 .flashlight-container {
   position: relative;
+}
+
+.extra-margin {
   margin-bottom: 120px;
 }
 
