@@ -92,7 +92,7 @@ quizzes = {
         "hint": "... --- ...",
         "answer_img": "/static/image/r-answer.png",
         "scored": False,
-    }
+    },
     "7": {
         "id": 7,
         "type": "eng_to_morse",
@@ -103,7 +103,7 @@ quizzes = {
         "hint": ".... . .-.. .-.. ---",
         "answer_img": "/static/image/r-answer.png",
         "scored": False,
-    },
+    }
 }
 
 quiz_score = 0
