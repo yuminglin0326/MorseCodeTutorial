@@ -93,6 +93,17 @@ quizzes = {
         "answer_img": "/static/image/r-answer.png",
         "scored": False,
     }
+    "7": {
+        "id": 7,
+        "type": "eng_to_morse",
+        "question": "Please enter the morse code for 'Hello'",
+        "answer_morse": ".... . .-.. .-.. ---",
+        "answer_letter": "Hello",
+        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
+        "hint": ".... . .-.. .-.. ---",
+        "answer_img": "/static/image/r-answer.png",
+        "scored": False,
+    }
 }
 
 quiz_score = 0
