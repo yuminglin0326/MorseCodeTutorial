@@ -103,7 +103,7 @@ quizzes = {
         "hint": ".... . .-.. .-.. ---",
         "answer_img": "/static/image/r-answer.png",
         "scored": False,
-    }
+    },
 }
 
 quiz_score = 0
