@@ -31,24 +31,67 @@ learns = {
         "id": 2,
         "letter": "h",
         "morse_code": "....",
-        "plain_image": "/static/image/plain_picture_h.png",
-        "morse_image": "/static/image/morse_picture_h.png",
+        "plain_image": "/static/image/h-plain.png",
+        "morse_image": "/static/image/h-morse.png",
         "morse_audio": "/static/audio/morse_code_H.mp3",
         "position": [[75, -10]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300]
     },
-     "1": {
+     "3": {
         "id": 3,
         "letter": "s",
         "morse_code": ".",
-        "plain_image": "/static/image/e-plain.png",
-        "morse_image": "/static/image/e-morse.png",
-        "morse_audio": "/static/audio/morse_code_e.mp3",
+        "plain_image": "/static/image/s-plain.png",
+        "morse_image": "/static/image/s-morse.png",
+        "morse_audio": "/static/audio/morse_code_S.mp3",
         "position": [[75, -10]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300]
     },
+    "4": {
+        "id": 4,
+        "letter": "l",
+        "morse_code": ".-..",
+        "plain_image": "/static/image/l-plain.png",
+        "morse_image": "/static/image/l-morse.png",
+        "morse_audio": "/static/audio/l-audio.mp3",
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
+    },
+    "5": {
+        "id": 5,
+        "letter": "m",
+        "morse_code": "--",
+        "plain_image": "/static/image/m-plain.png",
+        "morse_image": "/static/image/m-morse.png",
+        "morse_audio": "/static/audio/m-audio.mp3",
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
+    },
+    "6": {
+        "id": 6,
+        "letter": "r",
+        "morse_code": ".-.",
+        "plain_image": "/static/image/r-plain.png",
+        "morse_image": "/static/image/r-morse.png",
+        "morse_audio": "/static/audio/r-audio.mp3",
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
+    },
+    "7": {
+        "id": 7,
+        "letter": "o",
+        "morse_code": "---",
+        "plain_image": "/static/image/o-plain.png",
+        "morse_image": "/static/image/o-morse.png",
+        "morse_audio": "/static/audio/o-audio.mp3",
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
 }
 
 quizzes = {
