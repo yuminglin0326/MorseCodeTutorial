@@ -27,6 +27,28 @@ learns = {
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300]
     },
+    "2": {
+        "id": 2,
+        "letter": "h",
+        "morse_code": "....",
+        "plain_image": "/static/image/plain_picture_h.png",
+        "morse_image": "/static/image/morse_picture_h.png",
+        "morse_audio": "/static/audio/morse_code_H.mp3",
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
+    },
+     "1": {
+        "id": 3,
+        "letter": "s",
+        "morse_code": ".",
+        "plain_image": "/static/image/e-plain.png",
+        "morse_image": "/static/image/e-morse.png",
+        "morse_audio": "/static/audio/morse_code_e.mp3",
+        "position": [[75, -10]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "flash_interval": [300]
+    },
 }
 
 quizzes = {
@@ -125,7 +147,7 @@ quizzes = {
         "hint": "...",
         "answer_img": "/static/image/morse_picture_s.png",
         "scored": False,
-    }
+    },
 }
 
 quiz_score = 0
