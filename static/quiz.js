@@ -56,13 +56,13 @@ $(document).ready(function() {
             let audioFilePath = quiz["audio_file"];
             // Display the Morse code audio player with the specified audio file
             // $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
-            $('.question').after("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>")
+            $('.question').after("<audio controls class='quiz-audio'><source src='" + audioFilePath + "' type='audio/mpeg'></audio>")
             console.log("morse audio to English");
 
             // Add input box for user's answer
             let inputbox = $("<input class='input-morse-code' type='text'>");
             $('#quiz-mid-container').append(inputbox);
-            
+
             // change input font size
             $('.input-morse-code').css("font-size", "20px");
         } else {
@@ -317,10 +317,15 @@ $(document).ready(function() {
             hint = $("<div class='hint'>").text(quiz["hint"]);
             $('.flashlight-container').after(hint);
             $('.input-morse-code').val('');
+        } else if (quizType === "audio_to_eng") {
+            hint = $("<div class='hint'>").text(quiz["hint"]);
+            $('.quiz-audio').after(hint);
+            $('.input-morse-code').val('');
         }
         $('#hint-button').addClass('hide');
         $('#correct-answer-button').addClass('hide');
         $('#answer-feedback-container').empty();
+        $('.input-morse-code').removeAttr('disabled').focus();
         
         submitted = false;
     });
