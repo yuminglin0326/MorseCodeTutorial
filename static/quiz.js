@@ -8,6 +8,8 @@ $(document).ready(function() {
     let inCorrectCount = 0;
     let quizType = quiz["type"];
 
+    // $('.input-morse-code').attr('disabled', 'disabled');
+
     // display quiz question based on quiz type
     if (quizType === "eng_to_morse") {
         $('#duration-display').show();
@@ -60,6 +62,9 @@ $(document).ready(function() {
             // Add input box for user's answer
             let inputbox = $("<input class='input-morse-code' type='text'>");
             $('#quiz-mid-container').append(inputbox);
+            
+            // change input font size
+            $('.input-morse-code').css("font-size", "20px");
         } else {
             console.log("Error: No audio file specified for the quiz.");
         }
@@ -182,7 +187,7 @@ $(document).ready(function() {
     // display submit button when user types morse code
     $(document).keyup(function(e) {
         console.log($('.input-morse-code').val())
-        if ($('.input-morse-code').val().trim() !== '') {
+        if ($('.input-morse-code').val().trim() !== '' && !submitted) {
             // show submit button
             if ($('#submitAnswer').hasClass('hide')) {
                 $('#submitAnswer').removeClass('hide');
@@ -194,11 +199,13 @@ $(document).ready(function() {
         }
     });
 
+
     // submit answer
     $('#submitAnswer').click(function(e) {
         e.stopPropagation();
         submitted = true;
         let answer = "";
+        $('.input-morse-code').attr('disabled', 'disabled');
 
         // get answer and correct answer based on quiz type
         if (quizType === "eng_to_morse") {
