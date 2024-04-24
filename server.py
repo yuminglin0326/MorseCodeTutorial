@@ -182,7 +182,7 @@ quizzes = {
         "answer_img": ["/static/image/h-answer.png"],
         "scored": False,
     },
-     "9": {
+    "9": {
         "id": 9,
         "type": "audio_to_eng",
         "question": "Listen to the audio and write the corresponding letter",
@@ -191,7 +191,19 @@ quizzes = {
         "answer_letter": "s",
         "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
         "hint": "...",
-        "answer_img": ["/static/image/morse_picture_s.png"],
+        "answer_img": ["/static/image/s-answer.png"],
+        "scored": False,
+    },
+    "10": {
+        "id": 10,
+        "type": "audio_to_eng",
+        "question": "Listen to the audio and write the corresponding letter",
+        "audio_file": "/static/audio/morse_code_MORSE.mp3",
+        "answer_morse": "-- --- .-. ... .",
+        "answer_letter": "morse",
+        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
+        "hint": "-- --- .-. ... .",
+        "answer_img": ["/static/image/m-answer.png", "/static/image/o-answer.png", "/static/image/r-answer.png", "/static/image/s-answer.png", "/static/image/e-answer.png"],
         "scored": False,
     },
 }

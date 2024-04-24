@@ -62,6 +62,7 @@ $(document).ready(function() {
             // Add input box for user's answer
             let inputbox = $("<input class='input-morse-code' type='text'>");
             $('#quiz-mid-container').append(inputbox);
+            inputbox.focus();
 
             // change input font size
             $('.input-morse-code').css("font-size", "20px");
