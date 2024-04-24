@@ -1,9 +1,45 @@
 {% extends "layout.html" %}
+
 {% block content %}
-<div class="container text-center mt-5">
-    <h1 id="home-head">Let’s learn Morse Code!</h1>
-    <p>Welcome to Morse Code Mastery. Learn the timeless art of Morse code with our interactive lessons, practice sessions, quizzes, and games. <br> Unlock the secrets of Morse code with us!</p>
-    <a href="/morse-code" class="btn btn-primary">What is morse code</a>
-    <a href="/get-started-dot" class="btn btn-primary">Get Started</a>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Side: Information -->
+        <div class="col-md-6">
+            <div class="text-center firsttext">
+                <h1>Morse <br> Code!</h1>
+                <p class="subtitle">Welcome to Morse Code Mastery.<br> Learn the timeless art of Morse code with our interactive lessons, practice sessions, quizzes, and games!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-md-right"> <!-- Adjusted column size to fit both buttons within the same row -->
+                    <a href="/morse-code" class="btn btn-primary accent-button-unfilled">What is Morse code</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="/get-started-dot" class="btn btn-primary accent-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <!-- Right Side: Morse Code -->
+        <div class="col-md-6">
+            <div class="text-center">
+                <p class="morse-code"> <span class="accent">.-..</span> 
+                    . 
+                    <span class="accent">.- </span>
+                    .-. 
+                   <span class="accent"> .- </span>
+
+                    <br> 
+                    --
+                    <span class="accent"> --- </span>
+                    .-. 
+                    <span class="accent">...</span> 
+                    .
+                    <br> 
+                    <span class="accent"> -.-.</span>
+                    ---
+                    <span class = "accent">-..</span> 
+                    .</p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
