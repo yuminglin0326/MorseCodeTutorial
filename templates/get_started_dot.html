@@ -2,7 +2,8 @@
 {% block content %}
 <div class="container text-center mt-5">
     <h2>Let’s first learn about how to enter dots and dashes on this website!</h2>
-    <p>Morse code consists of a set of standardized sequences of short and long signals, typically referred to as dots and dashes</p>
+    <p>Morse code consists of a set of standardized sequences of short and long signals, typically referred to as dots
+        and dashes</p>
     <h4>Press space for less than 0.2 to enter a dot</h4>
     <div id="duration-display">0 seconds</div>
     <div class="input-morse-code"></div>
@@ -10,9 +11,11 @@
         <img class="flashlight" src="/static/image/led off.png" alt="led light off">
     </div>
     <div id="answer-feedback-container"></div>
+    <button id="practice-again-btn" style="display: none;">Practice Again</button>
 </div>
 
 <script>
+    // Variables to track spacebar press duration, audio, and submission status
     let spaceDownTime = 0;
     let spaceDown = false;
     let duration = 0;
@@ -20,7 +23,8 @@
     let submitted = false;
     let isCorrect = false;
 
-    $(document).keydown(function(e) {
+    // Event listener for spacebar press
+    $(document).keydown(function (e) {
         if (e.which === 32 && !spaceDown && !submitted) { // Check if the pressed key is the space key
             spaceDownTime = Date.now();
             displayDuration();
@@ -31,14 +35,15 @@
             // turn on flashlight
             $('.flashlight-container').empty();
             $('.flashlight-container').append('<img class="flashlight" src="/static/image/led on.png">')
-          } else if (e.which === 8 && !submitted) { // Check if the pressed key is the backspace key
+        } else if (e.which === 8 && !submitted) { // Check if the pressed key is the backspace key
             // Remove the last character from input-morse-code
             let text = $('.input-morse-code').text();
             $('.input-morse-code').text(text.slice(0, -1));
         }
     });
 
-    $(document).keyup(function(e) {
+    // Event listener for spacebar release
+    $(document).keyup(function (e) {
         if (e.which === 32 && spaceDown) {
             spaceDown = false;
             clearInterval(audioTimer);
@@ -48,15 +53,16 @@
             // turn off flashlight
             $('.flashlight-container').empty();
             $('.flashlight-container').append('<img class="flashlight" src="/static/image/led off.png">')
-          }
+        }
     });
 
+    // Function to display duration of spacebar press
     function displayDuration() {
         let isError = false;
-        intervalId = setInterval(function() {
+        intervalId = setInterval(function () {
             if (spaceDown) {
-              duration = Date.now() - spaceDownTime;
-              $('#duration-display').text(duration/1000 + ' seconds');
+                duration = Date.now() - spaceDownTime;
+                $('#duration-display').text(duration / 1000 + ' seconds');
             } else {
                 $('.error').remove();
                 if (duration < 200) {
@@ -66,6 +72,9 @@
                     $('#answer-feedback-container').append(feedback, continueMessage);
                     submitted = true;
                     isCorrect = true;
+
+                    // Show the "Practice Again" button
+                    $('#practice-again-btn').show();
                 } else {
                     let error = $("<div class='error'>")
                     error.html("try to enter the dot again!")
@@ -74,21 +83,33 @@
                         $('.input-morse-code').after(error);
                     }
                 }
-                clearInterval(intervalId); 
+                clearInterval(intervalId);
             }
-          }, 10);
+        }, 10);
     }
 
+    // Event listener for click event on the "Practice Again" button
+    $('#practice-again-btn').click(function () {
+        // Reset variables and UI elements
+        $('.input-morse-code').empty();
+        $('#answer-feedback-container').empty();
+        submitted = false;
+        isCorrect = false;
+        $('#practice-again-btn').hide(); // Hide the button again
+    });
+
+    // Function to play Morse code audio
     function playAudio() {
         morseAudio.currentTime = 0; // Reset audio to the beginning
         morseAudio.play();
         // Set a timeout to stop audio playback after 500 milliseconds
-        audioTimer = setTimeout(function() {
+        audioTimer = setTimeout(function () {
             morseAudio.pause();
         }, 500);
     }
 
-    $(document).click(function() {
+    // Event listener for click event
+    $(document).click(function () {
         if (submitted && isCorrect) {
             window.location.href = '/get-started-dash';
         }
