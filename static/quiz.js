@@ -43,20 +43,20 @@ $(document).ready(function() {
         $('.input-morse-code').css("font-size", "20px");
         console.log("flashlight to english");
     } else if (quizType === "audio_to_eng") {
-    // Check if there's an audio file specified for the quiz
-    if (quiz["audio_file"]) {
-        let audioFilePath = '/static/audio/' + quiz["audio_file"];
-        // Display the Morse code audio player with the specified audio file
-        $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
-        console.log("morse audio to English");
+        // Check if there's an audio file specified for the quiz
+        if (quiz["audio_file"]) {
+            let audioFilePath = '/static/audio/' + quiz["audio_file"];
+            // Display the Morse code audio player with the specified audio file
+            $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
+            console.log("morse audio to English");
 
-        // Add input box for user's answer
-        let inputbox = $("<input class='input-morse-code' type='text'>");
-        $('#quiz-mid-container').append(inputbox);
-    } else {
-        console.log("Error: No audio file specified for the quiz.");
+            // Add input box for user's answer
+            let inputbox = $("<input class='input-morse-code' type='text'>");
+            $('#quiz-mid-container').append(inputbox);
+        } else {
+            console.log("Error: No audio file specified for the quiz.");
+        }
     }
-}
     
 
     // allow user to enter morse code by pressing space key if the type is eng_to_morse
@@ -199,6 +199,7 @@ $(document).ready(function() {
         } else if (quizType === "audio_to_eng") {
             answer = $('.input-morse-code').val();
             correctAnswer = quiz["answer_letter"]
+        }
 
         if (answer === correctAnswer) { // if answer is correct
             console.log("Correct!");
