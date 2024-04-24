@@ -71,6 +71,10 @@ img.hint {
   color: lightgrey;
 }
 
+.correct-answer-container {
+  margin: 20px 0px;
+}
+
 /* learn page styling */
 #letter-plain {
   height: 200px;

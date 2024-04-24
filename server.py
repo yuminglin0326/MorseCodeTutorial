@@ -103,7 +103,7 @@ quizzes = {
         "answer_morse": ".",
         "answer_letter": "i",
         "hint": "/static/image/e-hint.png",
-        "answer_img": "/static/image/e-answer.png",
+        "answer_img": ["/static/image/e-answer.png"],
         "scored": False,
     },
     "2": {
@@ -113,7 +113,7 @@ quizzes = {
         "answer_morse": ".-..",
         "answer_letter": "a",
         "hint": "/static/image/l-hint.png",
-        "answer_img": "/static/image/l-answer.png",
+        "answer_img": ["/static/image/l-answer.png"],
         "scored": False,
     },
     "3": {
@@ -123,7 +123,7 @@ quizzes = {
         "answer_morse": "---",
         "answer_letter": "o",
         "hint": "/static/image/o-hint.png",
-        "answer_img": "/static/image/o-answer.png",
+        "answer_img": ["/static/image/o-answer.png"],
         "scored": False,
     },
     "4": {
@@ -134,7 +134,7 @@ quizzes = {
         "answer_letter": "Hello",
         "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
         "hint": ["/static/image/h-hint.png", "/static/image/e-hint.png", "/static/image/l-hint.png", "/static/image/l-hint.png", "/static/image/o-hint.png"],
-        "answer_img": "/static/image/r-answer.png",
+        "answer_img": ["/static/image/h-answer.png", "/static/image/e-answer.png", "/static/image/l-answer.png", "/static/image/l-answer.png", "/static/image/o-answer.png"],
         "scored": False,
     },
     "5": {
@@ -145,7 +145,7 @@ quizzes = {
         "answer_letter": "m",
         "flash_interval": [650, 750, 1400], # [on for 650ms, off for 100ms, on for 650ms]
         "hint": "--",
-        "answer_img": "/static/image/m-answer.png",
+        "answer_img": ["/static/image/m-answer.png"],
         "scored": False,
     },
     "6": {
@@ -156,7 +156,7 @@ quizzes = {
         "answer_letter": "r",
         "flash_interval": [300, 400, 1050, 1150, 1450], # [on for 300ms, off for 100ms, on for 650ms, off for 100ms, on for 300ms]
         "hint": ".-.",
-        "answer_img": "/static/image/r-answer.png",
+        "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
     },
     "7": {
@@ -167,7 +167,7 @@ quizzes = {
         "answer_letter": "sos",
         "flash_interval": [300, 400, 700, 800, 1100, 1400, 2050, 2150, 2800, 2900, 3550, 3850, 4150, 4250, 4550, 4650, 4950],
         "hint": "... --- ...",
-        "answer_img": "/static/image/r-answer.png",
+        "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
     },
     "8": {
@@ -178,7 +178,7 @@ quizzes = {
         "answer_letter": "H",
         "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
         "hint": "....",
-        "answer_img": "/static/image/morse_picture_h.png",
+        "answer_img": ["/static/image/morse_picture_h.png"],
         "scored": False,
     },
      "9": {
@@ -189,7 +189,7 @@ quizzes = {
         "answer_letter": "S",
         "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
         "hint": "...",
-        "answer_img": "/static/image/morse_picture_s.png",
+        "answer_img": ["/static/image/morse_picture_s.png"],
         "scored": False,
     },
 }

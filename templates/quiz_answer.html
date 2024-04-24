@@ -12,7 +12,11 @@
     <div class="quiz-container">
         <h1>Question {{quiz.id}}</h1>
         <div class="quiz-correct">Correct Answer</div>
-        <img class="plain-image" src="{{quiz.answer_img}}" alt="answer image">
+        <div class="correct-answer-container">
+            {% for answer in quiz.answer_img %}
+                <img class="plain-image" src="{{answer}}" alt="answer image">
+            {% endfor %}
+        </div>
         <div class="input-morse-code">{{quiz.answer_morse}}</div>
         <div class='continue-message'>
             Click anywhere to continue
