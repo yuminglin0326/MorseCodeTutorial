@@ -21,13 +21,26 @@ $(document).ready(function() {
                 })
                 $('.try-letter-container').append(morseImg);
             } else {
-                let morseImg = $('<img>').attr('src', learn["dash"]).attr('alt', learn["morse_code"][i]).attr('id', 'morse-img-' + i);
-                morseImg.css({
-                    'width': '110px',
-                    'position': 'absolute',
-                    'top': learn["position"][i][0] + 'px',
-                    'left': learn["position"][i][1] + 'px'
-                })
+                let morseImg = $('<img>')
+                if (Array.isArray(learn["dash"])) {
+                    console.log(learn["dash"][i])
+                    morseImg.attr('src', learn["dash"][i]).attr('alt', learn["morse_code"][i]).attr('id', 'morse-img-' + i);
+                    morseImg.css({
+                        'width': '185px',
+                        'position': 'absolute',
+                        'top': learn["position"][i][0] + 'px',
+                        'left': learn["position"][i][1] + 'px'
+                    })
+                } else {
+                    morseImg.attr('src', learn["dash"]).attr('alt', learn["morse_code"][i]).attr('id', 'morse-img-' + i);
+                    morseImg.css({
+                        'width': '110px',
+                        'position': 'absolute',
+                        'top': learn["position"][i][0] + 'px',
+                        'left': learn["position"][i][1] + 'px'
+                    })
+                }
+                
                 $('.try-letter-container').append(morseImg);
             }
         }

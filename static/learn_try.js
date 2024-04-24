@@ -86,14 +86,28 @@ $(document).ready(function() {
                     let input = '-';
                     $('.input-morse-code').append(input);
 
-                    // Append the dash image to the morse-on-image div
-                    let morseImg = $('<img>').attr('src', learn["dash"]).attr('alt', 'horizontal dash').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
-                    morseImg.css({
-                        'width': '110px',
-                        'position': 'absolute',
-                        'top': learn["position"][morseImgId][0] + 'px',
-                        'left': learn["position"][morseImgId][1] + 'px'
-                    })
+                    let morseImg = $('<img>')
+                    if (Array.isArray(learn["dash"])) {
+                        console.log(learn["dash"][morseImgId])
+                        morseImg.attr('src', learn["dash"][morseImgId]).attr('alt', 'dash').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
+                        morseImg.css({
+                            'width': '185px',
+                            'position': 'absolute',
+                            'top': learn["position"][morseImgId][0] + 'px',
+                            'left': learn["position"][morseImgId][1] + 'px'
+                        })
+                    } else {
+                        morseImg.attr('src', learn["dash"]).attr('alt', 'dash').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
+                        morseImg.css({
+                            'width': '110px',
+                            'position': 'absolute',
+                            'top': learn["position"][morseImgId][0] + 'px',
+                            'left': learn["position"][morseImgId][1] + 'px'
+                        })
+    
+                    }
+
+
                     $('.try-letter-container').append(morseImg)
 
 

@@ -38,38 +38,38 @@ learns = {
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [100, 150, 250, 300, 400, 450, 550, 650]
     },
-     "3": {
+    "3": {
         "id": 3,
-        "letter": "s",
-        "morse_code": ".",
-        "plain_image": "/static/image/s-plain.png",
-        "morse_image": "/static/image/s-morse.png",
-        "morse_audio": "/static/audio/morse_code_S.mp3",
-        "position": [[75, -10]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300]
-    },
-    "4": {
-        "id": 4,
         "letter": "l",
         "morse_code": ".-..",
         "plain_image": "/static/image/l-plain.png",
         "morse_image": "/static/image/l-morse.png",
         "morse_audio": "/static/audio/l-audio.mp3",
-        "position": [[75, -10]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300]
+        "position": [[0, -11], [35, -43], [166, 20], [166, 70]], # [top, left],
+        "dash": "/static/image/dash_ver.png",
+        "flash_interval": [100, 150, 450, 500, 600, 650, 750]
     },
-    "5": {
-        "id": 5,
+    "4": {
+        "id": 4,
         "letter": "m",
         "morse_code": "--",
         "plain_image": "/static/image/m-plain.png",
         "morse_image": "/static/image/m-morse.png",
         "morse_audio": "/static/audio/m-audio.mp3",
-        "position": [[75, -10]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300]
+        "position": [[20, -43], [20, 108]], # [top, left],
+        "dash": "/static/image/dash_ver.png",
+        "flash_interval": [300, 350, 650]
+    },
+    "5": {
+        "id": 5,
+        "letter": "o",
+        "morse_code": "---",
+        "plain_image": "/static/image/o-plain.png",
+        "morse_image": "/static/image/o-morse.png",
+        "morse_audio": "/static/audio/o-audio.mp3",
+        "position": [[-3, -8], [-3, -8], [-3, -8]], # [top, left],
+        "dash": ["/static/image/o-dash-1.png", "/static/image/o-dash-2.png", "/static/image/o-dash-3.png"],
+        "flash_interval": [300, 350, 650, 700, 1000]
     },
     "6": {
         "id": 6,
@@ -78,20 +78,20 @@ learns = {
         "plain_image": "/static/image/r-plain.png",
         "morse_image": "/static/image/r-morse.png",
         "morse_audio": "/static/audio/r-audio.mp3",
-        "position": [[75, -10]], # [top, left],
+        "position": [[150, -12], [82, -7], [150, 106]], # [top, left],
         "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300]
+        "flash_interval": [100, 150, 450, 500, 600]
     },
     "7": {
         "id": 7,
-        "letter": "o",
-        "morse_code": "---",
-        "plain_image": "/static/image/o-plain.png",
-        "morse_image": "/static/image/o-morse.png",
-        "morse_audio": "/static/audio/o-audio.mp3",
-        "position": [[75, -10]], # [top, left],
+        "letter": "s",
+        "morse_code": "...",
+        "plain_image": "/static/image/s-plain.png",
+        "morse_image": "/static/image/s-morse.png",
+        "morse_audio": "/static/audio/morse_code_S.mp3",
+        "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
         "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300]
+        "flash_interval": [100, 150, 250, 300, 400, 450]
     }
 }
 
@@ -128,6 +128,17 @@ quizzes = {
     },
     "4": {
         "id": 4,
+        "type": "eng_to_morse",
+        "question": "Please enter the morse code for 'Hello'",
+        "answer_morse": ".... . .-.. .-.. ---",
+        "answer_letter": "Hello",
+        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
+        "hint": ".... . .-.. .-.. ---",
+        "answer_img": "/static/image/r-answer.png",
+        "scored": False,
+    },
+    "5": {
+        "id": 5,
         "type": "flashlight_to_eng",
         "question": "Watch the flashlight and enter the corresponding English letter",
         "answer_morse": "--",
@@ -137,8 +148,8 @@ quizzes = {
         "answer_img": "/static/image/m-answer.png",
         "scored": False,
     },
-    "5": {
-        "id": 5,
+    "6": {
+        "id": 6,
         "type": "flashlight_to_eng",
         "question": "Watch the flashlight and enter the corresponding English letter",
         "answer_morse": ".-.",
@@ -148,25 +159,14 @@ quizzes = {
         "answer_img": "/static/image/r-answer.png",
         "scored": False,
     },
-    "6": {
-        "id": 6,
+    "7": {
+        "id": 7,
         "type": "flashlight_to_eng",
         "question": "Watch the flashlight and enter the corresponding English letter",
         "answer_morse": "... --- ...",
         "answer_letter": "sos",
         "flash_interval": [300, 400, 700, 800, 1100, 1400, 2050, 2150, 2800, 2900, 3550, 3850, 4150, 4250, 4550, 4650, 4950],
         "hint": "... --- ...",
-        "answer_img": "/static/image/r-answer.png",
-        "scored": False,
-    },
-    "7": {
-        "id": 7,
-        "type": "eng_to_morse",
-        "question": "Please enter the morse code for 'Hello'",
-        "answer_morse": ".... . .-.. .-.. ---",
-        "answer_letter": "Hello",
-        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
-        "hint": ".... . .-.. .-.. ---",
         "answer_img": "/static/image/r-answer.png",
         "scored": False,
     },
