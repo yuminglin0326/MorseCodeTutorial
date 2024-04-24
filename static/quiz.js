@@ -292,8 +292,17 @@ $(document).ready(function() {
     $('#hint-button').click(function() {
         let hint = "";
         if (quizType === "eng_to_morse") {
-            hint = $("<img class='hint'>").attr("src", quiz["hint"]);
-            $('.input-morse-code').after(hint);
+            hintContainer = $("<div class='hint-container'>");
+            if (Array.isArray(quiz["hint"])) {
+                for (let i = 0; i < quiz["hint"].length; i++) {
+                    hint = $("<img class='hint'>").attr("src", quiz["hint"][i]);
+                    hintContainer.append(hint);
+                }
+            } else {
+                hint = $("<img class='hint'>").attr("src", quiz["hint"]);
+                hintContainer.append(hint);
+            }
+            $('.input-morse-code').after(hintContainer);
             $('.input-morse-code').text('');
         } else if (quizType === "flashlight_to_eng") {
             hint = $("<div class='hint'>").text(quiz["hint"]);
