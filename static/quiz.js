@@ -51,9 +51,10 @@ $(document).ready(function() {
     } else if (quizType === "audio_to_eng") {
         // Check if there's an audio file specified for the quiz
         if (quiz["audio_file"]) {
-            let audioFilePath = '/static/audio/' + quiz["audio_file"];
+            let audioFilePath = quiz["audio_file"];
             // Display the Morse code audio player with the specified audio file
-            $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
+            // $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
+            $('.question').after("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>")
             console.log("morse audio to English");
 
             // Add input box for user's answer
@@ -209,6 +210,7 @@ $(document).ready(function() {
             correctAnswer = quiz["answer_letter"];
         } else if (quizType === "audio_to_eng") {
             answer = $('.input-morse-code').val();
+            answer = answer.trim().toLowerCase();
             correctAnswer = quiz["answer_letter"]
         }
 
