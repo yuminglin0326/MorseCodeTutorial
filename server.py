@@ -34,9 +34,9 @@ learns = {
         "plain_image": "/static/image/h-plain.png",
         "morse_image": "/static/image/h-morse.png",
         "morse_audio": "/static/audio/morse_code_H.mp3",
-        "position": [[75, -10]], # [top, left],
+        "position": [[0, -11], [0, 108], [155, -11], [155, 108]], # [top, left],
         "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300]
+        "flash_interval": [100, 150, 250, 300, 400, 450, 550, 650]
     },
      "3": {
         "id": 3,
@@ -92,6 +92,7 @@ learns = {
         "position": [[75, -10]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300]
+    }
 }
 
 quizzes = {
