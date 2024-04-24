@@ -65,6 +65,11 @@ img.hint {
   font-weight: bold;
 }
 
+.instruction {
+  font-size: 16px;
+  color: lightgrey;
+}
+
 /* learn page styling */
 #letter-plain {
   height: 200px;

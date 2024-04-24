@@ -11,6 +11,12 @@ $(document).ready(function() {
     // display quiz question based on quiz type
     if (quizType === "eng_to_morse") {
         $('#duration-display').show();
+        // display the instruction on entering space
+        if (quiz["answer_letter"].length > 1) {
+            let instruction = $("<div class='instruction'>").html("Press Tab to enter space between letters");
+            $('.question').after(instruction);
+        }
+
         // display input box as div
         let inputbox = $("<div class='input-morse-code'>");
         $('#quiz-mid-container').append(inputbox);
@@ -79,6 +85,11 @@ $(document).ready(function() {
                 if (text.length === 1 && !$('#submitAnswer').hasClass('hide')) {
                     $('#submitAnswer').addClass('hide');
                 }
+            }
+            else if (e.which === 9 && !submitted) { // Check if the pressed key is the tab key
+                e.preventDefault();
+                // Add a space character to input-morse-code
+                $('.input-morse-code').append(' ');
             }
         });
     
