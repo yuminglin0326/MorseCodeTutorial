@@ -50,8 +50,8 @@ $(document).ready(function() {
         // console.log("flashlight to english");
     } else if (quizType === "audio_to_eng") {
         // Check if there's an audio file specified for the quiz
-        if (quiz["audio_file"]) {
-            let audioFilePath = quiz["audio_file"];
+        if (quiz["morse_audio"]) {
+            let audioFilePath = quiz["morse_audio"];
             // Display the Morse code audio player with the specified audio file
             // $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
             $('.question').after("<audio controls class='quiz-audio'><source src='" + audioFilePath + "' type='audio/mpeg'></audio>")
