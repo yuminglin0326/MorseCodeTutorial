@@ -105,6 +105,7 @@ quizzes = {
         "hint": "/static/image/e-hint.png",
         "answer_img": ["/static/image/e-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "2": {
         "id": 2,
@@ -115,6 +116,7 @@ quizzes = {
         "hint": "/static/image/l-hint.png",
         "answer_img": ["/static/image/l-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "3": {
         "id": 3,
@@ -125,6 +127,7 @@ quizzes = {
         "hint": "/static/image/o-hint.png",
         "answer_img": ["/static/image/o-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "4": {
         "id": 4,
@@ -136,6 +139,7 @@ quizzes = {
         "hint": ["/static/image/h-hint.png", "/static/image/e-hint.png", "/static/image/l-hint.png", "/static/image/l-hint.png", "/static/image/o-hint.png"],
         "answer_img": ["/static/image/h-answer.png", "/static/image/e-answer.png", "/static/image/l-answer.png", "/static/image/l-answer.png", "/static/image/o-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "5": {
         "id": 5,
@@ -147,6 +151,7 @@ quizzes = {
         "hint": "--",
         "answer_img": ["/static/image/m-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "6": {
         "id": 6,
@@ -158,6 +163,7 @@ quizzes = {
         "hint": ".-.",
         "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "7": {
         "id": 7,
@@ -169,6 +175,7 @@ quizzes = {
         "hint": "... --- ...",
         "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "8": {
         "id": 8,
@@ -181,6 +188,7 @@ quizzes = {
         "hint": "....",
         "answer_img": ["/static/image/h-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "9": {
         "id": 9,
@@ -193,6 +201,7 @@ quizzes = {
         "hint": "...",
         "answer_img": ["/static/image/s-answer.png"],
         "scored": False,
+        "answered_correctly": 0,
     },
     "10": {
         "id": 10,
@@ -205,18 +214,7 @@ quizzes = {
         "hint": "-- --- .-. ... .",
         "answer_img": ["/static/image/m-answer.png", "/static/image/o-answer.png", "/static/image/r-answer.png", "/static/image/s-answer.png", "/static/image/e-answer.png"],
         "scored": False,
-    },
-    "10": {
-        "id": 10,
-        "type": "audio_to_eng",
-        "question": "Listen to the audio and write the corresponding word",
-        "audio_file": "/static/audio/morse_code_MORSE.mp3",
-        "answer_morse": "-- --- .-. ... .",
-        "answer_letter": "morse",
-        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
-        "hint": "-- --- .-. ... .",
-        "answer_img": ["/static/image/m-answer.png", "/static/image/o-answer.png", "/static/image/r-answer.png", "/static/image/s-answer.png", "/static/image/e-answer.png"],
-        "scored": False,
+        "answered_correctly": 0,
     },
 }
 
@@ -262,6 +260,7 @@ def finish_learn():
 def quiz_home():
     for quiz in quizzes.values():
         quiz["scored"] = False
+        quiz["answered_correctly"] = 0
 
     global quiz_score
     quiz_score = 0
@@ -273,14 +272,18 @@ def quiz(quiz_id):
     quiz = quizzes[quiz_id]
     total_quizzes = len(quizzes)
 
-    return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes)
+    return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes, all_quizzes=quizzes)
 
 @app.route('/quiz_answer/<quiz_id>')
 def quiz_answer(quiz_id):
     quiz = quizzes[quiz_id]
     total_quizzes = len(quizzes)
 
-    return render_template('quiz_answer.html', quiz=quiz, total_quizzes=total_quizzes)
+    # update answered_correctly to -2 to prevent user from answering again
+    if quizzes[quiz_id]["answered_correctly"] == -1:
+        quizzes[quiz_id]["answered_correctly"] = -2
+
+    return render_template('quiz_answer.html', quiz=quiz, total_quizzes=total_quizzes, all_quizzes=quizzes)
 
 @app.route('/quiz/score')
 def score():
@@ -299,19 +302,38 @@ def answered_quiz():
     json_data = request.get_json()
 
     quiz_id = str(json_data["id"])
-    if (quizzes[quiz_id]["scored"] == True):
-        return jsonify({"score": quiz_score})
+    # if (quizzes[quiz_id]["scored"] == True):
+    #     return jsonify({"score": quiz_score})
     
     is_correct = json_data["is_correct"]
     print(is_correct)
-    if is_correct:
-        quiz_score += 1
+    if is_correct: # if the answer is correct
+        
+        # if quizzes[quiz_id]["scored"]: 
+        if quizzes[quiz_id]["answered_correctly"] == -1: 
+            # if it's the second try and got correct, set to 2 (yellow)
+            quizzes[quiz_id]["answered_correctly"] = 2
+            print("change to 2")
+        elif quizzes[quiz_id]["answered_correctly"] == 0:
+            # if it's the first time the user answered correctly, set to 1 (green)
+            quizzes[quiz_id]["answered_correctly"] = 1
+            print("change to 1")
+            quiz_score += 1
+    else:
+        # if the answer is wrong, set to -1 (red)
+        if quizzes[quiz_id]["answered_correctly"] == 0:
+            quizzes[quiz_id]["answered_correctly"] = -1
+            print("change to -1")
     
+    all_answered_correctly = []
+    for quiz in quizzes.values():
+        all_answered_correctly.append(quiz["answered_correctly"])
+
     quizzes[quiz_id]["scored"] = True
 
     print(quiz_score)
 
-    return jsonify({"score": quiz_score})
+    return jsonify({"score": quiz_score, "all_answered_correctly": all_answered_correctly})
 
 
 if __name__ == '__main__':

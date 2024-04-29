@@ -9,14 +9,13 @@
   color: black;
 }
 
-
 body {
   font-family: "Montserrat", sans-serif;
   color: black;
   padding-bottom: 50px;
 }
 
-.accent{
+.accent {
   color: var(--accent);
 }
 
@@ -36,14 +35,14 @@ body {
 }
 
 .quiz-link {
-  color: #22194D !important;
+  color: #22194d !important;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-weight: bold;
   font-size: 24px;
   color: var(--light-gray);
-  font-weight: bold; 
+  font-weight: bold;
   background-color: white;
 }
 
@@ -55,7 +54,7 @@ body {
   padding: 5px 10px;
 }
 
-.quizNavBtn{
+.quizNavBtn {
   margin-right: 40px;
   padding-left: 10px;
   padding-right: 10px;
@@ -66,7 +65,7 @@ body {
   font-weight: bold;
 }
 
-a.nav-link{
+a.nav-link {
   font-size: 18px;
 }
 
@@ -83,7 +82,7 @@ a.nav-link{
   position: relative; /* Ensure relative positioning for absolute positioning of the yellow line */
 }
 
-.quiz-nav-button{
+.quiz-nav-button {
   font-weight: bold;
   border: 4px solid --var(--accent);
   margin-right: 60px;
@@ -94,25 +93,26 @@ a.nav-link{
   color: black; /* Set the text color to match the border color */
   font-weight: bold;
   height: 38px;
-  width:200px;
+  width: 200px;
   background-color: var(--accent);
-  
 }
 .accent-button-unfilled {
   background-color: transparent;
   color: black; /* Change color to your preferred accent color */
-  border-color: var(--accent); /* Change border color to your preferred accent color */
+  border-color: var(
+    --accent
+  ); /* Change border color to your preferred accent color */
 }
 
 /* home page */
-h1{
+h1 {
   font-family: "Stick No Bills", sans-serif;
   font-size: 75px;
   text-align: left;
   padding-top: 70px;
 }
 
-.morse-code{
+.morse-code {
   padding-top: 40px;
   font-size: 90px;
   font-weight: bolder;
@@ -120,11 +120,11 @@ h1{
   text-align: right;
 }
 
-.firsttext{
+.firsttext {
   margin-top: 40px;
 }
 
-.subtitle{
+.subtitle {
   text-align: left;
   color: var(--light-gray);
 }
@@ -145,7 +145,18 @@ h1{
   flex-direction: column;
 }
 
+.progress {
+  position: fixed;
+  bottom: 0;
+  margin: 20px 0px;
+  border-radius: 0px;
+  width: 100%;
+}
 
+.progress-container {
+  display: flex;
+  align-items: flex-end; /* Align to bottom */
+}
 
 .input-morse-code {
   width: 400px;

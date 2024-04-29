@@ -1,12 +1,11 @@
-{% extends "layout.html" %}
+{% extends "quiz_layout.html" %}
 
-{% block content %}
+{% block quiz_content %}
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_answer.js') }}"></script>
 
     <script>
         let quiz = {{quiz|tojson}} 
-        let total_quizzes = {{total_quizzes}}
     </script>
 
     <div class="quiz-container">

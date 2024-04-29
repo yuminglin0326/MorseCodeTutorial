@@ -8,8 +8,6 @@ $(document).ready(function() {
     let inCorrectCount = 0;
     let quizType = quiz["type"];
 
-    // $('.input-morse-code').attr('disabled', 'disabled');
-
     // display quiz question based on quiz type
     if (quizType === "eng_to_morse") {
         $('#duration-display').show();
@@ -28,7 +26,7 @@ $(document).ready(function() {
         let flashlight = $("<img class='flashlight' src='/static/image/led off.png' alt='led light off'>")
         flashlightContainer.append(flashlight);
         $('#quiz-mid-container').after(flashlightContainer);
-        console.log("english to morse");
+        // console.log("english to morse");
     } else if (quizType === "flashlight_to_eng") {
         // display input box as input
         let inputbox = $("<input class='input-morse-code' type='text'>");
@@ -49,7 +47,7 @@ $(document).ready(function() {
 
         // change input font size
         $('.input-morse-code').css("font-size", "20px");
-        console.log("flashlight to english");
+        // console.log("flashlight to english");
     } else if (quizType === "audio_to_eng") {
         // Check if there's an audio file specified for the quiz
         if (quiz["audio_file"]) {
@@ -240,6 +238,7 @@ $(document).ready(function() {
                 "type": quizType
             }
             sendAnswer(inputAnswer);
+
         } else { // if answer is incorrect
             console.log("Incorrect!");
             inCorrectCount += 1;
@@ -270,8 +269,9 @@ $(document).ready(function() {
         }
     });
 
+    let all_answered_correctly = [];
     // function to send answer to server
-    sendAnswer = function(inputAnswer) {
+    function sendAnswer(inputAnswer) {
         $.ajax({
             type: "POST",
             url: "/answered_quiz",
@@ -279,9 +279,32 @@ $(document).ready(function() {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(inputAnswer),
             success: function(result) {
-                console.log(result);
+                all_answered_correctly = result["all_answered_correctly"];
+                renderProgressBar();
             }
         })
+    }
+
+    function renderProgressBar() {
+        $('.progress').empty();   
+        for (let i = 0; i < total_quizzes; i++) {
+            answered_correctly = all_answered_correctly[i]
+            if (answered_correctly == 0) {
+                continue;
+            }
+    
+            let progressBar = $("<div class='progress-bar'>");
+            progressBar.attr('style', 'width: 10%');
+            if (answered_correctly == -1 || answered_correctly == -2) {
+                progressBar.addClass('bg-danger');
+            } else if (answered_correctly == 2) {
+                progressBar.addClass('bg-warning');
+            } else if (answered_correctly == 1){
+                progressBar.addClass('bg-success');
+            }
+            $('.progress').append(progressBar);
+        }
+        return true;
     }
 
     // navigate to next quiz when user clicks anywhere after the quiz is answered correctly
@@ -301,6 +324,7 @@ $(document).ready(function() {
     // hint button
     $('#hint-button').click(function() {
         let hint = "";
+        gotHint = true;
         if (quizType === "eng_to_morse") {
             hintContainer = $("<div class='hint-container'>");
             if (Array.isArray(quiz["hint"])) {
