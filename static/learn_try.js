@@ -2,7 +2,7 @@ $(document).ready(function() {
     let spaceDownTime = 0; // keep track of the time when the space key is pressed
     let spaceDown = false; // keep track of whether if the user is holding the space key
     let duration = 0; // keep track of the duration of space key press
-    let morseAudio = new Audio('/static/audio/morse_code_T.mp3'); // morse code audio
+    let morseAudio = new Audio('/static/audio/t-audio.mp3'); // morse code audio
     let morseImgId = 0; // keep track of index of the morse code being entered
     let submit = false // keep track of whether the user has submitted the answer
     let isCorrect = true; // keep track of whether the user has entered the correct morse code

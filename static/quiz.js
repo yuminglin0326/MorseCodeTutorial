@@ -2,7 +2,7 @@ $(document).ready(function() {
     let spaceDownTime = 0;
     let spaceDown = false;
     let duration = 0;
-    let morseAudio = new Audio('/static/audio/morse_code_T.mp3');
+    let morseAudio = new Audio('/static/audio/t-audio.mp3');
     let submitted = false;
     let isCorrect = false;
     let inCorrectCount = 0;
