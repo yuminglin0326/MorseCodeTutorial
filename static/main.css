@@ -104,6 +104,13 @@ a.nav-link {
   ); /* Change border color to your preferred accent color */
 }
 
+.btn-light {
+  border: 1px solid var(--light-gray);
+  color: var(--light-gray);
+  height: 38px;
+  background-color: transparent;
+}
+
 /* home page */
 h1 {
   font-family: "Stick No Bills", sans-serif;
@@ -298,8 +305,18 @@ img.hint {
 
 /* finish-learn page styling */
 
-#congrats {
+.page-header {
+  padding-top: 30px;
+}
+
+h2 {
   text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#congrats {
+  /* text-align: center; */
 }
 
 .review-detail-button {
@@ -308,7 +325,6 @@ img.hint {
 
 button.letter {
   margin: 10px;
-  font-size: 20px;
 }
 
 input {
