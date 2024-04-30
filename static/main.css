@@ -315,3 +315,12 @@ button.letter {
 input {
   border: none;
 }
+
+/* quiz score page */
+.score-btn-container {
+  margin: 20px 0px;
+}
+
+.quiz-result {
+  text-align: center;
+}

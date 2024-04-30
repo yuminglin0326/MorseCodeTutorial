@@ -2,10 +2,11 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_score.js') }}"></script>
 
     <script>
         let quiz = {{ quiz|tojson }};
+        let quizzes = {{ quizzes|tojson }};
     </script>
 
     <div class="quiz-container">
@@ -13,6 +14,7 @@
             <h2>Quiz Result</h2>
             <p>You answered {{ quiz.score }} out of {{ quiz.total_questions }} questions correctly.</p>
         </div>
+        <div class="score-btn-container"></div>
     </div>
 
     

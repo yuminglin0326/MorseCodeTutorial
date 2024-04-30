@@ -101,12 +101,13 @@ quizzes = {
         "type": "eng_to_morse",
         "question": "Please enter the Morse Code for 'E'",
         "answer_morse": ".",
-        "answer_letter": "i",
+        "answer_letter": "e",
         "morse_audio": "/static/audio/e-audio.mp3",
         "hint": "/static/image/e-hint.png",
         "answer_img": ["/static/image/e-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [1],
     },
     "2": {
         "id": 2,
@@ -119,6 +120,7 @@ quizzes = {
         "answer_img": ["/static/image/l-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [3],
     },
     "3": {
         "id": 3,
@@ -131,6 +133,7 @@ quizzes = {
         "answer_img": ["/static/image/o-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [5],
     },
     "4": {
         "id": 4,
@@ -144,6 +147,7 @@ quizzes = {
         "answer_img": ["/static/image/h-answer.png", "/static/image/e-answer.png", "/static/image/l-answer.png", "/static/image/l-answer.png", "/static/image/o-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [2, 1, 3, 3, 5],
     },
     "5": {
         "id": 5,
@@ -157,6 +161,7 @@ quizzes = {
         "answer_img": ["/static/image/m-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [4],
     },
     "6": {
         "id": 6,
@@ -170,6 +175,7 @@ quizzes = {
         "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [6],
     },
     "7": {
         "id": 7,
@@ -183,6 +189,7 @@ quizzes = {
         "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [7, 5, 7],
     },
     "8": {
         "id": 8,
@@ -197,6 +204,7 @@ quizzes = {
         "answer_img": ["/static/image/h-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [2],
     },
     "9": {
         "id": 9,
@@ -211,6 +219,7 @@ quizzes = {
         "answer_img": ["/static/image/s-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [7],
     },
     "10": {
         "id": 10,
@@ -225,6 +234,7 @@ quizzes = {
         "answer_img": ["/static/image/m-answer.png", "/static/image/o-answer.png", "/static/image/r-answer.png", "/static/image/s-answer.png", "/static/image/e-answer.png"],
         "scored": False,
         "answered_correctly": 0,
+        "id_in_learns": [4, 5, 6, 7, 1],
     },
 }
 
@@ -303,7 +313,7 @@ def score():
         "total_questions": len(quizzes),
     }
 
-    return render_template('quiz_score.html', quiz=quiz_data)
+    return render_template('quiz_score.html', quiz=quiz_data, quizzes=quizzes)
 
 @app.route('/answered_quiz', methods=['GET', 'POST'])
 def answered_quiz():
