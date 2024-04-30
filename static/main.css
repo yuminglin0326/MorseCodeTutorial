@@ -299,8 +299,7 @@ img.hint {
 /* finish-learn page styling */
 
 #congrats {
-  font-size: 60px;
-  color: green;
+  text-align: center;
 }
 
 .review-detail-button {
