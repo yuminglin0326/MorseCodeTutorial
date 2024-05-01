@@ -249,6 +249,26 @@ img.hint {
   margin-bottom: 20px;
 }
 
+.quiz-audio {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-audio img {
+  width: 60%;
+  height: 60%;
+}
+
+.quiz-audio:active {
+  background-color: var(--base);
+}
+
 /* learn page styling */
 #letter-plain {
   height: 200px;

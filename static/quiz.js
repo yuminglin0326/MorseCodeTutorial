@@ -60,8 +60,30 @@ $(document).ready(function() {
             let audioFilePath = quiz["morse_audio"];
             // Display the Morse code audio player with the specified audio file
             // $('#audio-player').append("<audio controls><source src='" + audioFilePath + "' type='audio/mpeg'></audio>");
-            $('.question').after("<audio controls class='quiz-audio'><source src='" + audioFilePath + "' type='audio/mpeg'></audio>")
+            // $('.question').after("<audio controls class='quiz-audio'><source src='" + audioFilePath + "' type='audio/mpeg'></audio>")
+            let audioPlayer = $("<div class='quiz-audio'>");
+            audioImg = $("<img src='/static/image/audio-off.png' alt='audio'>");
+            audioPlayer.append(audioImg);
+            $('.question').after(audioPlayer);
             console.log("morse audio to English");
+
+            // play audio when user clicks on the audio image
+            $('.quiz-audio').click(function() {
+                let audio = new Audio(audioFilePath);
+                audio.play();
+                audioPlayer.empty();
+                audioImg = $("<img src='/static/image/audio-on.png' alt='audio'>");
+                audioPlayer.append(audioImg);
+                $(audio).on('ended', function() {
+                    // Audio playback has ended
+                    console.log('Audio playback finished.');
+                    audioPlayer.empty();
+                    audioImg = $("<img src='/static/image/audio-off.png' alt='audio'>");
+                    audioPlayer.append(audioImg);
+                    // Add your desired functionality here
+                });
+            });
+            
 
             // Add input box for user's answer
             let inputbox = $("<input class='input-morse-code' type='text'>");
