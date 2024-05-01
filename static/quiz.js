@@ -29,6 +29,7 @@ $(document).ready(function() {
         $('.flashlight-col').append(flashlightContainer);
         // console.log("english to morse");
     } else if (quizType === "flashlight_to_eng") {
+
         // display input box as input
         let inputbox = $("<input class='input-morse-code' type='text'>");
         $('#quiz-mid-container').append(inputbox);
@@ -42,9 +43,13 @@ $(document).ready(function() {
         $('.question').after(flashlightContainer);
         playFlashlight(quiz["flash_interval"]);
 
+        // display the instruction on replaying flashlight
+        let instruction = $("<div class='subtitle text-center'>").html("Click on the flashlight to replay the morse code");
+        $('.flashlight-container').before(instruction);
+
         // replay button
-        let replayButton = $("<button id='replay-button' class='btn btn-secondary'>").text("Replay");
-        $('.flashlight-container').after(replayButton);
+        // let replayButton = $("<button id='replay-button' class='btn btn-secondary'>").text("Replay");
+        // $('.flashlight-container').after(replayButton);
 
         // change input font size
         $('.input-morse-code').css("font-size", "20px");
@@ -160,26 +165,28 @@ $(document).ready(function() {
     // function to play flashlight
     function playFlashlight(intervals) {
         $('.flashlight-on').show();
+        // console.log("flashlight on");
         for (let i = 0; i < intervals.length; i++) {
             let time = intervals[i];
             if (i % 2 == 0) {
                 setTimeout(function() {
                     $('.flashlight-on').hide();
                     $('.flashlight-off').show();
-                    
+                    // console.log("flashlight off", time);
                 }, time);
             } else {
                 setTimeout(function() {
                     $('.flashlight-off').hide();
                     $('.flashlight-on').show();
-                    
+                    // console.log("flashlight on", time);
                 }, time);
             }
         }
     };
 
     // replay flashlight button
-    $('#replay-button').click(function() {
+    // $('#replay-button').click(function() {
+    $('.flashlight-container').click(function() {
         $('.input-morse-code').focus();
         playFlashlight(quiz["flash_interval"]);
     });
