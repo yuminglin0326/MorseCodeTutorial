@@ -228,8 +228,10 @@ h1 {
 }
 
 img.hint {
-  height: 200px;
-  margin: 0px 10px;
+  height: 100px;
+  /* width: 100%; */
+  margin: 10px 10px;
+  text-align: right;
 }
 .hint {
   font-size: 60px;
