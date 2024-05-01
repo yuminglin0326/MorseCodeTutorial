@@ -192,6 +192,10 @@ h1 {
   overflow: hidden;
 }
 
+.fix-input-width {
+  width: 600px;
+}
+
 .top-margin {
   margin-top: 10px;
 }
@@ -338,7 +342,14 @@ img.hint {
 }
 
 .plain-image {
-  height: 200px;
+  max-height: 200px;
+  max-width: 80vw;
+  height: auto;
+  width: auto;
+}
+
+.top-bottom-margin {
+  margin: 20px 0px;
 }
 
 /* .morse-on-image {
@@ -359,7 +370,7 @@ img.hint {
 
 .page-header {
   padding-top: 30px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 #congrats {

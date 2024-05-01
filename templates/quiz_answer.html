@@ -8,18 +8,19 @@
         let quiz = {{quiz|tojson}} 
     </script>
 
-    <div class="quiz-container">
-        <h1>Question {{quiz.id}}</h1>
-        <div class="quiz-correct">Correct Answer</div>
-        <div class="correct-answer-container">
-            {% for answer in quiz.answer_img %}
-                <img class="plain-image" src="{{answer}}" alt="answer image">
-            {% endfor %}
+    <div>
+        <div class="quiz-container">
+            <!-- <h2 class="page-header">Question {{quiz.id}}</h2> -->
+            <h2 class="quiz-correct">Correct Answer</h2>
+            <div class="correct-answer-container">
+                {% for answer in quiz.answer_img %}
+                    <img class="plain-image top-bottom-margin" src="{{answer}}" alt="answer image">
+                {% endfor %}
+            </div>
+            <div class="input-morse-code fix-input-width">{{quiz.answer_morse}}</div>
+            <div class='continue-message'>
+                Click anywhere to continue
+            </div>
         </div>
-        <div class="input-morse-code">{{quiz.answer_morse}}</div>
-        <div class='continue-message'>
-            Click anywhere to continue
-        </div>
-
     </div>
 {% endblock %}
