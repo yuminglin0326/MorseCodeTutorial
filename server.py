@@ -152,7 +152,7 @@ quizzes = {
     "5": {
         "id": 5,
         "type": "flashlight_to_eng",
-        "question": "Watch the flashlight and enter the corresponding English letter",
+        "question": "Watch the flashlight and enter the corresponding letter",
         "answer_morse": "--",
         "answer_letter": "m",
         "morse_audio": "/static/audio/m-audio.mp3",
@@ -166,7 +166,7 @@ quizzes = {
     "6": {
         "id": 6,
         "type": "flashlight_to_eng",
-        "question": "Watch the flashlight and enter the corresponding English letter",
+        "question": "Watch the flashlight and enter the corresponding letter",
         "answer_morse": ".-.",
         "answer_letter": "r",
         "morse_audio": "/static/audio/r-audio.mp3",
@@ -180,7 +180,7 @@ quizzes = {
     "7": {
         "id": 7,
         "type": "flashlight_to_eng",
-        "question": "Watch the flashlight and enter the corresponding English letter",
+        "question": "Watch the flashlight and enter the corresponding word",
         "answer_morse": "... --- ...",
         "answer_letter": "sos",
         "morse_audio": "/static/audio/sos-audio.mp3", 

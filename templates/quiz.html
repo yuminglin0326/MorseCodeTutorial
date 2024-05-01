@@ -8,21 +8,29 @@
         let quiz = {{quiz|tojson}} 
     </script>
 
-    <div class="quiz-container">
-        <h1>Quiz!</h1>
-        <div class="question">{{quiz.id}}. {{quiz.question}}</div>
-        <div id="duration-display" class="hide">0 seconds</div>
-        <div id="quiz-mid-container"></div>
-       
-        <div id="answer-feedback-container"></div>
-        <div id="button-container">
-            <button id="submitAnswer" class="btn btn-primary hide">Submit</button>
-            <div id="wrong-answer-buttons">
-                <button id="hint-button" class="btn btn-primary hide">Hint</button>
-                <button id="correct-answer-button" class="btn btn-secondary hide">Correct Answer</button>
+    <div class="container">
+        <h1 class="page-header">Quiz</h1>
+        <div class="quiz-container">
+            <h2 class="question">{{quiz.id}}. {{quiz.question}}</h2>
+            <!-- <div id="duration-display" class="hide">0 seconds</div> -->
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div id="quiz-mid-container"></div>
+                </div>
+                <div class="col-md-3 flashlight-col"></div>
+            </div>
+            <div class="quiz-bottom-container">
+                <div id="answer-feedback-container"></div>
+                <div id="button-container">
+                    <button id="submitAnswer" class="btn btn-primary hide">Submit</button>
+                    <div id="wrong-answer-buttons" class="top-margin">
+                        <button id="hint-button" class="btn btn-primary hide left-btn ">Hint</button>
+                        <button id="correct-answer-button" class="btn btn-secondary hide">Correct Answer</button>
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </div>
+    
 {% endblock %}

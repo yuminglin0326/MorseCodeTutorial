@@ -13,7 +13,7 @@ $(document).ready(function() {
         $('#duration-display').show();
         // display the instruction on entering space
         if (quiz["answer_letter"].length > 1) {
-            let instruction = $("<div class='instruction'>").html("Press Tab to enter space between letters");
+            let instruction = $("<div class='subtitle text-center'>").html("Press Tab to enter space between letters");
             $('.question').after(instruction);
         }
 
@@ -25,7 +25,8 @@ $(document).ready(function() {
         let flashlightContainer = $("<div class='flashlight-container'>");
         let flashlight = $("<img class='flashlight' src='/static/image/led off.png' alt='led light off'>")
         flashlightContainer.append(flashlight);
-        $('#quiz-mid-container').after(flashlightContainer);
+        // $('#quiz-mid-container').after(flashlightContainer);
+        $('.flashlight-col').append(flashlightContainer);
         // console.log("english to morse");
     } else if (quizType === "flashlight_to_eng") {
         // display input box as input
@@ -130,7 +131,7 @@ $(document).ready(function() {
                         error.html("try enter the morse code again!")
                         if (!isError) {
                             isError = true;
-                            $('.input-morse-code').after(error);
+                            $('.quiz-bottom-container').append(error);
                         }
                     }
                     clearInterval(intervalId); 

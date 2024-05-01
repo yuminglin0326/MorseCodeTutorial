@@ -4,9 +4,17 @@
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_home.js') }}"></script>
 
-    <div class="quiz-container">
-        <h1>Quiz!</h1>
-        <p>Test your Morse Code knowledge!</p>
-        <button class="btn btn-primary" id="start-quiz-button">Start</button>
+    <div class="container">
+        <h1 class="page-header">Quiz</h1>
+        <div class="quiz-container">
+            <h2>Morse Code Quiz</h2>
+            <p class="subtitle text-center">
+                This quiz will test your understanding of Morse code <br>
+                You'll have 10 questions to answer. <br>
+                Click the button below to start the quiz! <br>
+            </p>
+            <button class="btn btn-primary" id="start-quiz-button">Start</button>
+        </div>
     </div>
+
 {% endblock %}
