@@ -52,7 +52,7 @@ $(document).ready(function() {
         // $('.flashlight-container').after(replayButton);
 
         // change input font size
-        $('.input-morse-code').css("font-size", "20px");
+        $('.input-morse-code').css("font-size", "40px");
         // console.log("flashlight to english");
     } else if (quizType === "audio_to_eng") {
         // Check if there's an audio file specified for the quiz
@@ -91,7 +91,7 @@ $(document).ready(function() {
             inputbox.focus();
 
             // change input font size
-            $('.input-morse-code').css("font-size", "20px");
+            $('.input-morse-code').css("font-size", "40px");
         } else {
             console.log("Error: No audio file specified for the quiz.");
         }
