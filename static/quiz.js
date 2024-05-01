@@ -369,7 +369,7 @@ $(document).ready(function() {
             $('.row').before(hintContainer);
             $('.input-morse-code').text('');
         } else if (quizType === "flashlight_to_eng") {
-            hint = $("<div class='hint'>").text(quiz["hint"]);
+            hint = $("<div class='hint line-height-down'>").text(quiz["hint"]);
             $('.flashlight-container').after(hint);
             $('.input-morse-code').val('');
         } else if (quizType === "audio_to_eng") {

@@ -236,7 +236,11 @@ img.hint {
   font-size: 60px;
   font-weight: bold;
   height: 40px;
-  line-height: 30px;
+  line-height: 0px;
+}
+
+.line-height-down {
+  line-height: 20px;
 }
 
 .instruction {
