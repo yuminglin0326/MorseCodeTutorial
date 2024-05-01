@@ -366,7 +366,7 @@ $(document).ready(function() {
                 hint = $("<img class='hint'>").attr("src", quiz["hint"]);
                 hintContainer.append(hint);
             }
-            $('.input-morse-code').before(hintContainer);
+            $('.row').before(hintContainer);
             $('.input-morse-code').text('');
         } else if (quizType === "flashlight_to_eng") {
             hint = $("<div class='hint'>").text(quiz["hint"]);
