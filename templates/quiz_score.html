@@ -1,3 +1,8 @@
+
+
+User
+This is the layout for the results of a quiz in html. Could you add a button that redirects to a page called quiz_home.html located in the templates folder of our project?
+
 {% extends "layout.html" %}
 
 {% block content %}
@@ -15,6 +20,34 @@
             <p>You answered {{ quiz.score }} out of {{ quiz.total_questions }} questions correctly.</p>
         </div>
         <div class="score-btn-container"></div>
+    </div>
+
+    
+{% endblock %}
+ChatGPT
+Sure, you can add a button element to redirect to the quiz_home.html page. Here's how you can do it:
+
+html
+Copy code
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_score.js') }}"></script>
+
+    <script>
+        let quiz = {{ quiz|tojson }};
+        let quizzes = {{ quizzes|tojson }};
+    </script>
+
+    <div class="quiz-container">
+        <div class="quiz-result">
+            <h2>Quiz Result</h2>
+            <p>You answered {{ quiz.score }} out of {{ quiz.total_questions }} questions correctly.</p>
+        </div>
+        <div class="score-btn-container">
+            <button onclick="window.location.href = '/templates/quiz_home.html';">Go to Quiz Home</button>
+        </div>
     </div>
 
     
