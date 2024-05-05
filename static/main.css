@@ -344,11 +344,15 @@ h1 {
 .flashlight {
   width: 70px;
   align-items:first baseline;
-  
 }
 
 .hide {
   display: none;
+}
+
+.written-morse-container {
+  display: inline-block;
+  text-align: left; /* Adjust alignment as needed */
 }
 
 .quiz-correct {
@@ -442,6 +446,7 @@ img.hint {
 }
 
 .learn-message {
+  padding-top: 10px;
   font-size: 20px;
   color: lightgrey;
 }
@@ -464,12 +469,7 @@ img.hint {
 
 .flashlight-off,
 .flashlight-on {
-  width: 100px;
-  position: absolute;
-  top: 0;
-  left: 50%; /* Place images at the horizontal center */
-  transform: translateX(-50%); /* Adjust to center the images */
-  margin-top: 10px;
+  width: 70px;
 }
 
 .learn-letter-container {
