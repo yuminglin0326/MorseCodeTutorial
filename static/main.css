@@ -15,8 +15,19 @@ body {
   padding-bottom: 50px;
 }
 
-.accent {
+.accenttxt {
   color: var(--accent);
+}
+
+.bolder{
+  font-weight: bolder;
+  color: var(--accent);
+  font-size: 35px;
+}
+
+.bold{
+  font-weight: 500;
+  color: var(--dark-gray);
 }
 
 .navbar {
@@ -32,10 +43,6 @@ body {
   background-color: white;
   margin-bottom: 10px;
   font-size: 18px;
-}
-
-.quiz-link {
-  color: #22194d !important;
 }
 
 .navbar-brand {
@@ -122,8 +129,12 @@ a.nav-link {
   background-color: var(--accent);
 }
 
-.btn-primary:hover,
-.accent-button-unfilled:hover {
+.accent-button-unfilled:hover{
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.btn-primary:hover {
   background-color: var(--accent);
   border: var(--base);
   text-decoration: underline;
@@ -169,9 +180,13 @@ h2 {
 /* home page */
 h1 {
   font-family: "Stick No Bills", sans-serif;
-  font-size: 75px;
   text-align: left;
-  padding-top: 70px;
+  font-size: 50px;
+}
+
+.web-title{
+  font-size: 80px;
+  padding-top: 75px;
 }
 
 .morse-code {
@@ -182,13 +197,31 @@ h1 {
   text-align: right;
 }
 
-.firsttext {
+.margin-top {
   margin-top: 40px;
 }
 
 .subtitle {
   text-align: left;
   color: var(--light-gray);
+}
+
+.description{
+  margin-top: 40px;
+  text-align: left;
+  margin-bottom: 60px;
+  color: var(--light-gray);
+}
+
+.description .row {
+  display: flex;
+  align-items:first baseline; /* Align items vertically */
+}
+
+.description .col-md-1,
+.description .col-md-10 {
+  display: flex;
+  align-items:first baseline; /* Align items vertically */
 }
 
 /* quiz pages styling */
