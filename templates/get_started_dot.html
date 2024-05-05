@@ -1,18 +1,51 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container text-center mt-5">
-    <h2>Let’s first learn about how to enter dots and dashes on this website!</h2>
-    <p>Morse code consists of a set of standardized sequences of short and long signals, typically referred to as dots
-        and dashes</p>
-    <h4>Press space for less than 0.2 to enter a dot</h4>
-    <div id="duration-display">0 seconds</div>
-    <div class="input-morse-code"></div>
-    <div class="flashlight-container">
-        <img class="flashlight" src="/static/image/led off.png" alt="led light off">
+<div class="container mt-5">
+    <div class="row ">
+        <div class="col-md-12">
+            <div id="dash-tutorial" class="intro">
+                <h2>Tutorial: How to enter <span class="accenttxt"> dot .</span></h2>
+                <p class="subtitle">Morse code consists of a set of standardized sequences of short and long signals,
+                    typically referred to as dots and dashes</p>
+            </div>
+        </div>
     </div>
-    <div id="answer-feedback-container"></div>
-    <button id="practice-again-btn" style="display: none;">Practice Again</button>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div id="place-to-type" class="info-text">
+                <h4>Press space for less than 0.2 to enter a dot</h4>
+                <div id="duration-display" class="graytxt">0 seconds</div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="input-group">
+                <div id="input-box" class="input-morse-code form-control"></div>
+                <div id = "flash" class="flashlight-container input-group-append">
+                    <img class="flashlight" src="/static/image/led off.png" alt="led light off">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" row justify-content-center">
+        <button id="practice-again-btn" class="practie-btn">
+            <img class="refresh" src="/static/image/refresh.png" alt="refresh icon">
+            Practice Again
+        </button>
+    </div>
+    <div class="row justify-content-center mt-3"> <!-- Adjust margin top as needed -->
+        
+        <div class="col-md-6">
+            <div id="feedback-container" class="feedback-container-cls">
+                <div id="answer-feedback-container"></div>
+                
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 <script>
     // Variables to track spacebar press duration, audio, and submission status
@@ -77,10 +110,10 @@
                     $('#practice-again-btn').show();
                 } else {
                     let error = $("<div class='error'>")
-                    error.html("try to enter the dot again!")
+                    error.html("INCORRECT! Enter dot again")
                     if (!isError) {
                         isError = true;
-                        $('.input-morse-code').after(error);
+                        $('#answer-feedback-container').append(error);
                     }
                 }
                 clearInterval(intervalId);

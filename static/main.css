@@ -1,8 +1,9 @@
 :root {
   --base: #fae6b6;
-  --accent: #fdc002;
+  --accent: #f8ba00;
   --dark-gray: black;
   --light-gray: #b2acac;
+  --error: #F3430C;
 }
 
 .accent:nth-child(odd) {
@@ -13,10 +14,27 @@ body {
   font-family: "Montserrat", sans-serif;
   color: black;
   padding-bottom: 50px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
+
+.row {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
 
 .accenttxt {
   color: var(--accent);
+}
+
+.graytxt{
+  color: var(--light-gray);
+}
+
+.accent-font{
+  font-family: "Stick No Bills", sans-serif;
+  font-size: 30px;
 }
 
 .bolder{
@@ -29,6 +47,8 @@ body {
   font-weight: 500;
   color: var(--dark-gray);
 }
+
+
 
 .navbar {
   border-bottom: 2px solid var(--base); /* Add a 3px solid yellow border to the bottom of the navbar */
@@ -51,20 +71,6 @@ body {
   color: var(--light-gray);
   font-weight: bold;
   background-color: white;
-}
-
-.nav-item.quizNavBtn {
-  border: 2px solid var(--base);
-}
-
-.nav-link.quizNavLink {
-  padding: 5px 10px;
-}
-
-.quizNavBtn {
-  margin-right: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .quiz-nav-button {
@@ -150,6 +156,31 @@ a.nav-link {
   padding-right: 13px;
 }
 
+.practie-btn{
+  border: 2px solid var(--base);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: transparent;
+  width: auto; /* or set a specific width like width: 150px; */
+  margin-bottom: 20px;
+}
+
+.practie-btn:hover{
+  background-color: var(--accent);
+  border: var(--base);
+  text-decoration: underline;
+  color: var(--dark-gray);
+}
+
+.refresh{
+  width: 10px;
+  margin-right: 5px;
+}
+
 .col-md-6.text-md-right {
   display: flex;
   justify-content: flex-end;
@@ -172,16 +203,20 @@ a.nav-link {
 }
 
 h2 {
-  text-align: center;
+  text-align: Left;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 35px;
+}
+
+h4{
+  font-weight: bold;
 }
 
 /* home page */
 h1 {
   font-family: "Stick No Bills", sans-serif;
   text-align: left;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .web-title{
@@ -204,6 +239,7 @@ h1 {
 .subtitle {
   text-align: left;
   color: var(--light-gray);
+  font-size: 20px;
 }
 
 .description{
@@ -249,20 +285,42 @@ h1 {
   align-items: flex-end; /* Align to bottom */
 }
 
+.intro{
+  margin-bottom: 80px;
+}
+
+.info-text{
+  text-align: center;
+}
+
 .input-morse-code {
-  width: 100%;
-  height: 100px;
+  width: 70%;
+  height: 70px;
   margin: 15px 0px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: transparent;
   text-align: center;
   font-size: 100px;
   font-weight: bold;
-  line-height: 65px;
+  line-height: 30px;
   vertical-align: middle;
   border: 4px solid var(--accent);
   overflow: hidden;
+  margin-left: 100px;
+}
+
+.practice-again-btn{
+  border: 2px solid var(--accent); /* Add a 2px solid red border */
+  border-radius: 5px; /* Optional: Add some border radius for a rounded look */
+  padding-top: 5px; 
+  padding-bottom: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent; /* Optional: Make the background transparent */
+  font-size: 16px;
+}
+
+.practice-again-btn:hover{
+  background-color: var(--accent); /* Optional: Make the background transparent */
 }
 
 .fix-input-width {
@@ -274,12 +332,19 @@ h1 {
 }
 
 .error {
-  color: red;
+  color: var(--error);
   font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
 }
 
 .flashlight {
-  width: 100px;
+  width: 70px;
+  align-items:first baseline;
+  
 }
 
 .hide {
@@ -287,13 +352,14 @@ h1 {
 }
 
 .quiz-correct {
-  color: green;
+  color: var(--accent);
   font-size: 40px;
+  font-weight: bolder;
   text-align: center;
 }
 
 .quiz-wrong {
-  color: red;
+  color: var(--error);
   font-size: 40px;
   text-align: center;
 }
@@ -344,6 +410,8 @@ img.hint {
   align-items: center;
 }
 
+
+
 .quiz-audio img {
   width: 60%;
   height: 60%;
@@ -379,9 +447,15 @@ img.hint {
 }
 
 .flashlight-container {
-  position: relative;
   text-align: left;
   padding-top: 20px;
+  align-items: flex-start;
+  vertical-align: top;
+}
+
+.input-group{
+  vertical-align: top;
+
 }
 
 .extra-margin {
