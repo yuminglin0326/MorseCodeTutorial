@@ -111,6 +111,9 @@
                     $('#answer-feedback-container').append(feedback, continueMessage);
                     submitted = true;
                     isCorrect = true;
+
+                    // Show the "Practice Again" button
+                    $('#practice-again-btn').show();
                 } else {
                     let error = $("<div class='error'>")
                     error.html("try to enter the dash again!")
@@ -132,6 +135,15 @@
             morseAudio.pause();
         }, 500);
     }
+
+    $('#practice-again-btn').click(function () {
+        // Reset variables and UI elements
+        $('.input-morse-code').empty();
+        $('#answer-feedback-container').empty();
+        submitted = false;
+        isCorrect = false;
+        $('#practice-again-btn').hide(); // Hide the button again
+    });
 
     $(document).click(function() {
         if (submitted && isCorrect) {
