@@ -175,7 +175,7 @@ $(document).ready(function() {
         $('#answer-feedback-container').empty();
         submitted = false;
         isCorrect = false;
-        $('#practice-again-btn').hide(); // Hide the button again
+
     });
 
     // click to continue to next page
