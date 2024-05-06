@@ -36,7 +36,7 @@ $(document).ready(function() {
         inputbox.focus();
 
         // display flashlight
-        let flashlightContainer = $("<div class='flashlight-container extra-margin'>");
+        let flashlightContainer = $("<div class='flashlight-container extra-margin text-center'>");
         let flashlightOff = $("<img class='flashlight-off hide' src='/static/image/led off.png' alt='led light off'>")
         let flashlightOn = $("<img class='flashlight-on hide' src='/static/image/led on.png' alt='led light on'>")
         flashlightContainer.append(flashlightOff, flashlightOn);
@@ -186,8 +186,9 @@ $(document).ready(function() {
     
     // function to play flashlight
     function playFlashlight(intervals) {
+        $('.flashlight-off').hide();
         $('.flashlight-on').show();
-        // console.log("flashlight on");
+        console.log("flashlight on");
         for (let i = 0; i < intervals.length; i++) {
             let time = intervals[i];
             if (i % 2 == 0) {
