@@ -1,20 +1,20 @@
 $(document).ready(function() {
     let displayed = false; // check if the letter is displayed
     $(document).click(function() {
+        // Hide the div with id 'click-msg'
+        $('#click-msg').hide();
+
         if (displayed) {
-            // if the letter is displayed, do nothing
+            console.log("clicked")
             return;
         }
-
-        
-
 
         // display morse code on the letter
         for (let i = 0; i < learn["morse_code"].length; i++) {
             if (learn["morse_code"][i] == '.') {
                 let morseImg = $('<img>').attr('src', '/static/image/dot.png').attr('alt', learn["morse_code"][i]).attr('id', 'morse-img-' + i);
                 morseImg.css({
-                    'width': '50px',
+                    'width': '35px',
                     'position': 'absolute',
                     'top': learn["position"][i][0] + 'px',
                     'left': learn["position"][i][1] + 'px'

@@ -23,8 +23,13 @@ body {
   align-items: center; /* Align items vertically */
 }
 
+
 .accenttxt {
   color: var(--accent);
+}
+
+.biggertxt{
+  font-size:80px;
 }
 
 .graytxt {
@@ -402,6 +407,22 @@ img.hint {
   margin-bottom: 20px;
 }
 
+.quiz-audio-learn{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid var(--accent);
+  margin: 20px auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-audio-learn:hover{
+  background-color: var(--accent);
+}
+
 .quiz-audio {
   width: 80px;
   height: 80px;
@@ -414,17 +435,29 @@ img.hint {
 }
 
 .quiz-audio img {
-  width: 60%;
-  height: 60%;
+  width: 40%;
+  height: 40%;
+}
+
+
+#learn-listen-button img{
+  width: 30px;
+  height: 30px;
 }
 
 .quiz-audio:active {
   background-color: var(--base);
 }
 
+
+.learn-message{
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
 /* learn page styling */
 #letter-plain {
-  height: 200px;
+  height: 400px;
+  justify-content: center;
 }
 
 .hidden {
@@ -443,7 +476,6 @@ img.hint {
 }
 
 .learn-message {
-  padding-top: 10px;
   font-size: 20px;
   color: lightgrey;
 }
@@ -512,8 +544,9 @@ img.hint {
 /* finish-learn page styling */
 
 .page-header {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  font-size: 60px;
 }
 
 #congrats {

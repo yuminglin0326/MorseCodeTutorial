@@ -23,7 +23,7 @@ learns = {
         "plain_image": "/static/image/e-plain.png",
         "morse_image": "/static/image/e-morse.png",
         "morse_audio": "/static/audio/e-audio.mp3",
-        "position": [[75, -10]], # [top, left],
+        "position": [[80, 595]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300]
     },
