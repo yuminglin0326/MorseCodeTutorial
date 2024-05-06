@@ -75,6 +75,7 @@ $(document).ready(function() {
 
     // ToSolve: need to make dynamic
     displayFlashlight = function() {
+        $('.flashlight-off').hide();
         $('.flashlight-on').show();
         for (let i = 0; i < learn["flash_interval"].length; i++) {
             let interval = learn["flash_interval"][i];
