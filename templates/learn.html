@@ -8,27 +8,14 @@
     let learn = {{ learn| tojson}} 
 </script>
 
-<div class="learn-container container text-center">
-    <div class="row">
-        <h1 class="page-header ">E <span class="accenttxt biggertxt"> . </span></h1>
-    </div>
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-12">
-            <p class="learn-message hidden">Press the spacebar shortly to enter a dot, hold the spacebar to enter a
-                dash!</p>
-        </div>
-    </div>
--->
-    <div class="row justify-content-center">
+<div class="container text-center">
+    <h1 class="page-header ">E <span class="accenttxt biggertxt"> . </span></h1>
+    <div class="learn-container">
         <div class="try-letter-container">
             <img class="plain-image" src="/static/image/{{learn.letter}}-plain.png" alt="letter image">
         </div>
-
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="learn-message"></div>
-        </div>
+        <h4 class="graytxt" id="click-msg">Click anywhere to learn its Morse code!</h4>
+        <div class="learn-message"></div>
     </div>
     <div class="row">
         <div class="col-md-3"></div>
@@ -41,13 +28,8 @@
                 <img class="flashlight-on hide" alt="light-on" src="/static/image/led on.png">
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <h4 class="graytxt" id="click-msg">Click anywhere to learn its Morse code!</h4>
-            </div>
-        </div>
     </div>
-
+    
     <div class="row ">
         <div class="col-md-5"></div>
         <div class="col-md-1 justify-content-left">
