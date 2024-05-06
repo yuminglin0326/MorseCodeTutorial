@@ -1,9 +1,9 @@
 $(document).ready(function() {
     // add buttons for review and restart
-    let reviewButton = $("<button class='btn btn-primary'>Review</button>");
-    let restartButton = $("<button class='btn btn-primary'>Restart</button>");
+    let reviewButton = $("<button class='btn accent-button-unfilled'>Review</button>");
+    let restartButton = $("<button class='btn btn-primary left-btn'>Restart</button>");
     let addedLetters = [];
-    $('.score-btn-container').append(reviewButton, restartButton);
+    $('.score-btn-container').append(restartButton, reviewButton);
 
     // add event listeners for review
     reviewButton.click(function() {
@@ -26,7 +26,7 @@ $(document).ready(function() {
             cur_letter = letters[i].toUpperCase();
             if ($.inArray(cur_letter, addedLetters) == -1) {
                 addedLetters.push(cur_letter);
-                let letterButton = $("<button class='btn btn-secondary'>"+ cur_letter +"</button>");
+                let letterButton = $("<button class='btn btn-light letter'>"+ cur_letter +"</button>");
                 container.append(letterButton);
                 letterButton.click(function() {
                     reviewPath = "/learn/" + learn_id[i];

@@ -36,7 +36,7 @@ $(document).ready(function() {
         inputbox.focus();
 
         // display flashlight
-        let flashlightContainer = $("<div class='flashlight-container extra-margin text-center'>");
+        let flashlightContainer = $("<div class='flashlight-container text-center'>");
         let flashlightOff = $("<img class='flashlight-off hide' src='/static/image/led off.png' alt='led light off'>")
         let flashlightOn = $("<img class='flashlight-on hide' src='/static/image/led on.png' alt='led light on'>")
         flashlightContainer.append(flashlightOff, flashlightOn);

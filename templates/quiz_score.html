@@ -9,14 +9,13 @@
         let quizzes = {{ quizzes|tojson }};
     </script>
 
-    <div class="quiz-container">
+    <div class="container text-center">
         <div class="quiz-result">
-            <h2>Quiz Result</h2>
-            <p>You answered {{ quiz.score }} out of {{ quiz.total_questions }} questions correctly.</p>
+            <h1 class="page-header">Quiz</h1>
+            <h2 class="text-center">You've finished the Quiz!</h2>
+            <p>You answered <strong class="score-number">{{ quiz.score }}</strong> out of <strong class="score-number">{{ quiz.total_questions }}</strong> questions correctly.</p>
         </div>
-        <div class="score-btn-container">
-            <button onclick="window.location.href = '/templates/quiz_home.html';">Go to Quiz Home</button>
-        </div>
+        <div class="score-btn-container"></div>
     </div>
 
     

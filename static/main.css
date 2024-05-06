@@ -544,3 +544,9 @@ input {
 .quiz-result {
   text-align: center;
 }
+
+.score-number {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--accent);
+}
