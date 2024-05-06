@@ -6,6 +6,18 @@
   --error: #f3430c;
 }
 
+.red{
+  background-color: red;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.yellow{
+  background-color: #f8ba00;
+}
+
 .accent:nth-child(odd) {
   color: black;
 }
@@ -130,8 +142,8 @@ a.nav-link {
   color: black; /* Set the text color to match the border color */
   font-weight: bold;
   height: 38px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: var(--accent);
 }
 
@@ -152,8 +164,8 @@ a.nav-link {
   color: black; /* Set the text color to match the border color */
   font-weight: bold;
   height: 38px;
-  padding-left: 13px;
-  padding-right: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .practie-btn {
@@ -576,6 +588,7 @@ button.letter {
 
 .left-btn {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 input {

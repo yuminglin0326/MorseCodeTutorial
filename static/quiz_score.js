@@ -3,7 +3,7 @@ $(document).ready(function() {
     let reviewButton = $("<button class='btn accent-button-unfilled'>Review</button>");
     let restartButton = $("<button class='btn btn-primary left-btn'>Restart</button>");
     let addedLetters = [];
-    $('.score-btn-container').append(restartButton, reviewButton);
+    $('.score-btn-container').append(reviewButton, restartButton);
 
     // add event listeners for review
     reviewButton.click(function() {
