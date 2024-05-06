@@ -24,23 +24,21 @@ $(document).ready(function() {
                 let morseImg = $('<img>');
                 if (Array.isArray(learn["dash"])) {
                     morseImg.attr('src', learn["dash"][i]).attr('alt', learn["morse_code"][i]).attr('id', 'morse-img-' + i);
+                    console.log(learn["dash_width"] + 'px')
                     morseImg.css({
-                        'width': '185px',
+                        'width': learn["dash_width"] + 'px',
                         'position': 'absolute',
                         'top': learn["position"][i][0] + 'px',
                         'left': learn["position"][i][1] + 'px',
-                        'max-width': '10px',
-                        'max-height': '300px'  // Adjust this value as needed
                     });
                 } else {
                     morseImg.attr('src', learn["dash"]).attr('alt', learn["morse_code"][i]).attr('id', 'morse-img-' + i);
+                    console.log(learn["dash_width"] + 'px')
                     morseImg.css({
-                        'width': '110px',
+                        'width': learn["dash_width"] + 'px',
                         'position': 'absolute',
                         'top': learn["position"][i][0] + 'px',
                         'left': learn["position"][i][1] + 'px',
-                        'max-width': '100px',
-                        'max-height': '50px'  // Adjust this value as needed
                     });
                 }
                 
