@@ -9,19 +9,15 @@
         let total_letters = {{total_learns}}
     </script>
 
-    <div class="learn-container container text-center">
-        <div class="row">
-            <h1 class="page-header">{{ learn.letter | upper }} <span class="accenttxt biggertxt"> {{ learn.morse_code }} </span></h1>
-        </div>
-        <div class="row">
+    <div class="container text-center">
+        <h1 class="page-header">{{ learn.letter | upper }} <span class="accenttxt biggertxt"> {{ learn.morse_code }} </span></h1>
+        <div class="learn-container">
             <p class="learn-message">Press the spacebar <span class="bold">shortly to enter a dot</span>, hold the spacebar  <span class="bold"> long to enter a dash!</span></p>
-        </div>
-        <div class="row">
             <div class="try-letter-container">
                 <img class="plain-image" src="{{ learn['plain_image'] }}" alt="letter image">
             </div>
         </div>
-        <!-- <div class="morse-on-image"></div> -->
+        
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
