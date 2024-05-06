@@ -14,7 +14,7 @@ learns = {
          "morse_audio": "/static/audio/a-audio.mp3",
          "position": [[-9, 60], [110, 32]], # [top, left],
          "dash": "/static/image/dash_hor.png",
-         "flash_interval": [100, 150, 450] # [on for 100ms, off for 50ms, on for 300ms]
+         "flash_interval": [300, 350, 1000] # [on for 300ms, off for 50ms, on for 650ms]
      },
     "1": {
         "id": 1,
@@ -23,9 +23,8 @@ learns = {
         "plain_image": "/static/image/e-plain.png",
         "morse_image": "/static/image/e-morse.png",
         "morse_audio": "/static/audio/e-audio.mp3",
-        "position": [[80, 6]], # [top, left],
+        "position": [[80, 595]], # [top, left],
         "dash": "/static/image/dash_hor.png",
-        "dash_width": "110",
         "flash_interval": [300]
     },
     "2": {
@@ -35,9 +34,8 @@ learns = {
         "plain_image": "/static/image/h-plain.png",
         "morse_image": "/static/image/h-morse.png",
         "morse_audio": "/static/audio/h-audio.mp3",
-        "position": [[5, 6], [5, 122], [155, 6], [155, 122]], # [top, left],
+        "position": [[0, -11], [0, 108], [155, -11], [155, 108]], # [top, left],
         "dash": "/static/image/dash_hor.png",
-        "dash_width": "110",
         "flash_interval": [100, 150, 250, 300, 400, 450, 550, 650]
     },
     "3": {
@@ -47,9 +45,8 @@ learns = {
         "plain_image": "/static/image/l-plain.png",
         "morse_image": "/static/image/l-morse.png",
         "morse_audio": "/static/audio/l-audio.mp3",
-        "position": [[0, 6], [40, 18], [163, 42], [163, 92]], # [top, left],
+        "position": [[0, -11], [35, -43], [166, 20], [166, 70]], # [top, left],
         "dash": "/static/image/dash_ver.png",
-        "dash_width": "10",
         "flash_interval": [100, 150, 450, 500, 600, 650, 750]
     },
     "4": {
@@ -59,9 +56,8 @@ learns = {
         "plain_image": "/static/image/m-plain.png",
         "morse_image": "/static/image/m-morse.png",
         "morse_audio": "/static/audio/m-audio.mp3",
-        "position": [[30, 15], [30, 172]], # [top, left],
+        "position": [[20, -43], [20, 108]], # [top, left],
         "dash": "/static/image/dash_ver.png",
-        "dash_width": "10",
         "flash_interval": [300, 350, 650]
     },
     "5": {
@@ -71,9 +67,8 @@ learns = {
         "plain_image": "/static/image/o-plain.png",
         "morse_image": "/static/image/o-morse.png",
         "morse_audio": "/static/audio/o-audio.mp3",
-        "position": [[-2, 0], [-2, 0], [-2, 0]], # [top, left],
+        "position": [[-3, -8], [-3, -8], [-3, -8]], # [top, left],
         "dash": ["/static/image/o-dash-1.png", "/static/image/o-dash-2.png", "/static/image/o-dash-3.png"],
-        "dash_width": "180",
         "flash_interval": [300, 350, 650, 700, 1000]
     },
     "6": {
@@ -83,9 +78,8 @@ learns = {
         "plain_image": "/static/image/r-plain.png",
         "morse_image": "/static/image/r-morse.png",
         "morse_audio": "/static/audio/r-audio.mp3",
-        "position": [[150, 6], [101, 15], [150, 100]], # [top, left],
+        "position": [[150, -12], [82, -7], [150, 106]], # [top, left],
         "dash": "/static/image/dash_hor.png",
-        "dash_width": "80",
         "flash_interval": [100, 150, 450, 500, 600]
     },
     "7": {
@@ -95,40 +89,6 @@ learns = {
         "plain_image": "/static/image/s-plain.png",
         "morse_image": "/static/image/s-morse.png",
         "morse_audio": "/static/audio/s-audio.mp3",
-        "position": [[0, 57], [75, 57], [162, 57]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "dash_width": "110",
-        "flash_interval": [100, 150, 250, 300, 400, 450]
-    },
-    "8": {
-        "id": 8,
-        "letter": "n",
-        "morse_code": "-.",
-        "plain_image": "/static/image/n-plain.png",
-        "morse_image": "/static/image/n-morse.png",
-        "morse_audio": "/static/audio/n-audio.mp3",
-        "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300,350,450,500]
-    },
-    "9": {
-        "id": 9,
-        "letter": "c",
-        "morse_code": "-.-.",
-        "plain_image": "/static/image/c-plain.png",
-        "morse_image": "/static/image/c-morse.png",
-        "morse_audio": "/static/audio/c-audio.mp3",
-        "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300, 350, 450, 500, 800, 850, 950, 1000]
-    },
-    "10": {
-        "id": 10,
-        "letter": "d",
-        "morse_code": "-..",
-        "plain_image": "/static/image/d-plain.png",
-        "morse_image": "/static/image/d-morse.png",
-        "morse_audio": "/static/audio/d-audio.mp3",
         "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [100, 150, 250, 300, 400, 450]
