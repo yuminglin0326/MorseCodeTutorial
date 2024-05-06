@@ -39,8 +39,8 @@ $(document).ready(function() {
                         'position': 'absolute',
                         'top': learn["position"][i][0] + 'px',
                         'left': learn["position"][i][1] + 'px',
-                        'max-width': '10px',
-                        'max-height': '300px'  // Adjust this value as needed
+                        'max-width': '100px',
+                        'max-height': '50px'  // Adjust this value as needed
                     });
                 }
                 
