@@ -91,7 +91,7 @@ $(document).ready(function() {
                         console.log(learn["dash"][morseImgId])
                         morseImg.attr('src', learn["dash"][morseImgId]).attr('alt', 'dash').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
                         morseImg.css({
-                            'width': '185px',
+                            'width': learn["dash_width"] +'px',
                             'position': 'absolute',
                             'top': learn["position"][morseImgId][0] + 'px',
                             'left': learn["position"][morseImgId][1] + 'px'
@@ -99,7 +99,7 @@ $(document).ready(function() {
                     } else {
                         morseImg.attr('src', learn["dash"]).attr('alt', 'dash').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
                         morseImg.css({
-                            'width': '110px',
+                            'width': learn["dash_width"] +'px',
                             'position': 'absolute',
                             'top': learn["position"][morseImgId][0] + 'px',
                             'left': learn["position"][morseImgId][1] + 'px'
