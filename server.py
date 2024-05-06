@@ -23,7 +23,7 @@ learns = {
         "plain_image": "/static/image/e-plain.png",
         "morse_image": "/static/image/e-morse.png",
         "morse_audio": "/static/audio/e-audio.mp3",
-        "position": [[80, 595]], # [top, left],
+        "position": [[80, 6]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300]
     },
@@ -34,7 +34,7 @@ learns = {
         "plain_image": "/static/image/h-plain.png",
         "morse_image": "/static/image/h-morse.png",
         "morse_audio": "/static/audio/h-audio.mp3",
-        "position": [[5, 585], [0, 108], [155, -11], [155, 108]], # [top, left],
+        "position": [[5, 6], [5, 122], [155, 6], [155, 122]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [100, 150, 250, 300, 400, 450, 550, 650]
     },
