@@ -100,7 +100,7 @@ learns = {
         "dash_width": "110",
         "flash_interval": [100, 150, 250, 300, 400, 450]
     },
-        "8": {
+    "8": {
         "id": 8,
         "letter": "n",
         "morse_code": "-.",
@@ -111,7 +111,7 @@ learns = {
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300,350,450,500]
     },
-        "9": {
+    "9": {
         "id": 9,
         "letter": "c",
         "morse_code": "-.-.",
@@ -122,7 +122,7 @@ learns = {
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [300, 350, 450, 500, 800, 850, 950, 1000]
     },
-        "10": {
+    "10": {
         "id": 10,
         "letter": "d",
         "morse_code": "-..",
@@ -132,39 +132,6 @@ learns = {
         "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "flash_interval": [100, 150, 250, 300, 400, 450]
-    },
-        "8": {
-        "id": 8,
-        "letter": "n",
-        "morse_code": "-.",
-        "plain_image": "/static/image/n-plain.png",
-        "morse_image": "/static/image/n-morse.png",
-        "morse_audio": "/static/audio/n-audio.mp3",
-        "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300,350,450,500]
-    },
-        "9": {
-        "id": 9,
-        "letter": "c",
-        "morse_code": "-.-.",
-        "plain_image": "/static/image/c-plain.png",
-        "morse_image": "/static/image/c-morse.png",
-        "morse_audio": "/static/audio/c-audio.mp3",
-        "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300, 350, 450, 500, 800, 850, 950, 1000]
-    },
-        "10": {
-        "id": 10,
-        "letter": "d",
-        "morse_code": "-..",
-        "plain_image": "/static/image/d-plain.png",
-        "morse_image": "/static/image/d-morse.png",
-        "morse_audio": "/static/audio/d-audio.mp3",
-        "position": [[-9, 50], [75, 50], [166, 50]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "flash_interval": [300, 350, 450, 500, 600, 650]
     }
 }
 
