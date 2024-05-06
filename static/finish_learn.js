@@ -5,6 +5,7 @@ $(document).ready(function() {
     });
 
     $('#learn-review-button').click(function() {
+        console.log("clicked review button")
         $(".review-detail-button").empty();
         $.each(learns, function(index, learn) {
             let id = learn["id"];

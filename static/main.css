@@ -547,10 +547,15 @@ img.hint {
 }
 #congrats {
   /* padding-top: 50px; */
+  text-align: center;
 }
-
 .review-detail-button {
   margin: 20px 0px;
+}
+.centered{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 button.letter {
@@ -558,7 +563,8 @@ button.letter {
 }
 
 .left-btn {
-  margin-right: 20px;
+  margin-left: 20px;
+
 }
 
 input {
