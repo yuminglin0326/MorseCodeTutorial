@@ -68,7 +68,7 @@ $(document).ready(function() {
                     // Append the dot image to the morse-on-image div
                     let morseImg = $('<img>').attr('src', '/static/image/dot.png').attr('alt', 'dot').attr('id', 'morse-img-' + morseImgId).addClass('morse-on-image');
                     morseImg.css({
-                        'width': '50px',
+                        'width': '40px',
                         'position': 'absolute',
                         'top': learn["position"][morseImgId][0] + 'px',
                         'left': learn["position"][morseImgId][1] + 'px'

@@ -8,15 +8,26 @@
         let learns = {{learns|tojson}} 
     </script>
 
-    <div class="finish-learn-container text-center container">
-        <h1 class="page-header">Tutorial</h1>
-        <h2 id="congrats">Congratulations!</h2>
-        <p>You've finished learning all letters!</p>
-        <button id="learn-quiz-button" class="btn btn-primary left-btn">Quiz</button>
-        <button id="learn-review-button" class="btn btn-primary accent-button-unfilled">Review</button>
-        <div class="review-detail-button"></div>
+    <div class="finish-learn-container container">
+        <div class="row">
+            <h1 class="page-header">Tutorial</h1>
+        </div>
+        <div class="row">
+            <h2 id="congrats">Congratulations!</h2>
+        </div>
+        <div class="row justify-content-center">
+            <p class="centered">You've finished learning all letters!</p>
+        </div>
+        <div class="row"> <!-- Center the buttons horizontally -->
+            <div class="col-sm-6 justify-content-end d-flex"> <!-- Each button occupies half of the available space -->
+                <button id="learn-review-button" class="btn accent-button-unfilled">Review</button>
+            </div>
+            <div class="col-sm-6"> <!-- Each button occupies half of the available space -->
+                <button id="learn-quiz-button" class="btn btn-primary left-btn">Quiz</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="review-detail-button centered"></div>
+        </div>
     </div>
-
-    
-     
 {% endblock %}

@@ -58,7 +58,6 @@ body {
 /* Nav bar */
 .navbar-light {
   padding-top: 30px;
-  padding-bottom: 20px;
   padding-left: 40px;
   color: var(--dark-gray);
   background-color: white;
@@ -175,6 +174,7 @@ a.nav-link {
   border: var(--base);
   text-decoration: underline;
   color: var(--dark-gray);
+  font-weight: bold;
 }
 
 .refresh {
@@ -463,9 +463,10 @@ img.hint {
   background-color: var(--base);
 }
 
-.learn-message {
-  margin-top: 5px;
-  margin-bottom: 20px;
+
+.learn-message{
+  margin-bottom: 30px;
+  color: var(--light-gray);
 }
 /* learn page styling */
 #letter-plain {
@@ -485,11 +486,7 @@ img.hint {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.learn-message {
-  font-size: 20px;
-  color: lightgrey;
+  margin: 30px 0px; */
 }
 
 .flashlight-container {
@@ -556,16 +553,23 @@ img.hint {
 /* finish-learn page styling */
 
 .page-header {
-  padding-bottom: 5px;
   font-size: 50px;
 }
-
+#click-msg{
+  color: var(--light-gray);
+  margin-top: 40px;
+}
 #congrats {
   /* padding-top: 50px; */
+  text-align: center;
 }
-
 .review-detail-button {
   margin: 20px 0px;
+}
+.centered{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 button.letter {
@@ -573,7 +577,8 @@ button.letter {
 }
 
 .left-btn {
-  margin-right: 20px;
+  margin-left: 20px;
+
 }
 
 input {
