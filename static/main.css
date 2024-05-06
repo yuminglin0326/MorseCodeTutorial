@@ -23,13 +23,12 @@ body {
   align-items: center; /* Align items vertically */
 }
 
-
 .accenttxt {
   color: var(--accent);
 }
 
-.biggertxt{
-  font-size:80px;
+.biggertxt {
+  font-size: 80px;
 }
 
 .graytxt {
@@ -287,6 +286,22 @@ h1 {
   align-items: flex-end; /* Align to bottom */
 }
 
+.correct-progress {
+  background-color: var(--accent);
+}
+
+.hint-correct-progress {
+  background-color: var(--base);
+}
+
+.wrong-progress {
+  background-color: lightgrey;
+}
+
+.progress {
+  background-color: transparent;
+}
+
 .intro {
   margin-bottom: 80px;
 }
@@ -407,7 +422,7 @@ img.hint {
   margin-bottom: 20px;
 }
 
-.quiz-audio-learn{
+.quiz-audio-learn {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -419,7 +434,7 @@ img.hint {
   align-items: center;
 }
 
-.quiz-audio-learn:hover{
+.quiz-audio-learn:hover {
   background-color: var(--accent);
 }
 
@@ -439,8 +454,7 @@ img.hint {
   height: 40%;
 }
 
-
-#learn-listen-button img{
+#learn-listen-button img {
   width: 30px;
   height: 30px;
 }
@@ -449,8 +463,7 @@ img.hint {
   background-color: var(--base);
 }
 
-
-.learn-message{
+.learn-message {
   margin-top: 5px;
   margin-bottom: 20px;
 }

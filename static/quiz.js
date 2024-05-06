@@ -327,11 +327,11 @@ $(document).ready(function() {
             let progressBar = $("<div class='progress-bar'>");
             progressBar.attr('style', 'width: 10%');
             if (answered_correctly == -1 || answered_correctly == -2) {
-                progressBar.addClass('bg-danger');
+                progressBar.addClass('wrong-progress');
             } else if (answered_correctly == 2) {
-                progressBar.addClass('bg-warning');
+                progressBar.addClass('hint-correct-progress');
             } else if (answered_correctly == 1){
-                progressBar.addClass('bg-success');
+                progressBar.addClass('correct-progress');
             }
             $('.progress').append(progressBar);
         }
