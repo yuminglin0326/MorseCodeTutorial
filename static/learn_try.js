@@ -169,6 +169,14 @@ $(document).ready(function() {
             }
         }
     }
+    $('#practice-again-btn').click(function () {
+        // Reset variables and UI elements
+        $('.input-morse-code').empty();
+        $('#answer-feedback-container').empty();
+        submitted = false;
+        isCorrect = false;
+        $('#practice-again-btn').hide(); // Hide the button again
+    });
 
     // click to continue to next page
     $(document).click(function() {
