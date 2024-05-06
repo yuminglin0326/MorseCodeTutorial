@@ -185,7 +185,7 @@ $(document).ready(function() {
             if (isCorrect) { 
                 // move to the next letter
                 let nextLearn = learn["id"] + 1
-                if (nextLearn > total_letters) {
+                if (nextLearn > total_letters-1) {
                     window.location.href = "/finish_learn";
                 } else {
                     window.location.href = "/learn/" + nextLearn;
