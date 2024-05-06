@@ -17,7 +17,13 @@
                     <img class="plain-image top-bottom-margin" src="{{answer}}" alt="answer image">
                 {% endfor %}
             </div>
-            <div class="input-morse-code fix-input-width">{{quiz.answer_morse}}</div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="input-morse-code">{{quiz.answer_morse}}</div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
             <div class='continue-message'>
                 Click anywhere to continue
             </div>
