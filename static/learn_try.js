@@ -6,6 +6,9 @@ $(document).ready(function() {
     let morseImgId = 0; // keep track of index of the morse code being entered
     let submit = false // keep track of whether the user has submitted the answer
     let isCorrect = true; // keep track of whether the user has entered the correct morse code
+    let correctCount = 0;
+    let mode = "letter"; // all modes: letter, audio, flashlight
+    let sideFlashlight = true;
 
     // press space key to enter morse code
     $(document).keydown(function(e) {
@@ -18,8 +21,10 @@ $(document).ready(function() {
             playAudio();
 
             // turn on flashlight
-            $('.flashlight-container').empty();
-            $('.flashlight-container').append('<img class="flashlight" src="/static/image/led on.png">')
+            if (sideFlashlight) {
+                $('.flashlight-container').empty();
+                $('.flashlight-container').append('<img class="flashlight" src="/static/image/led on.png">')
+            }
           } 
           else if (e.which === 8 && !submit) { // Check if the pressed key is the backspace key
             // Remove the last character from input-morse-code
@@ -42,8 +47,10 @@ $(document).ready(function() {
             spaceDownTime = 0;
 
             // turn off flashlight
-            $('.flashlight-container').empty();
-            $('.flashlight-container').append('<img class="flashlight" src="/static/image/led off.png">')
+            if (sideFlashlight) {
+                $('.flashlight-container').empty();
+                $('.flashlight-container').append('<img class="flashlight" src="/static/image/led off.png">')
+            }
           }
     });
 
@@ -180,26 +187,121 @@ $(document).ready(function() {
 
     // click to continue to next page
     $(document).click(function() {
-        console.log("click")
         if (submit) {
-            if (isCorrect) { 
-                // move to the next letter
-                let nextLearn = learn["id"] + 1
-                if (nextLearn > total_letters-1) {
-                    window.location.href = "/finish_learn";
-                } else {
-                    window.location.href = "/learn/" + nextLearn;
+            if (isCorrect) {
+                correctCount++;
+                if (mode == "letter" && correctCount == 2) {
+                    correctCount = 0;
+                    // switch to audio mode
+                    mode = "audio";
+                    $(".learn-container").empty();
+                    resetPage();
+                    displayAudioMode();
+                }
+                else if (mode == "audio" && correctCount == 2) {
+                    correctCount = 0;
+                    // switch to flashlight mode
+                    mode = "flashlight";
+                    sideFlashlight = false;
+                    $(".learn-container").empty();
+                    $(".flashlight-container").empty();
+                    resetPage();
+                    displayFlashlightMode();
+                }
+                else if (mode == "flashlight" && correctCount == 2){
+                    correctCount = 0;
+                    // move to the next letter
+                    let nextLearn = learn["id"] + 1
+                    if (nextLearn > total_letters-1) {
+                        window.location.href = "/finish_learn";
+                    } else {
+                        window.location.href = "/learn/" + nextLearn;
+                    }
+                }
+                else {
+                    resetPage();
                 }
             } 
             else {
                 // reset the page
-                $('#answer-feedback-container').empty();
-                $('.input-morse-code').empty();
-                $('.morse-on-image').remove();
-                submit = false;
-                isCorrect = true;
-                morseImgId = 0;
+                resetPage();
             }
         }
-    })
+    });
+
+    // reset the page
+    function resetPage() {
+        $('#answer-feedback-container').empty();
+        $('.input-morse-code').empty();
+        $('.morse-on-image').remove();
+        submit = false;
+        isCorrect = true;
+        morseImgId = 0;
+    }
+
+    // display audio mode
+    function displayAudioMode() {
+        let audioFilePath = learn["morse_audio"];
+        let audioPlayer = $("<div class='quiz-audio'>");
+        audioImg = $("<img src='/static/image/audio-off.png' alt='audio'>");
+        audioPlayer.append(audioImg);
+        $('.learn-container').append(audioPlayer);
+        console.log("morse audio to English");
+
+        // play audio when user clicks on the audio image
+        $('.quiz-audio').click(function() {
+            console.log(audioFilePath)
+            let letterAudio = new Audio(audioFilePath);
+            letterAudio.play();
+            audioPlayer.empty();
+            audioImg = $("<img src='/static/image/audio-on.png' alt='audio'>");
+            audioPlayer.append(audioImg);
+            $(letterAudio).on('ended', function() {
+                // Audio playback has ended
+                console.log('Audio playback finished.');
+                audioPlayer.empty();
+                audioImg = $("<img src='/static/image/audio-off.png' alt='audio'>");
+                audioPlayer.append(audioImg);
+                // Add your desired functionality here
+            });
+        });
+    }
+
+    // display flashlight mode
+    function displayFlashlightMode() {
+        // display flashlight
+        let flashlightContainer = $("<div class='flashlight-container-top text-center'>");
+        let flashlightOff = $("<img class='flashlight-off hide' src='/static/image/led off.png' alt='led light off'>")
+        let flashlightOn = $("<img class='flashlight-on hide' src='/static/image/led on.png' alt='led light on'>")
+        flashlightContainer.append(flashlightOff, flashlightOn);
+        $('.learn-container').append(flashlightContainer);
+        playFlashlight(learn["flash_interval"]);
+
+        $('.flashlight-container-top').click(function() {
+            console.log("replay flashlight");
+            playFlashlight(learn["flash_interval"]);
+        });
+    }
+
+    function playFlashlight(intervals) {
+        $('.flashlight-off').hide();
+        $('.flashlight-on').show();
+        console.log("flashlight on");
+        for (let i = 0; i < intervals.length; i++) {
+            let time = intervals[i];
+            if (i % 2 == 0) {
+                setTimeout(function() {
+                    $('.flashlight-on').hide();
+                    $('.flashlight-off').show();
+                    // console.log("flashlight off", time);
+                }, time);
+            } else {
+                setTimeout(function() {
+                    $('.flashlight-off').hide();
+                    $('.flashlight-on').show();
+                    // console.log("flashlight on", time);
+                }, time);
+            }
+        }
+    };
 });

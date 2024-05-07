@@ -69,6 +69,7 @@ $(document).ready(function() {
 
             // play audio when user clicks on the audio image
             $('.quiz-audio').click(function() {
+                console.log(audioFilePath)
                 let audio = new Audio(audioFilePath);
                 audio.play();
                 audioPlayer.empty();

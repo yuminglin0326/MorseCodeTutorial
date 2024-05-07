@@ -3,8 +3,7 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-learns = {
-     
+learns = {  
      "0": {
          "id": 0,
          "letter": "a",
@@ -14,7 +13,7 @@ learns = {
          "morse_audio": "/static/audio/a-audio.mp3",
          "position": [[4, 79], [127, 42]], # [top, left],
          "dash": "/static/image/dash_hor.png",
-        "dash_width": "110",
+         "dash_width": "110",
          "flash_interval": [100, 150, 450] # [on for 100ms, off for 50ms, on for 300ms]
      },
     "1": {
@@ -336,6 +335,14 @@ def quiz_home():
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
+    # check if all previous quiz is answered
+    # for i in range(1, int(quiz_id)):
+    #     print(i)
+    #     if quizzes[str(i)]["scored"] == False:
+    #         quiz = quizzes[str(i-1)]
+    #         total_quizzes = len(quizzes)
+    #         return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes, all_quizzes=quizzes)
+
     quiz = quizzes[quiz_id]
     total_quizzes = len(quizzes)
 
