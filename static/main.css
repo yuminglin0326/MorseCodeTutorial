@@ -142,8 +142,8 @@ a.nav-link {
   color: black; /* Set the text color to match the border color */
   font-weight: bold;
   height: 38px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
   background-color: var(--accent);
 }
 
@@ -359,7 +359,7 @@ h1 {
 }
 
 .top-margin {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .error {
@@ -368,8 +368,8 @@ h1 {
   position: absolute;
   top: 80%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 600;
+  transform: translate(-50%, -10%);
+  font-weight: bold;
 }
 
 .flashlight {
@@ -396,6 +396,7 @@ h1 {
 .quiz-wrong {
   color: var(--error);
   font-size: 40px;
+  font-weight: 600;
   text-align: center;
 }
 
