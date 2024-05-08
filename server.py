@@ -279,7 +279,7 @@ quizzes = {
     },
     "11": {
         "id": 11,
-        "type": "flashlight_to_morse",
+        "type": "flashlight_to_eng",
         "question": "Watch the flashlight and enter the corresponding letter",
         "answer_morse": "...",
         "answer_letter": "s",
@@ -293,12 +293,12 @@ quizzes = {
     },
     "12": {
         "id": 12,
-        "type": "flashlight_to_morse",
-        "question": "Watch the flashlight and enter the corresponding word",
+        "type": "audio_to_eng",
+        "question": "Listen to the audio and write the corresponding word",
         "answer_morse": ".-. --- ... .",
         "answer_letter": "rose",
         "morse_audio": "/static/audio/rose-audio.mp3",
-        "flash_interval": [300, 200, 900, 1100, 1400, 2100, 2800, 3000, 3700, 3900, 4600, 5300, 5600, 5800, 6100, 6300, 6600, 7300, 7600],
+        "flash_interval": [300, 200, 900, 1100, 1400, 2400, 3100, 3300, 4000, 4200, 4900, 5900, 6200, 6400, 6700, 6900, 7200, 8200, 8500],
         "hint": ".-. --- ... .",
         "answer_img": ["/static/image/rose-answer.png"],
         "scored": False,
@@ -307,7 +307,7 @@ quizzes = {
     },
     "13": {
         "id": 13,
-        "type": "audio_to_morse",
+        "type": "audio_to_eng",
         "question": "Listen to the audio and write the corresponding word",
         "answer_morse": "-.-. --- -.. .",
         "answer_letter": "code",
