@@ -16,8 +16,8 @@ learns = {
     #      "dash_width": "110",
     #      "flash_interval": [300, 500, 1100] # [300ms for dot,200ms for break, 700ms for dash]
     #  },
-    "1": {
-        "id": 1,
+    "0": {
+        "id": 0,
         "letter": "e",
         "morse_code": ".",
         "plain_image": "/static/image/e-plain.png",
@@ -52,8 +52,8 @@ learns = {
     #     "dash_width": "10",
     #     "flash_interval": [300, 500, 1200, 1400, 1700, 1900, 2200] #[dot, break, dash, break, dot, break, dot]
     # },
-    "4": {
-        "id": 4,
+    "1": {
+        "id": 1,
         "letter": "m",
         "morse_code": "--",
         "plain_image": "/static/image/m-plain.png",
@@ -64,8 +64,8 @@ learns = {
         "dash_width": "10",
         "flash_interval": [600, 800, 1400] # [dash, break, dash]
     },
-    "5": {
-        "id": 5,
+    "2": {
+        "id": 2,
         "letter": "o",
         "morse_code": "---",
         "plain_image": "/static/image/o-plain.png",
@@ -76,8 +76,8 @@ learns = {
         "dash_width": "180",
         "flash_interval": [700, 900, 1600, 1800, 2500] # [dash, break, dash, break, dash]
     },
-    "6": {
-        "id": 6,
+    "4": {
+        "id": 4,
         "letter": "r",
         "morse_code": ".-.",
         "plain_image": "/static/image/r-plain.png",
@@ -88,8 +88,8 @@ learns = {
         "dash_width": "80",
         "flash_interval": [300, 500, 1100, 1300, 1600] # [dot, break, dash, break, dot]
     },
-    "7": {
-        "id": 7,
+    "3": {
+        "id": 3,
         "letter": "s",
         "morse_code": "...",
         "plain_image": "/static/image/s-plain.png",
@@ -112,8 +112,8 @@ learns = {
     #     "dash_width": "10",
     #     "flash_interval": [700, 900, 1200] # [dash, break, dot]
     # },
-    "9": {
-        "id": 9,
+    "6": {
+        "id": 6,
         "letter": "c",
         "morse_code": "-.-.",
         "plain_image": "/static/image/c-plain.png",
@@ -124,8 +124,8 @@ learns = {
         "dash_width": "200",
         "flash_interval": [700, 900, 1200, 1400, 2100, 2300, 2600] # [dash, break, dot, break, dash, break, dot]
     },
-    "10": {
-        "id": 10,
+    "5": {
+        "id": 5,
         "letter": "d",
         "morse_code": "-..",
         "plain_image": "/static/image/d-plain.png",

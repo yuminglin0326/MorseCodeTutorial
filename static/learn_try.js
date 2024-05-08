@@ -65,7 +65,7 @@ $(document).ready(function() {
             else { // space key is released -> the user finished entering the morse code
                 // determine dot or dash based on the duration of space key press
                 $('.error').remove();
-                if (duration < 300) { // dot
+                if (duration < 350) { // dot
                     // console.log("dot duration: " + duration);
                     
                     // Append the dot to the input-morse-code to show on the screen
@@ -86,7 +86,7 @@ $(document).ready(function() {
                     checkMorseCode(input);
 
                 } 
-                else if (duration > 300 && duration < 800) { // dash
+                else if (duration > 350 && duration < 800) { // dash
                     console.log("dash duration: " + duration);
 
                     // Append the dash to the input-morse-code
