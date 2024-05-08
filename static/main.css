@@ -124,7 +124,19 @@ a.nav-link {
   position: relative; /* Ensure relative positioning for absolute positioning of the yellow line */
 }
 
-/* Add this CSS to your main.css file */
+/* Custom margins for small screens */
+@media (max-width: 576px) {
+  .custom-small-margin {
+      margin-top: -90px;  /* Adjust these values as needed */
+      margin-bottom: -110px;
+  }
+}
+
+@media (max-width: 576px) {
+  .button-spacing {
+      margin-bottom: 10px; /* Add 10px margin below each button */
+  }
+}
 
 /* Style for nav links */
 .navbar-nav .nav-item .nav-link {
