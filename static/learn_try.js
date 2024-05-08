@@ -190,7 +190,7 @@ $(document).ready(function() {
         if (submit) {
             if (isCorrect) {
                 correctCount++;
-                if (mode == "letter" && correctCount == 2) {
+                if (mode == "letter" && correctCount == 1) {
                     correctCount = 0;
                     // switch to audio mode
                     mode = "audio";
@@ -198,7 +198,7 @@ $(document).ready(function() {
                     resetPage();
                     displayAudioMode();
                 }
-                else if (mode == "audio" && correctCount == 2) {
+                else if (mode == "audio" && correctCount == 1) {
                     correctCount = 0;
                     // switch to flashlight mode
                     mode = "flashlight";
@@ -208,7 +208,7 @@ $(document).ready(function() {
                     resetPage();
                     displayFlashlightMode();
                 }
-                else if (mode == "flashlight" && correctCount == 2){
+                else if (mode == "flashlight" && correctCount == 1){
                     correctCount = 0;
                     // move to the next letter
                     let nextLearn = learn["id"] + 1

@@ -398,6 +398,24 @@ def answered_quiz():
         if quizzes[quiz_id]["answered_correctly"] == 0:
             quizzes[quiz_id]["answered_correctly"] = -1
             print("change to -1")
+        
+        # add the question to the end of the quiz again
+        # quiz = quizzes[quiz_id]
+        # new_quiz_id = str(len(quizzes) + 1)
+        # new_quiz = {
+        #     "id": new_quiz_id,
+        #     "type": quiz["type"],
+        #     "question": quiz["question"],
+        #     "answer_morse": quiz["answer_morse"],
+        #     "answer_letter": quiz["answer_letter"],
+        #     "morse_audio": quiz["morse_audio"],
+        #     "hint": quiz["hint"],
+        #     "answer_img": quiz["answer_img"],
+        #     "scored": False,
+        #     "answered_correctly": 0,
+        #     "id_in_learns": quiz["id_in_learns"],
+        # }
+        # quizzes[new_quiz_id] = new_quiz
     
     all_answered_correctly = []
     for quiz in quizzes.values():
