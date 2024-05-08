@@ -6,15 +6,15 @@
   --error: #f3430c;
 }
 
-.red{
+.red {
   background-color: red;
 }
 
-.blue{
+.blue {
   background-color: blue;
 }
 
-.yellow{
+.yellow {
   background-color: #f8ba00;
 }
 
@@ -34,7 +34,8 @@ body {
 
 .row {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
+  /* Align items vertically */
 }
 
 .accenttxt {
@@ -66,7 +67,8 @@ body {
 }
 
 .navbar {
-  border-bottom: 2px solid var(--base); /* Add a 3px solid yellow border to the bottom of the navbar */
+  border-bottom: 2px solid var(--base);
+  /* Add a 3px solid yellow border to the bottom of the navbar */
 }
 
 /* Nav bar */
@@ -88,18 +90,22 @@ body {
 }
 
 .quiz-nav-button {
-  border: 2px solid var(--base); /* Add a 2px solid red border */
-  border-radius: 5px; /* Optional: Add some border radius for a rounded look */
+  border: 2px solid var(--base);
+  /* Add a 2px solid red border */
+  border-radius: 5px;
+  /* Optional: Add some border radius for a rounded look */
   padding-top: 5px;
   padding-bottom: 5px;
   margin-right: 50px;
   width: 100px;
-  background-color: transparent; /* Optional: Make the background transparent */
+  background-color: transparent;
+  /* Optional: Make the background transparent */
 }
 
 /* Add this CSS to your main.css file or within a <style> tag in your HTML */
 .nav-link.quiz-nav-button:hover {
-  color: black; /* Change the text color to black when hovered */
+  color: black;
+  /* Change the text color to black when hovered */
 }
 
 .quizNavBtn a.nav-link {
@@ -121,39 +127,50 @@ a.nav-link {
 }
 
 .navbar {
-  position: relative; /* Ensure relative positioning for absolute positioning of the yellow line */
+  position: relative;
+  /* Ensure relative positioning for absolute positioning of the yellow line */
 }
 
 /* Custom margins for small screens */
 @media (max-width: 576px) {
   .custom-small-margin {
-      margin-top: -90px;  /* Adjust these values as needed */
-      margin-bottom: -110px;
+    margin-top: -90px;
+    /* Adjust these values as needed */
+    margin-bottom: -110px;
   }
-}
 
-@media (max-width: 576px) {
   .button-spacing {
-      margin-bottom: 10px; /* Add 10px margin below each button */
+    margin-bottom: 10px;
+    /* Add 10px margin below each button */
+  }
+  .error { 
+    top: 105%;
+    text-align: center;
   }
 }
 
 /* Style for nav links */
 .navbar-nav .nav-item .nav-link {
-  color: black; /* Default color */
-  font-weight: normal; /* Default font weight */
-  transition: color 0.3s, font-weight 0.3s; /* Smooth transition */
+  color: black;
+  /* Default color */
+  font-weight: normal;
+  /* Default font weight */
+  transition: color 0.3s, font-weight 0.3s;
+  /* Smooth transition */
 }
 
 /* Style for hover */
 .navbar-nav .nav-item .nav-link:hover {
-  color: var(--accent); /* Change color to blue on hover */
-  font-weight: bold; /* Make font bold on hover */
+  color: var(--accent);
+  /* Change color to blue on hover */
+  font-weight: bold;
+  /* Make font bold on hover */
 }
 
 .btn-primary {
   border: 2px solid var(--accent);
-  color: black; /* Set the text color to match the border color */
+  color: black;
+  /* Set the text color to match the border color */
   font-weight: bold;
   height: 38px;
   padding-left: 40px;
@@ -175,7 +192,8 @@ a.nav-link {
 
 .accent-button-unfilled {
   border: 2px solid var(--base);
-  color: black; /* Set the text color to match the border color */
+  color: black;
+  /* Set the text color to match the border color */
   font-weight: bold;
   height: 38px;
   padding-left: 30px;
@@ -191,7 +209,8 @@ a.nav-link {
   border-radius: 5px;
   font-size: 14px;
   background-color: transparent;
-  width: auto; /* or set a specific width like width: 150px; */
+  width: auto;
+  /* or set a specific width like width: 150px; */
   margin-bottom: 20px;
 }
 
@@ -214,7 +233,8 @@ a.nav-link {
 }
 
 .col-md-6.text-md-right .btn {
-  margin-left: 10px; /* Adjust the margin between buttons */
+  margin-left: 10px;
+  /* Adjust the margin between buttons */
 }
 
 .btn-light {
@@ -278,13 +298,15 @@ h1 {
 
 .description .row {
   display: flex;
-  align-items: first baseline; /* Align items vertically */
+  align-items: first baseline;
+  /* Align items vertically */
 }
 
 .description .col-md-1,
 .description .col-md-10 {
   display: flex;
-  align-items: first baseline; /* Align items vertically */
+  align-items: first baseline;
+  /* Align items vertically */
 }
 
 /* quiz pages styling */
@@ -309,7 +331,8 @@ h1 {
 
 .progress-container {
   display: flex;
-  align-items: flex-end; /* Align to bottom */
+  align-items: flex-end;
+  /* Align to bottom */
 }
 
 .correct-progress {
@@ -352,20 +375,22 @@ h1 {
 }
 
 .practice-again-btn {
-  border: 2px solid var(--accent); /* Add a 2px solid red border */
-  border-radius: 5px; /* Optional: Add some border radius for a rounded look */
+  border: 2px solid var(--accent);
+  /* Add a 2px solid red border */
+  border-radius: 5px;
+  /* Optional: Add some border radius for a rounded look */
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: transparent; /* Optional: Make the background transparent */
+  background-color: transparent;
+  /* Optional: Make the background transparent */
   font-size: 16px;
 }
 
 .practice-again-btn:hover {
-  background-color: var(
-    --accent
-  ); /* Optional: Make the background transparent */
+  background-color: var(--accent);
+  /* Optional: Make the background transparent */
 }
 
 .fix-input-width {
@@ -425,6 +450,7 @@ img.hint {
   /* width: 100%; */
   margin: 10px 10px;
 }
+
 .hint {
   font-size: 60px;
   font-weight: bold;
@@ -494,6 +520,7 @@ img.hint {
   margin-bottom: 30px;
   color: var(--light-gray);
 }
+
 /* learn page styling */
 #letter-plain {
   height: 400px;
@@ -503,6 +530,7 @@ img.hint {
 .hidden {
   opacity: 0;
 }
+
 /* .learn-container {
   text-align: center;
   margin: 50px 0px;
@@ -519,6 +547,10 @@ img.hint {
   /* padding-top: 20px; */
   align-items: flex-start;
   vertical-align: top;
+  display: flex;
+  justify-content: center;
+  /* Center the flashlight image within its column */
+  align-items: center;
 }
 
 .input-group {
@@ -580,17 +612,21 @@ img.hint {
 .page-header {
   font-size: 50px;
 }
+
 #click-msg {
   color: var(--light-gray);
   margin-top: 40px;
 }
+
 #congrats {
   /* padding-top: 50px; */
   text-align: center;
 }
+
 .review-detail-button {
   margin: 20px 0px;
 }
+
 .centered {
   text-align: center;
   margin-top: 20px;
