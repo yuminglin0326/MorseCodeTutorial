@@ -201,7 +201,7 @@ quizzes = {
         "answer_morse": "--",
         "answer_letter": "m",
         "morse_audio": "/static/audio/m-audio.mp3",
-        "flash_interval": [650, 750, 1400], # [on for 650ms, off for 100ms, on for 650ms]
+        "flash_interval": [700, 900, 1600],
         "hint": "--",
         "answer_img": ["/static/image/m-answer.png"],
         "scored": False,
@@ -215,7 +215,7 @@ quizzes = {
         "answer_morse": ".-.",
         "answer_letter": "r",
         "morse_audio": "/static/audio/r-audio.mp3",
-        "flash_interval": [300, 400, 1050, 1150, 1450], # [on for 300ms, off for 100ms, on for 650ms, off for 100ms, on for 300ms]
+        "flash_interval": [300, 500, 1200, 1400, 1700],
         "hint": ".-.",
         "answer_img": ["/static/image/r-answer.png"],
         "scored": False,
@@ -229,7 +229,8 @@ quizzes = {
         "answer_morse": "... --- ...",
         "answer_letter": "sos",
         "morse_audio": "/static/audio/sos-audio.mp3", 
-        "flash_interval": [300, 400, 700, 800, 1100, 1400, 2050, 2150, 2800, 2900, 3550, 3850, 4150, 4250, 4550, 4650, 4950],
+        # [dot, break, dot, break, dot, longbreak, dash, break, dash, break, dash, longbreak, dot, break, dot, break, dot]
+        "flash_interval": [300, 500, 800, 1000, 1300, 2000, 2700, 2900, 3600, 3800, 4500, 5200, 5500, 5700, 6000, 6200, 6500],
         "hint": "... --- ...",
         "answer_img": ["/static/image/sos-answer.png"],
         "scored": False,
@@ -335,13 +336,6 @@ def quiz_home():
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
-    # check if all previous quiz is answered
-    # for i in range(1, int(quiz_id)):
-    #     print(i)
-    #     if quizzes[str(i)]["scored"] == False:
-    #         quiz = quizzes[str(i-1)]
-    #         total_quizzes = len(quizzes)
-    #         return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes, all_quizzes=quizzes)
 
     quiz = quizzes[quiz_id]
     total_quizzes = len(quizzes)
@@ -404,24 +398,6 @@ def answered_quiz():
         if quizzes[quiz_id]["answered_correctly"] == 0:
             quizzes[quiz_id]["answered_correctly"] = -1
             print("change to -1")
-        
-        # add the question to the end of the quiz again
-        # quiz = quizzes[quiz_id]
-        # new_quiz_id = str(len(quizzes) + 1)
-        # new_quiz = {
-        #     "id": new_quiz_id,
-        #     "type": quiz["type"],
-        #     "question": quiz["question"],
-        #     "answer_morse": quiz["answer_morse"],
-        #     "answer_letter": quiz["answer_letter"],
-        #     "morse_audio": quiz["morse_audio"],
-        #     "hint": quiz["hint"],
-        #     "answer_img": quiz["answer_img"],
-        #     "scored": False,
-        #     "answered_correctly": 0,
-        #     "id_in_learns": quiz["id_in_learns"],
-        # }
-        # quizzes[new_quiz_id] = new_quiz
     
     all_answered_correctly = []
     for quiz in quizzes.values():

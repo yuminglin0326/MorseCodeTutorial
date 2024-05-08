@@ -7,7 +7,6 @@
   --white: #fffcf2;
 }
 
-
 .accent:nth-child(odd) {
   color: black;
 }
@@ -61,7 +60,7 @@ body {
   color: var(--dark-gray);
 }
 
-.fw-bold{
+.fw-bold {
   color: var(--accent);
 }
 
@@ -186,7 +185,7 @@ a.nav-link {
 
 @media (min-width: 992px) {
   .morse-code {
-      margin-right: 70px;  /* Adjust the right margin as needed */
+    margin-right: 70px; /* Adjust the right margin as needed */
   }
 }
 
@@ -609,6 +608,10 @@ img.hint {
   /* align-items: center; */
 }
 
+.flashlight-center {
+  justify-content: center;
+}
+
 .input-group {
   vertical-align: top;
 }
@@ -620,6 +623,10 @@ img.hint {
 .flashlight-off,
 .flashlight-on {
   width: 70px;
+}
+
+.flashlight-quiz-width {
+  width: 100px;
 }
 
 .learn-letter-container {

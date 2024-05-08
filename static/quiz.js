@@ -36,15 +36,15 @@ $(document).ready(function() {
         inputbox.focus();
 
         // display flashlight
-        let flashlightContainer = $("<div class='flashlight-container text-center'>");
-        let flashlightOff = $("<img class='flashlight-off hide' src='/static/image/led off.png' alt='led light off'>")
-        let flashlightOn = $("<img class='flashlight-on hide' src='/static/image/led on.png' alt='led light on'>")
+        let flashlightContainer = $("<div class='flashlight-container flashlight-center'>");
+        let flashlightOff = $("<img class='flashlight-off flashlight-quiz-width' src='/static/image/led off.png' alt='led light off'>")
+        let flashlightOn = $("<img class='flashlight-on flashlight-quiz-width hide' src='/static/image/led on.png' alt='led light on'>")
         flashlightContainer.append(flashlightOff, flashlightOn);
         $('.question').after(flashlightContainer);
-        playFlashlight(quiz["flash_interval"]);
+        // playFlashlight(quiz["flash_interval"]);
 
         // display the instruction on replaying flashlight
-        let instruction = $("<div class='subtitle text-center'>").html("Click on the flashlight to replay the morse code");
+        let instruction = $("<div class='subtitle text-center'>").html("Click on the flashlight to play the morse code");
         $('.flashlight-container').before(instruction);
 
         // replay button
