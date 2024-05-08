@@ -333,7 +333,7 @@ $(document).ready(function() {
             }
     
             let progressBar = $("<div class='progress-bar'>");
-            progressBar.attr('style', 'width: 10%');
+            progressBar.attr('style', 'width: 7.14%');
             if (answered_correctly == -1 || answered_correctly == -2) {
                 progressBar.addClass('wrong-progress');
             } else if (answered_correctly == 2) {
