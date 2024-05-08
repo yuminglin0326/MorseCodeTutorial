@@ -4,20 +4,20 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 learns = {  
-    # "0": {
-    #      "id": 0,
-    #      "letter": "a",
-    #      "morse_code": ".-",
-    #      "plain_image": "/static/image/a-plain.png",
-    #      "morse_image": "/static/image/a-morse.png",
-    #      "morse_audio": "/static/audio/a-audio.mp3",
-    #      "position": [[4, 79], [127, 42]], # [top, left],
-    #      "dash": "/static/image/dash_hor.png",
-    #      "dash_width": "110",
-    #      "flash_interval": [300, 500, 1100] # [300ms for dot,200ms for break, 700ms for dash]
-    #  },
-    "0": {
-        "id": 0,
+     "0": {
+         "id": 0,
+         "letter": "a",
+         "morse_code": ".-",
+         "plain_image": "/static/image/a-plain.png",
+         "morse_image": "/static/image/a-morse.png",
+         "morse_audio": "/static/audio/a-audio.mp3",
+         "position": [[4, 79], [127, 42]], # [top, left],
+         "dash": "/static/image/dash_hor.png",
+         "dash_width": "110",
+         "flash_interval": [100, 150, 450] # [on for 100ms, off for 50ms, on for 300ms]
+     },
+    "1": {
+        "id": 1,
         "letter": "e",
         "morse_code": ".",
         "plain_image": "/static/image/e-plain.png",
@@ -28,32 +28,32 @@ learns = {
         "dash_width": "110",
         "flash_interval": [300]
     },
-    # "2": {
-    #     "id": 2,
-    #     "letter": "h",
-    #     "morse_code": "....",
-    #     "plain_image": "/static/image/h-plain.png",
-    #     "morse_image": "/static/image/h-morse.png",
-    #     "morse_audio": "/static/audio/h-audio.mp3",
-    #     "position": [[5, 6], [5, 122], [155, 6], [155, 122]], # [top, left],
-    #     "dash": "/static/image/dash_hor.png",
-    #     "dash_width": "110",
-    #     "flash_interval": [300, 500, 800, 1000, 1300, 1500, 1800] #[dot, break, dot, break, dot, break, dot]
-    # },
-    # "3": {
-    #     "id": 3,
-    #     "letter": "l",
-    #     "morse_code": ".-..",
-    #     "plain_image": "/static/image/l-plain.png",
-    #     "morse_image": "/static/image/l-morse.png",
-    #     "morse_audio": "/static/audio/l-audio.mp3",
-    #     "position": [[0, 6], [40, 18], [163, 42], [163, 92]], # [top, left],
-    #     "dash": "/static/image/dash_ver.png",
-    #     "dash_width": "10",
-    #     "flash_interval": [300, 500, 1200, 1400, 1700, 1900, 2200] #[dot, break, dash, break, dot, break, dot]
-    # },
-    "1": {
-        "id": 1,
+    "2": {
+        "id": 2,
+        "letter": "h",
+        "morse_code": "....",
+        "plain_image": "/static/image/h-plain.png",
+        "morse_image": "/static/image/h-morse.png",
+        "morse_audio": "/static/audio/h-audio.mp3",
+        "position": [[5, 6], [5, 122], [155, 6], [155, 122]], # [top, left],
+        "dash": "/static/image/dash_hor.png",
+        "dash_width": "110",
+        "flash_interval": [100, 150, 250, 300, 400, 450, 550, 650]
+    },
+    "3": {
+        "id": 3,
+        "letter": "l",
+        "morse_code": ".-..",
+        "plain_image": "/static/image/l-plain.png",
+        "morse_image": "/static/image/l-morse.png",
+        "morse_audio": "/static/audio/l-audio.mp3",
+        "position": [[0, 6], [40, 18], [163, 42], [163, 92]], # [top, left],
+        "dash": "/static/image/dash_ver.png",
+        "dash_width": "10",
+        "flash_interval": [100, 150, 450, 500, 600, 650, 750]
+    },
+    "4": {
+        "id": 4,
         "letter": "m",
         "morse_code": "--",
         "plain_image": "/static/image/m-plain.png",
@@ -62,10 +62,10 @@ learns = {
         "position": [[30, 15], [30, 172]], # [top, left],
         "dash": "/static/image/dash_ver.png",
         "dash_width": "10",
-        "flash_interval": [600, 800, 1400] # [dash, break, dash]
+        "flash_interval": [300, 350, 650]
     },
-    "2": {
-        "id": 2,
+    "5": {
+        "id": 5,
         "letter": "o",
         "morse_code": "---",
         "plain_image": "/static/image/o-plain.png",
@@ -74,10 +74,10 @@ learns = {
         "position": [[-2, 0], [-2, 0], [-2, 0]], # [top, left],
         "dash": ["/static/image/o-dash-1.png", "/static/image/o-dash-2.png", "/static/image/o-dash-3.png"],
         "dash_width": "180",
-        "flash_interval": [700, 900, 1600, 1800, 2500] # [dash, break, dash, break, dash]
+        "flash_interval": [300, 350, 650, 700, 1000]
     },
-    "4": {
-        "id": 4,
+    "6": {
+        "id": 6,
         "letter": "r",
         "morse_code": ".-.",
         "plain_image": "/static/image/r-plain.png",
@@ -86,10 +86,10 @@ learns = {
         "position": [[150, 6], [101, 15], [150, 100]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "dash_width": "80",
-        "flash_interval": [300, 500, 1100, 1300, 1600] # [dot, break, dash, break, dot]
+        "flash_interval": [100, 150, 450, 500, 600]
     },
-    "3": {
-        "id": 3,
+    "7": {
+        "id": 7,
         "letter": "s",
         "morse_code": "...",
         "plain_image": "/static/image/s-plain.png",
@@ -98,22 +98,22 @@ learns = {
         "position": [[0, 57], [75, 57], [162, 57]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "dash_width": "110",
-        "flash_interval": [300, 500, 800, 1000, 1300] # [dot, break, dot, break, dot]
+        "flash_interval": [100, 150, 250, 300, 400, 450]
     },
-    # "8": {
-    #     "id": 8,
-    #     "letter": "n",
-    #     "morse_code": "-.",
-    #     "plain_image": "/static/image/n-plain.png",
-    #     "morse_image": "/static/image/n-morse.png",
-    #     "morse_audio": "/static/audio/n-audio.mp3",
-    #     "position": [[30, 18], [155, 110]], # [top, left],
-    #     "dash": "/static/image/dash_ver.png",
-    #     "dash_width": "10",
-    #     "flash_interval": [700, 900, 1200] # [dash, break, dot]
-    # },
-    "6": {
-        "id": 6,
+    "8": {
+        "id": 8,
+        "letter": "n",
+        "morse_code": "-.",
+        "plain_image": "/static/image/n-plain.png",
+        "morse_image": "/static/image/n-morse.png",
+        "morse_audio": "/static/audio/n-audio.mp3",
+        "position": [[30, 18], [155, 110]], # [top, left],
+        "dash": "/static/image/dash_ver.png",
+        "dash_width": "10",
+        "flash_interval": [300,350,450,500]
+    },
+    "9": {
+        "id": 9,
         "letter": "c",
         "morse_code": "-.-.",
         "plain_image": "/static/image/c-plain.png",
@@ -122,10 +122,10 @@ learns = {
         "position": [[-10, -15], [80, 15], [-10, -15], [143, 110]], # [top, left],
         "dash": ["/static/image/c-dash-1.png", "", "/static/image/c-dash-2.png"],
         "dash_width": "200",
-        "flash_interval": [700, 900, 1200, 1400, 2100, 2300, 2600] # [dash, break, dot, break, dash, break, dot]
+        "flash_interval": [300, 350, 450, 500, 800, 850, 950, 1000]
     },
-    "5": {
-        "id": 5,
+    "10": {
+        "id": 10,
         "letter": "d",
         "morse_code": "-..",
         "plain_image": "/static/image/d-plain.png",
@@ -134,7 +134,7 @@ learns = {
         "position": [[30, 18], [6, 85], [156, 85]], # [top, left],
         "dash": "/static/image/dash_ver.png",
         "dash_width": "10",
-        "flash_interval": [700, 900, 1200, 1400, 1700] # [dash, break, dot, break, dot]
+        "flash_interval": [100, 150, 250, 300, 400, 450]
     }
 }
 
@@ -150,36 +150,10 @@ quizzes = {
         "answer_img": ["/static/image/e-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [0],
+        "id_in_learns": [1],
     },
     "2": {
         "id": 2,
-        "type": "eng_to_morse",
-        "question": "Please enter the Morse Code for 'C'",
-        "answer_morse": "-.-.",
-        "answer_letter": "c",
-        "morse_audio": "/static/audio/c-audio.mp3",
-        "hint": "/static/image/c-hint.png",
-        "answer_img": ["/static/image/c-answer.png"],
-        "scored": False,
-        "answered_correctly": 0,
-        "id_in_learns": [6],
-    },
-    "3": {
-        "id": 3,
-        "type": "eng_to_morse",
-        "question": "Please enter the Morse Code for 'S'",
-        "answer_morse": "...",
-        "answer_letter": "s",
-        "morse_audio": "/static/audio/s-audio.mp3",
-        "hint": "/static/image/s-hint.png",
-        "answer_img": ["/static/image/s-answer.png"],
-        "scored": False,
-        "answered_correctly": 0,
-        "id_in_learns": [3],
-    },
-    "4": {
-        "id": 4,
         "type": "eng_to_morse",
         "question": "Please enter the Morse Code for 'M'",
         "answer_morse": "--",
@@ -189,43 +163,121 @@ quizzes = {
         "answer_img": ["/static/image/m-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [1],
+        "id_in_learns": [4],
     },
-    "5": {
-        "id": 5,
+    "3": {
+        "id": 3,
         "type": "eng_to_morse",
-        "question": "Please enter the Morse Code for 'D'",
+        "question": "Please enter the Morse Code for 'Me'",
+        "answer_morse": "-- .",
+        "answer_letter": "me",
+        "morse_audio": "/static/audio/me-audio.mp3", # add here
+        "hint": "/static/image/o-hint.png",
+        "answer_img": ["/static/image/me-answer.png"],
+        "scored": False,
+        "answered_correctly": 0,
+        "id_in_learns": [1,4],
+    },
+    "4": {
+        "id": 4,
+        "type": "flashlight_to_eng",
+        "question": "Watch the flashlight and enter the corresponding letter",
         "answer_morse": "-..",
         "answer_letter": "d",
         "morse_audio": "/static/audio/d-audio.mp3",
+        "flash_interval": [650,750,1050,1150,1450],
+        # "hint": ["/static/image/h-hint.png", "/static/image/e-hint.png", "/static/image/l-hint.png", "/static/image/l-hint.png", "/static/image/o-hint.png"],
         "hint": "/static/image/d-hint.png",
+        # "answer_img": ["/static/image/h-answer.png", "/static/image/e-answer.png", "/static/image/l-answer.png", "/static/image/l-answer.png", "/static/image/o-answer.png"],
         "answer_img": ["/static/image/d-answer.png"],
+        "scored": False,
+        "answered_correctly": 0,
+        "id_in_learns": [10],
+    },
+    "5": {
+        "id": 5,
+        "type": "flashlight_to_eng",
+        "question": "Watch the flashlight and enter the corresponding letter",
+        "answer_morse": "---",
+        "answer_letter": "o",
+        "morse_audio": "/static/audio/o-audio.mp3",
+        "flash_interval": [650, 750, 1400, 1500, 2150], # [on for 650ms, off for 100ms, on for 650ms]
+        "hint": "---",
+        "answer_img": ["/static/image/o-answer.png"],
         "scored": False,
         "answered_correctly": 0,
         "id_in_learns": [5],
     },
     "6": {
         "id": 6,
-        "type": "eng_to_morse",
-        "question": "Please enter the Morse Code for 'R'",
-        "answer_morse": ".-.",
-        "answer_letter": "r",
-        "morse_audio": "/static/audio/r-audio.mp3",
-        "hint": "/static/image/r-hint.png",
-        "answer_img": ["/static/image/r-answer.png"],
+        "type": "flashlight_to_eng",
+        "question": "Watch the flashlight and enter the corresponding word",
+        "answer_morse": "-.. ---",
+        "answer_letter": "do",
+        "morse_audio": "/static/audio/do-audio.mp3",
+        "flash_interval": [650,750,1050,1150,1450,1750,2400,2500,3150,3250,3900], # [on for 300ms, off for 100ms, on for 650ms, off for 100ms, on for 300ms]
+        "hint": "-.. ---",
+        "answer_img": ["/static/image/do-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [4],
+        "id_in_learns": [5,10],
     },
     "7": {
         "id": 7,
-        "type": "eng_to_morse",
-        "question": "Please enter the Morse Code for 'O'",
-        "answer_morse": "---",
-        "answer_letter": "o",
-        "morse_audio": "/static/audio/o-audio.mp3",
-        "hint": "/static/image/o-hint.png",
-        "answer_img": ["/static/image/o-answer.png"],
+        "type": "audio_to_eng",
+        "question": "Listen to the audio and write the corresponding letter",
+        "answer_morse": "-.-.",
+        "answer_letter": "c",
+        "morse_audio": "/static/audio/c-audio.mp3", 
+        "flash_interval": [650,750,1050,1150,1800,1900,2200],
+        "hint": "-.-.",
+        "answer_img": ["/static/image/c-answer.png"],
+        "scored": False,
+        "answered_correctly": 0,
+        "id_in_learns": [9],
+    },
+    "8": {
+        "id": 8,
+        "type": "audio_to_eng",
+        "question": "Listen to the audio and write the corresponding word",
+        # "audio_file": "/static/audio/h-audio.mp3",
+        "answer_morse": "-.-. --- -..",
+        "answer_letter": "cod",
+        "morse_audio": "/static/audio/cod-audio.mp3",
+        "flash_interval": [650,750,1050,1150,1800,1900,2200,2500,3150,3250,3900,4000,4650],
+        "hint": "-.-. --- -..",
+        "answer_img": ["/static/image/cod-answer.png"],
+        "scored": False,
+        "answered_correctly": 0,
+        "id_in_learns": [9,5,10],
+    },
+    "9": {
+        "id": 9,
+        "type": "audio_to_eng",
+        "question": "Listen to the audio and write the corresponding letter",
+        # "audio_file": "/static/audio/s-audio.mp3",
+        "answer_morse": "...",
+        "answer_letter": "s",
+        "morse_audio": "/static/audio/s-audio.mp3",
+        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
+        "hint": "...",
+        "answer_img": ["/static/image/s-answer.png"],
+        "scored": False,
+        "answered_correctly": 0,
+        "id_in_learns": [7],
+    },
+    "10": {
+        "id": 10,
+        "type": "audio_to_eng",
+        "question": "Listen to the audio and write the corresponding letter",
+        # "audio_file": "/static/audio/morse-audio.mp3",
+        "answer_morse": "-- --- .-. ... .",
+        "morse_audio": "/static/audio/morse-audio.mp3",
+        "answer_letter": "morse",
+        "flash_interval": [300, 400, 700, 800, 1100, 1200, 1500, 1800, 2100, 2400, 2700, 2800, 3450, 3550, 3850, 3950, 4250, 4550, 4850, 4950, 5600, 5700, 6000, 6100, 6400, 6700, 7350, 7450, 8100, 8200, 8850],
+        "hint": "-- --- .-. ... .",
+        # "answer_img": ["/static/image/m-answer.png", "/static/image/o-answer.png", "/static/image/r-answer.png", "/static/image/s-answer.png", "/static/image/e-answer.png"],
+        "answer_img": ["/static/image/morse-answer.png"],
         "scored": False,
         "answered_correctly": 0,
         "id_in_learns": [2],
@@ -349,8 +401,8 @@ def morse_code():
 @app.route('/learn/<learn_id>')
 def learn(learn_id):
     learn_data = learns[learn_id]
-    current_page = learn_data['letter'].upper()  # Assuming 'letter' holds the character like 'H', 'E', etc.
-    return render_template('learn.html', learn=learn_data, current_page=current_page)
+
+    return render_template('learn.html', learn=learn_data)
 
 @app.route('/learn_try/<learn_id>')
 def learn_try(learn_id):
@@ -378,6 +430,13 @@ def quiz_home():
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
+    # check if all previous quiz is answered
+    # for i in range(1, int(quiz_id)):
+    #     print(i)
+    #     if quizzes[str(i)]["scored"] == False:
+    #         quiz = quizzes[str(i-1)]
+    #         total_quizzes = len(quizzes)
+    #         return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes, all_quizzes=quizzes)
 
     quiz = quizzes[quiz_id]
     total_quizzes = len(quizzes)
