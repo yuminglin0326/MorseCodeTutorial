@@ -211,7 +211,7 @@ quizzes = {
     "6": {
         "id": 6,
         "type": "flashlight_to_eng",
-        "question": "Watch the flashlight and enter the corresponding letter",
+        "question": "Watch the flashlight and enter the corresponding word",
         "answer_morse": "-.. ---",
         "answer_letter": "do",
         "morse_audio": "/static/audio/do-audio.mp3",
@@ -418,4 +418,3 @@ def answered_quiz():
 
 if __name__ == '__main__':
     app.run(debug = True)
-
