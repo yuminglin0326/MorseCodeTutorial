@@ -135,6 +135,21 @@ a.nav-link {
   /* Ensure relative positioning for absolute positioning of the yellow line */
 }
 
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fae6b6' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+
+.custom-toggler.navbar-toggler {
+  border: 2px solid var(--base);
+}
+
+.custom-toggler.navbar-toggler:hover {
+  background-color: var(--accent);
+  border: 2px solid var(--base);
+}
+
 /* Custom margins for small screens */
 @media (max-width: 576px) {
   .custom-small-margin {
@@ -157,6 +172,22 @@ a.nav-link {
   }
   .page-header{
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  #navbarSupportedContent.show {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  #navbarSupportedContent.show .navbar-nav {
+      flex-direction: row;
+      justify-content: center; /* Center navbar items horizontally */
+      width: 100%; /* Ensure navbar items use full width available */
+  }
+  .nav-item {
+      margin: 0 10px; /* Keep consistent spacing between items */
   }
 }
 
