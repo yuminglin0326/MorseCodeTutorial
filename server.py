@@ -172,7 +172,7 @@ quizzes = {
         "answer_morse": "-- .",
         "answer_letter": "me",
         "morse_audio": "/static/audio/me-audio.mp3", # add here
-        "hint": "/static/image/o-hint.png",
+        "hint": "/static/image/me-hint.png",
         "answer_img": ["/static/image/me-answer.png"],
         "scored": False,
         "answered_correctly": 0,
@@ -185,9 +185,9 @@ quizzes = {
         "answer_morse": "-..",
         "answer_letter": "d",
         "morse_audio": "/static/audio/d-audio.mp3",
-        "flash_interval": [650,750,1050,1150,1450],
+        "flash_interval": [700, 900, 1200, 1400, 1700],
         # "hint": ["/static/image/h-hint.png", "/static/image/e-hint.png", "/static/image/l-hint.png", "/static/image/l-hint.png", "/static/image/o-hint.png"],
-        "hint": "/static/image/d-hint.png",
+        "hint": "-..",
         # "answer_img": ["/static/image/h-answer.png", "/static/image/e-answer.png", "/static/image/l-answer.png", "/static/image/l-answer.png", "/static/image/o-answer.png"],
         "answer_img": ["/static/image/d-answer.png"],
         "scored": False,
@@ -201,7 +201,7 @@ quizzes = {
         "answer_morse": "---",
         "answer_letter": "o",
         "morse_audio": "/static/audio/o-audio.mp3",
-        "flash_interval": [650, 750, 1400, 1500, 2150], # [on for 650ms, off for 100ms, on for 650ms]
+        "flash_interval": [700, 900, 1600, 1800, 2500], # [on for 650ms, off for 100ms, on for 650ms]
         "hint": "---",
         "answer_img": ["/static/image/o-answer.png"],
         "scored": False,
@@ -215,7 +215,7 @@ quizzes = {
         "answer_morse": "-.. ---",
         "answer_letter": "do",
         "morse_audio": "/static/audio/do-audio.mp3",
-        "flash_interval": [650,750,1050,1150,1450,1750,2400,2500,3150,3250,3900], # [on for 300ms, off for 100ms, on for 650ms, off for 100ms, on for 300ms]
+        "flash_interval": [700, 900, 1200, 1400, 1700, 2700, 3400, 3600, 4300, 4500, 5200], 
         "hint": "-.. ---",
         "answer_img": ["/static/image/do-answer.png"],
         "scored": False,
