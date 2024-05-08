@@ -4,19 +4,24 @@ $(document).ready(function() {
     // audio.play();
 
     // navigate to the next quiz when the user clicks anywhere on the page
-    $(document).click(function() {
-        let nextQuiz = quiz["id"] + 1;
-        if (nextQuiz > total_quizzes) {
-            window.location.href = "/quiz/score";
-        } else {
-            window.location.href = "/quiz/" + nextQuiz;
-        }
-    });
+    // $(document).click(function() {
+    //     let nextQuiz = quiz["id"] + 1;
+    //     if (nextQuiz > total_quizzes) {
+    //         window.location.href = "/quiz/score";
+    //     } else {
+    //         window.location.href = "/quiz/" + nextQuiz;
+    //     }
+    // });
 
     // press space to navigate to next quiz
     $(document).keydown(function(e) {
         if (e.which === 32) {
-            $(document).click();
+            let nextQuiz = quiz["id"] + 1;
+            if (nextQuiz > total_quizzes) {
+                window.location.href = "/quiz/score";
+            } else {
+                window.location.href = "/quiz/" + nextQuiz;
+            }
         }
     });
 });
