@@ -27,53 +27,42 @@
 </head>
 
 <body>
-    <!-- navbar: web title + search bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-
-            <div class="col-md-3 ">
-                <a class="navbar-brand" href="/"><span class="accent">._</span> Morse Code</a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Brand and toggle button grouped for mobile display -->
+                <div class="col-md-3">
+                    <a class="navbar-brand" href="/">
+                        <span class="accent">._</span> Morse Code
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+    
+                <!-- Navbar links -->
+                <div class="col-md-6 justify-content-center">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            {% for letter, index in [('A',0), ('E',1), ('H',2), ('L',3), ('M',4), ('O',5), ('R',6), ('S',7), ('N',8), ('C',9), ('D',10)] %}
+                            <li class="nav-item" style="margin: 0 10px;">
+                                <a class="nav-link" href="/learn/{{ index }}">{{ letter }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Quiz Button -->
+                <div class="col-md-3 d-flex justify-content-center">
+                    <button class="btn accent-button-unfilled" onclick="window.location.href='/quiz'">Quiz</button>
+                </div>
             </div>
-
-            <div class="col-md-6 justify-content-center ">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="text-align: center;">
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/0">A</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/1">E</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/2">H</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/3">L</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/4">M</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/5">O</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/6">R</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/7">S</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/8">N</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/9">C</a></li>
-                    <li class="nav-item" style="display: inline-block; margin: 0 10px;"><a class="nav-link"
-                            href="/learn/10">D</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 d-flex justify-content-center ">
-                <button class="btn accent-button-unfilled" onclick="window.location.href='/quiz'">Quiz</button>
-            </div>
+        </nav>
+    
+        <div>
+            {% block content %}
+            {% endblock %}
         </div>
-        </div>
-    </nav>
-
-
-
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
-</body>
+    </body>    
 
 </html>
