@@ -49,10 +49,13 @@
                                                 {% for letter, index in [ ('E',0), ('M',1),
                                                 ('O',2), ('S',3), ('R',4), ('D',5), ('C',6)] %}
                                                 <li class="nav-item" style="margin: 0 10px;">
-                                                        <a class="nav-link" href="/learn/{{ index }}">{{ letter }}</a>
+                                                    <a class="nav-link {{ 'fw-bold' if current_page == letter else '' }}" 
+                                                       style="{{ 'color: var(--accent);' if current_page == letter else '' }}"
+                                                       href="/learn/{{ index }}">{{ letter }}</a>
                                                 </li>
                                                 {% endfor %}
-                                        </ul>
+                                            </ul>
+                                            
                                 </div>
                         </div>
 

@@ -7,17 +7,6 @@
   --white: #fffcf2;
 }
 
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: #f8ba00;
-}
 
 .accent:nth-child(odd) {
   color: black;
@@ -70,6 +59,10 @@ body {
 .bold {
   font-weight: 500;
   color: var(--dark-gray);
+}
+
+.fw-bold{
+  color: var(--accent);
 }
 
 .navbar {
@@ -191,6 +184,12 @@ a.nav-link {
   }
 }
 
+@media (min-width: 992px) {
+  .morse-code {
+      margin-right: 70px;  /* Adjust the right margin as needed */
+  }
+}
+
 .not-found-container {
   text-align: center;
   margin-top: 50px;
@@ -208,6 +207,13 @@ a.nav-link {
 
 /* Style for hover */
 .navbar-nav .nav-item .nav-link:hover {
+  color: var(--accent);
+  /* Change color to blue on hover */
+  font-weight: bold;
+  /* Make font bold on hover */
+}
+
+.navbar-nav .nav-item .nav-link:active {
   color: var(--accent);
   /* Change color to blue on hover */
   font-weight: bold;

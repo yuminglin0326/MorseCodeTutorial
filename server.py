@@ -306,8 +306,8 @@ def morse_code():
 @app.route('/learn/<learn_id>')
 def learn(learn_id):
     learn_data = learns[learn_id]
-
-    return render_template('learn.html', learn=learn_data)
+    current_page = learn_data['letter'].upper()  # Assuming 'letter' holds the character like 'H', 'E', etc.
+    return render_template('learn.html', learn=learn_data, current_page=current_page)
 
 @app.route('/learn_try/<learn_id>')
 def learn_try(learn_id):
