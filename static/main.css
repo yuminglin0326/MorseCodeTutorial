@@ -139,8 +139,6 @@ a.nav-link {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fae6b6' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-
-
 .custom-toggler.navbar-toggler {
   border: 2px solid var(--base);
 }
@@ -162,32 +160,32 @@ a.nav-link {
     margin-bottom: 10px;
     /* Add 10px margin below each button */
   }
-  .error { 
+  .error {
     top: 105%;
     text-align: center;
   }
   #congrats,
-  h2{
+  h2 {
     margin-top: 70px;
   }
-  .page-header{
+  .page-header {
     margin-top: 20px;
   }
 }
 
 @media (max-width: 991px) {
   #navbarSupportedContent.show {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #navbarSupportedContent.show .navbar-nav {
-      flex-direction: row;
-      justify-content: center; /* Center navbar items horizontally */
-      width: 100%; /* Ensure navbar items use full width available */
+    flex-direction: row;
+    justify-content: center; /* Center navbar items horizontally */
+    width: 100%; /* Ensure navbar items use full width available */
   }
   .nav-item {
-      margin: 0 10px; /* Keep consistent spacing between items */
+    margin: 0 10px; /* Keep consistent spacing between items */
   }
 }
 
@@ -467,11 +465,11 @@ h1 {
   display: none;
 }
 
-#start-quiz-button{
+#start-quiz-button {
   margin-top: 20px;
 }
 
-#submitAnswer{
+#submitAnswer {
   margin-top: 20px;
 }
 
@@ -598,9 +596,9 @@ img.hint {
   align-items: flex-start;
   vertical-align: top;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   /* Center the flashlight image within its column */
-  align-items: center;
+  /* align-items: center; */
 }
 
 .input-group {
