@@ -191,6 +191,11 @@ a.nav-link {
   }
 }
 
+.not-found-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
 /* Style for nav links */
 .navbar-nav .nav-item .nav-link {
   color: black;

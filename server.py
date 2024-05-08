@@ -369,6 +369,12 @@ def score():
 
     return render_template('quiz_score.html', quiz=quiz_data, quizzes=quizzes)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # Log to console to confirm this function is triggered
+    print("404 error caught, rendering custom page")
+    return render_template('404.html'), 404
+
 @app.route('/answered_quiz', methods=['GET', 'POST'])
 def answered_quiz():
     global quiz_score
