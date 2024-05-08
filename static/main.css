@@ -392,7 +392,7 @@ h1 {
 }
 
 .hint-correct-progress {
-  background-color: var(--accent);
+  background-color: #fae6b6;
 }
 
 .wrong-progress {

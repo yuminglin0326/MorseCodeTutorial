@@ -385,13 +385,6 @@ def quiz_home():
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
-    # check if all previous quiz is answered
-    # for i in range(1, int(quiz_id)):
-    #     print(i)
-    #     if quizzes[str(i)]["scored"] == False:
-    #         quiz = quizzes[str(i-1)]
-    #         total_quizzes = len(quizzes)
-    #         return render_template('quiz.html', quiz=quiz, total_quizzes=total_quizzes, all_quizzes=quizzes)
 
     quiz = quizzes[quiz_id]
     total_quizzes = len(quizzes)
@@ -439,7 +432,6 @@ def answered_quiz():
     print(is_correct)
     if is_correct: # if the answer is correct
         
-        # if quizzes[quiz_id]["scored"]: 
         if quizzes[quiz_id]["answered_correctly"] == -1: 
             # if it's the second try and got correct, set to 2 (yellow)
             quizzes[quiz_id]["answered_correctly"] = 2
