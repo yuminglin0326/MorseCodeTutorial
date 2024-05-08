@@ -95,7 +95,7 @@
             } else {
                 $('.error').remove();
                 $('.input-morse-code').text('');
-                if (duration < 200) {
+                if (duration < 350) {
                     console.log("dot duration: " + duration);
                     $('.input-morse-code').append('.');
                     let error = $("<div class='error'>")
@@ -104,7 +104,7 @@
                         isError = true;
                         $('#answer-feedback-container').append(error);
                     }
-                } else if (duration > 200 && duration < 500) {
+                } else if (duration > 350 && duration < 800) {
                     console.log("dash duration: " + duration);
                     $('.input-morse-code').append('-');
                     let feedback = $("<div class='feedback'>").html("Great!").addClass("quiz-correct");

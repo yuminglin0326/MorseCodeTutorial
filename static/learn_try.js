@@ -123,7 +123,7 @@ $(document).ready(function() {
                 } 
                 else { // invalid input
                     let error = $("<div class='error'>")
-                    error.html("try enter the morse code again!")
+                    error.html("Pressed for too long. try enter the morse code again!")
                     if (!isError) {
                         isError = true;
                         $('.input-morse-code').after(error);

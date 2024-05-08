@@ -12,4 +12,11 @@ $(document).ready(function() {
             window.location.href = "/quiz/" + nextQuiz;
         }
     });
+
+    // press space to navigate to next quiz
+    $(document).keydown(function(e) {
+        if (e.which === 32) {
+            $(document).click();
+        }
+    });
 });

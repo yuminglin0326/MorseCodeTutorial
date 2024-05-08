@@ -148,10 +148,10 @@ $(document).ready(function() {
                   $('#duration-display').text(duration/1000 + ' seconds');
                 } else {
                     $('.error').remove();
-                    if (duration < 200) {
+                    if (duration < 350) {
                         console.log("dot duration: " + duration);
                         $('.input-morse-code').append('.');
-                    } else if (duration > 200 && duration < 500) {
+                    } else if (duration > 350 && duration < 800) {
                         console.log("dash duration: " + duration);
                         $('.input-morse-code').append('-');
                     } else {
@@ -258,7 +258,7 @@ $(document).ready(function() {
             isCorrect = true;
             // add feedback messages when answer is correct
             let feedback = $("<div class='feedback'>").html("Correct!").addClass("quiz-correct");
-            let continueMessage = $("<div class='continue-message'>").html("Click anywhere to continue");
+            let continueMessage = $("<div class='continue-message'>").html("Click anywhere or press Space bar to continue");
             $('#answer-feedback-container').append(feedback, continueMessage);
             $('#submitAnswer').addClass('hide');
 
@@ -285,7 +285,7 @@ $(document).ready(function() {
                 $('#hint-button').removeClass('hide');
                 $('#correct-answer-button').removeClass('hide');
             } else {
-                let continueMessage = $("<div class='continue-message'>").html("Click anywhere to see the correct answer");
+                let continueMessage = $("<div class='continue-message'>").html("Click anywhere or press Space bar to see the correct answer");
                 $('#answer-feedback-container').append(continueMessage);
             }
             
@@ -298,6 +298,13 @@ $(document).ready(function() {
             }
             
             sendAnswer(inputAnswer);
+        }
+    });
+
+    // use enter to submit
+    $(document).keypress(function(e) {
+        if (e.which === 13 && !$('#submitAnswer').hasClass('hide')) {
+            $('#submitAnswer').click();
         }
     });
 
@@ -350,6 +357,13 @@ $(document).ready(function() {
             }
         } else if (submitted && inCorrectCount >= 2) {
             window.location.href = "/quiz_answer/" + quiz["id"];
+        }
+    });
+
+    // press space to navigate to next quiz
+    $(document).keydown(function(e) {
+        if (e.which === 32 && submitted) {
+            $(document).click();
         }
     });
 
