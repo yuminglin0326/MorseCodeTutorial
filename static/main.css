@@ -193,6 +193,12 @@ a.nav-link {
   }
 }
 
+@media (min-width: 992px) {
+  .morse-code {
+      margin-right: 70px;  /* Adjust the right margin as needed */
+  }
+}
+
 .not-found-container {
   text-align: center;
   margin-top: 50px;
