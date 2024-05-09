@@ -3,21 +3,9 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-learns = {  
-     "0": {
-         "id": 0,
-         "letter": "a",
-         "morse_code": ".-",
-         "plain_image": "/static/image/a-plain.png",
-         "morse_image": "/static/image/a-morse.png",
-         "morse_audio": "/static/audio/a-audio.mp3",
-         "position": [[4, 79], [127, 42]], # [top, left],
-         "dash": "/static/image/dash_hor.png",
-         "dash_width": "110",
-         "flash_interval": [100, 150, 450] # [on for 100ms, off for 50ms, on for 300ms]
-     },
-    "1": {
-        "id": 1,
+learns = { 
+    "0": {
+        "id": 0,
         "letter": "e",
         "morse_code": ".",
         "plain_image": "/static/image/e-plain.png",
@@ -28,32 +16,8 @@ learns = {
         "dash_width": "110",
         "flash_interval": [300]
     },
-    "2": {
-        "id": 2,
-        "letter": "h",
-        "morse_code": "....",
-        "plain_image": "/static/image/h-plain.png",
-        "morse_image": "/static/image/h-morse.png",
-        "morse_audio": "/static/audio/h-audio.mp3",
-        "position": [[5, 6], [5, 122], [155, 6], [155, 122]], # [top, left],
-        "dash": "/static/image/dash_hor.png",
-        "dash_width": "110",
-        "flash_interval": [100, 150, 250, 300, 400, 450, 550, 650]
-    },
-    "3": {
-        "id": 3,
-        "letter": "l",
-        "morse_code": ".-..",
-        "plain_image": "/static/image/l-plain.png",
-        "morse_image": "/static/image/l-morse.png",
-        "morse_audio": "/static/audio/l-audio.mp3",
-        "position": [[0, 6], [40, 18], [163, 42], [163, 92]], # [top, left],
-        "dash": "/static/image/dash_ver.png",
-        "dash_width": "10",
-        "flash_interval": [100, 150, 450, 500, 600, 650, 750]
-    },
-    "4": {
-        "id": 4,
+    "1": {
+        "id": 1,
         "letter": "m",
         "morse_code": "--",
         "plain_image": "/static/image/m-plain.png",
@@ -64,8 +28,8 @@ learns = {
         "dash_width": "10",
         "flash_interval": [300, 350, 650]
     },
-    "5": {
-        "id": 5,
+    "2": {
+        "id": 2,
         "letter": "o",
         "morse_code": "---",
         "plain_image": "/static/image/o-plain.png",
@@ -76,8 +40,8 @@ learns = {
         "dash_width": "180",
         "flash_interval": [300, 350, 650, 700, 1000]
     },
-    "6": {
-        "id": 6,
+    "4": {
+        "id": 4,
         "letter": "r",
         "morse_code": ".-.",
         "plain_image": "/static/image/r-plain.png",
@@ -88,8 +52,8 @@ learns = {
         "dash_width": "80",
         "flash_interval": [100, 150, 450, 500, 600]
     },
-    "7": {
-        "id": 7,
+    "3": {
+        "id": 3,
         "letter": "s",
         "morse_code": "...",
         "plain_image": "/static/image/s-plain.png",
@@ -100,20 +64,8 @@ learns = {
         "dash_width": "110",
         "flash_interval": [100, 150, 250, 300, 400, 450]
     },
-    "8": {
-        "id": 8,
-        "letter": "n",
-        "morse_code": "-.",
-        "plain_image": "/static/image/n-plain.png",
-        "morse_image": "/static/image/n-morse.png",
-        "morse_audio": "/static/audio/n-audio.mp3",
-        "position": [[30, 18], [155, 110]], # [top, left],
-        "dash": "/static/image/dash_ver.png",
-        "dash_width": "10",
-        "flash_interval": [300,350,450,500]
-    },
-    "9": {
-        "id": 9,
+    "6": {
+        "id": 6,
         "letter": "c",
         "morse_code": "-.-.",
         "plain_image": "/static/image/c-plain.png",
@@ -124,8 +76,8 @@ learns = {
         "dash_width": "200",
         "flash_interval": [300, 350, 450, 500, 800, 850, 950, 1000]
     },
-    "10": {
-        "id": 10,
+    "5": {
+        "id": 5,
         "letter": "d",
         "morse_code": "-..",
         "plain_image": "/static/image/d-plain.png",
