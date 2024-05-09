@@ -154,7 +154,7 @@
     // Event listener for click event
     $(document).click(function () {
         if (submitted && isCorrect) {
-            if (correctCount == 2){
+            if (correctCount >= 2){
                 window.location.href = '/get-started-dash';
             }
             else {
