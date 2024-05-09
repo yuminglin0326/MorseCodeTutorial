@@ -159,7 +159,7 @@ $(document).ready(function() {
             submit = true;
             isCorrect = false;
             let feedback = $("<div class='feedback'>").html("Try again!").addClass("quiz-wrong");
-            let continueMessage = $("<div class='continue-message'>").html("Click anywhere to continue");
+            let continueMessage = $("<div class='continue-message'>").html("Click anywhere or press Space Bar to continue");
             $('#answer-feedback-container').append(feedback, continueMessage);
         }
         // move to the next morse code
@@ -171,11 +171,12 @@ $(document).ready(function() {
             if (isCorrect) {
                 // add feedback messages when answer is correct
                 let feedback = $("<div class='feedback'>").html("Correct!").addClass("quiz-correct");
-                let continueMessage = $("<div class='continue-message'>").html("Click anywhere to continue");
+                let continueMessage = $("<div class='continue-message'>").html("Click anywhere or press Space Bar to continue");
                 $('#answer-feedback-container').append(feedback, continueMessage);
             }
         }
     }
+
     $('#practice-again-btn').click(function () {
         // Reset variables and UI elements
         $('.input-morse-code').empty();
@@ -229,6 +230,13 @@ $(document).ready(function() {
         }
     });
 
+    // press space bar to continue to the next page
+    $(document).keydown(function(e) {
+        if (e.which === 32 && submit) {
+            $(document).click();
+        }
+    });
+
     // reset the page
     function resetPage() {
         $('#answer-feedback-container').empty();
@@ -271,8 +279,8 @@ $(document).ready(function() {
     function displayFlashlightMode() {
         // display flashlight
         let flashlightContainer = $("<div class='flashlight-container-top text-center'>");
-        let flashlightOff = $("<img class='flashlight-off hide' src='/static/image/led off.png' alt='led light off'>")
-        let flashlightOn = $("<img class='flashlight-on hide' src='/static/image/led on.png' alt='led light on'>")
+        let flashlightOff = $("<img class='flashlight-off flashlight-quiz-width hide' src='/static/image/led off.png' alt='led light off'>")
+        let flashlightOn = $("<img class='flashlight-on flashlight-quiz-width hide' src='/static/image/led on.png' alt='led light on'>")
         flashlightContainer.append(flashlightOff, flashlightOn);
         $('.learn-container').append(flashlightContainer);
         playFlashlight(learn["flash_interval"]);

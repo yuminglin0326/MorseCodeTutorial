@@ -26,7 +26,7 @@ learns = {
         "position": [[30, 15], [30, 172]], # [top, left],
         "dash": "/static/image/dash_ver.png",
         "dash_width": "10",
-        "flash_interval": [300, 350, 650]
+        "flash_interval": [700, 900, 1600]
     },
     "2": {
         "id": 2,
@@ -38,7 +38,7 @@ learns = {
         "position": [[-2, 0], [-2, 0], [-2, 0]], # [top, left],
         "dash": ["/static/image/o-dash-1.png", "/static/image/o-dash-2.png", "/static/image/o-dash-3.png"],
         "dash_width": "180",
-        "flash_interval": [300, 350, 650, 700, 1000]
+        "flash_interval": [600, 800, 1500, 1700, 2400]
     },
     "4": {
         "id": 4,
@@ -50,7 +50,7 @@ learns = {
         "position": [[150, 6], [101, 15], [150, 100]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "dash_width": "80",
-        "flash_interval": [100, 150, 450, 500, 600]
+        "flash_interval": [300, 500, 1200, 1400, 1700]
     },
     "3": {
         "id": 3,
@@ -62,7 +62,7 @@ learns = {
         "position": [[0, 57], [75, 57], [162, 57]], # [top, left],
         "dash": "/static/image/dash_hor.png",
         "dash_width": "110",
-        "flash_interval": [100, 150, 250, 300, 400, 450]
+        "flash_interval": [300, 500, 800, 1000, 1300]
     },
     "6": {
         "id": 6,
@@ -74,7 +74,7 @@ learns = {
         "position": [[-10, -15], [80, 15], [-10, -15], [143, 110]], # [top, left],
         "dash": ["/static/image/c-dash-1.png", "", "/static/image/c-dash-2.png"],
         "dash_width": "200",
-        "flash_interval": [300, 350, 450, 500, 800, 850, 950, 1000]
+        "flash_interval": [700, 900, 1200, 1400, 2100, 2300, 2600]
     },
     "5": {
         "id": 5,
@@ -86,7 +86,7 @@ learns = {
         "position": [[30, 18], [6, 85], [156, 85]], # [top, left],
         "dash": "/static/image/dash_ver.png",
         "dash_width": "10",
-        "flash_interval": [100, 150, 250, 300, 400, 450]
+        "flash_interval": [700, 900, 1200, 1400, 1700]
     }
 }
 
