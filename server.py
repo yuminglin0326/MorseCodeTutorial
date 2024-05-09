@@ -104,7 +104,7 @@ quizzes = {
         "answer_img": ["/static/image/e-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [1],
+        "id_in_learns": [0],
     },
     "2": {
         "id": 2,
@@ -117,7 +117,7 @@ quizzes = {
         "answer_img": ["/static/image/m-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [4],
+        "id_in_learns": [1],
     },
     "3": {
         "id": 3,
@@ -130,7 +130,7 @@ quizzes = {
         "answer_img": ["/static/image/me-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [1,4],
+        "id_in_learns": [1, 0],
     },
     "4": {
         "id": 4,
@@ -146,7 +146,7 @@ quizzes = {
         "answer_img": ["/static/image/d-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [10],
+        "id_in_learns": [5],
     },
     "5": {
         "id": 5,
@@ -160,7 +160,7 @@ quizzes = {
         "answer_img": ["/static/image/o-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [5],
+        "id_in_learns": [2],
     },
     "6": {
         "id": 6,
@@ -174,7 +174,7 @@ quizzes = {
         "answer_img": ["/static/image/do-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [5,10],
+        "id_in_learns": [5, 2],
     },
     "7": {
         "id": 7,
@@ -188,7 +188,7 @@ quizzes = {
         "answer_img": ["/static/image/c-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [9],
+        "id_in_learns": [6],
     },
     "8": {
         "id": 8,
@@ -203,7 +203,7 @@ quizzes = {
         "answer_img": ["/static/image/cod-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [9,5,10],
+        "id_in_learns": [6, 2, 5],
     },
     "9": {
         "id": 9,
@@ -229,7 +229,7 @@ quizzes = {
         "answer_img": ["/static/image/roe-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [4, 7, 0],
+        "id_in_learns": [4, 2, 0],
     },
     "11": {
         "id": 11,
@@ -257,7 +257,7 @@ quizzes = {
         "answer_img": ["/static/image/rose-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [4, 7, 0, 3],
+        "id_in_learns": [4, 2, 3, 0],
     },
     "13": {
         "id": 13,
@@ -271,7 +271,7 @@ quizzes = {
         "answer_img": ["/static/image/code-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [6, 7, 5, 3],
+        "id_in_learns": [6, 2, 5, 0],
     },
     "14": {
         "id": 14,
@@ -284,7 +284,7 @@ quizzes = {
         "answer_img": ["/static/image/morse-answer.png"],
         "scored": False,
         "answered_correctly": 0,
-        "id_in_learns": [1, 7, 4, 3, 0],
+        "id_in_learns": [1, 2, 4, 3, 0],
     }
 }
 
