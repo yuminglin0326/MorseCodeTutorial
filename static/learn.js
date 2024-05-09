@@ -75,6 +75,13 @@ $(document).ready(function() {
 
     });
 
+    // press space to navigate to next quiz
+    $(document).keydown(function(e) {
+        if (e.which === 32) {
+            $(document).click();
+        }
+    });
+
     // ToSolve: need to make dynamic
     displayFlashlight = function() {
         $('.flashlight-off').hide();

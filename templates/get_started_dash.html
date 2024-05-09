@@ -54,6 +54,7 @@
     let morseAudio = new Audio('/static/audio/t-audio.mp3');
     let submitted = false;
     let isCorrect = false;
+    let correctCount = 0;
 
     $(document).keydown(function(e) {
         if (e.which === 32 && !spaceDown && !submitted) { // Check if the pressed key is the space key
@@ -112,6 +113,7 @@
                     $('#answer-feedback-container').append(feedback, continueMessage);
                     submitted = true;
                     isCorrect = true;
+                    correctCount++;
 
                     // Show the "Practice Again" button
                     $('#practice-again-btn').show();
@@ -138,17 +140,26 @@
     }
 
     $('#practice-again-btn').click(function () {
+        resetPage();
+    });
+
+    function resetPage() {
         // Reset variables and UI elements
         $('.input-morse-code').empty();
         $('#answer-feedback-container').empty();
         submitted = false;
         isCorrect = false;
         $('#practice-again-btn').hide(); // Hide the button again
-    });
+    }
 
     $(document).click(function() {
         if (submitted && isCorrect) {
-            window.location.href = '/learn/0';
+            if (correctCount == 2){
+                window.location.href = '/learn/0';
+            }
+            else {
+                resetPage();
+            }
         }
     });
 </script>
