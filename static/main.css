@@ -64,6 +64,11 @@ body {
   color: var(--accent);
 }
 
+.learned {
+    font-weight: bold;
+    color: grey !important;  /* Using !important to override other styles if necessary */
+}
+
 .navbar {
   border-bottom: 2px solid var(--accent);
   /* Add a 3px solid yellow border to the bottom of the navbar */
